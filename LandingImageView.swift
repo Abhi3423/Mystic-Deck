@@ -104,7 +104,7 @@ struct LandingImageView: View {
             }
             
             
-            Text("MYSTIC")
+            Text("MYSTIK")
                 .fontWeight(.bold)
                 .font(.system(size: 60))
                 .foregroundColor(.white)
