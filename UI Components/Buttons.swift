@@ -7,12 +7,28 @@
 
 import SwiftUI
 
-struct Buttons: View {
+
+struct CustomButton: View {
+    var buttonText: String
+    var onClick: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            onClick()
+        }) {
+            Text(buttonText)
+                .frame(width: 130, height: 35)
+                .padding(.horizontal, 30.0)
+                .padding(.vertical, 10.0)
+                .bold()
+                .foregroundColor(.white)
+                .background(LinearGradient(gradient: Gradient(colors: [Color(hex: "#2F61DF"), Color(hex: "#AA1ADC")]), startPoint: .leading, endPoint: .trailing))
+                .cornerRadius(28)
+                .font(.system(size: 28))
+        }
     }
 }
 
 #Preview {
-    Buttons()
+    GameRoomView()
 }

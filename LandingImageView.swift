@@ -20,6 +20,8 @@ struct LandingImageView: View {
             Image("landing")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             
             Text("MYSTIC")
