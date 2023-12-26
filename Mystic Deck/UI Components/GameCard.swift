@@ -73,7 +73,7 @@ struct HistoryCard_Previews: PreviewProvider {
     static var previews: some View {
         GameCard(
             imageName: "maharashtra",
-            cardHeading: "Maharashtr",
+            cardHeading: "Maharashtra..",
             rectangles: [
                 ("AREA (sq km)", "308,000", "#BBB3AC", "#000000"),
                 ("POPULATION", "13.16 crore", "#BBB3AC", "#000000"),
