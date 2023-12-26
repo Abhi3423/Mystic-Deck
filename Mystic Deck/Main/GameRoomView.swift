@@ -20,7 +20,7 @@ struct GameRoomView: View {
                 Spacer()
                         .frame(height: 150)
                 
-            HistoryCard(
+            GameCard(
                 imageName: "maharashtra",
                 cardHeading: "Maharashtra",
                 rectangles: [

@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftyJSON
 
 
-struct HistoryCard: View {
+struct GameCard: View {
     var imageName: String
     var cardHeading: String
     var rectangles: [(String, String, String, String)] // (Rectangle Heading, Rectangle Content, Start Color, End Color)
@@ -71,7 +71,7 @@ struct HistoryCard: View {
 
 struct HistoryCard_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryCard(
+        GameCard(
             imageName: "maharashtra",
             cardHeading: "Maharashtra",
             rectangles: [

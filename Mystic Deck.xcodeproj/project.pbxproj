@@ -23,7 +23,7 @@
 		7FF7B4992B38263A001FD16C /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B4982B38263A001FD16C /* Buttons.swift */; };
 		7FF7B49B2B383843001FD16C /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B49A2B383843001FD16C /* Loading.swift */; };
 		7FF7B49D2B383DCB001FD16C /* FontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B49C2B383DCB001FD16C /* FontView.swift */; };
-		7FF7B49F2B38506A001FD16C /* HistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B49E2B38506A001FD16C /* HistoryCard.swift */; };
+		7FF7B49F2B38506A001FD16C /* GameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B49E2B38506A001FD16C /* GameCard.swift */; };
 		7FF7B4A22B385238001FD16C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B4A12B385238001FD16C /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,7 @@
 		7FF7B4982B38263A001FD16C /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		7FF7B49A2B383843001FD16C /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		7FF7B49C2B383DCB001FD16C /* FontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontView.swift; sourceTree = "<group>"; };
-		7FF7B49E2B38506A001FD16C /* HistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCard.swift; sourceTree = "<group>"; };
+		7FF7B49E2B38506A001FD16C /* GameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCard.swift; sourceTree = "<group>"; };
 		7FF7B4A12B385238001FD16C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		AF07F07940DF02339484DBF2 /* Pods_Mystic_DeckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mystic_DeckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EE76759F0F44F92944E05B /* Pods-Mystic DeckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mystic DeckTests.debug.xcconfig"; path = "Target Support Files/Pods-Mystic DeckTests/Pods-Mystic DeckTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 			children = (
 				7FF7B4982B38263A001FD16C /* Buttons.swift */,
 				7FF7B49A2B383843001FD16C /* Loading.swift */,
-				7FF7B49E2B38506A001FD16C /* HistoryCard.swift */,
+				7FF7B49E2B38506A001FD16C /* GameCard.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -464,7 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FF7B49F2B38506A001FD16C /* HistoryCard.swift in Sources */,
+				7FF7B49F2B38506A001FD16C /* GameCard.swift in Sources */,
 				7FF7B4992B38263A001FD16C /* Buttons.swift in Sources */,
 				7F4AD8572B2DA17C00213099 /* ContentView.swift in Sources */,
 				7F313ED42B39F2CF00816103 /* data.swift in Sources */,
