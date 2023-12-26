@@ -35,8 +35,10 @@ struct GameRoomView: View {
                 
 //                CustomButton(buttonText: "PLAY") {
 //                    print("Button clicked!")
-//                    isNavigationActive = true
+////                    isNavigationActive = true
 //                    // Perform any action you want here
+//                    let ok = createSampleJSON()
+//                    print(ok)
 //                }
             }
         }

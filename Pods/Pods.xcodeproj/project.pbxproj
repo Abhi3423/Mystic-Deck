@@ -1,0 +1,963 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FEEBFBACE70A78E172D9179D94032A5 /* Pods-Mystic Deck-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBA001F8CA169DE7C1E22BBEAB221FF /* Pods-Mystic Deck-dummy.m */; };
+		2F4D10E3266415B11DDFC96325E5EEF3 /* Pods-Mystic Deck-Mystic DeckUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7871D6585BD45E858C87B39B889E7667 /* Pods-Mystic Deck-Mystic DeckUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		325CCDB295FFA016638075B5D2CEDD5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		34A9B6E1845C2CEA384A0A8ACBB340A6 /* Pods-Mystic Deck-Mystic DeckUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4700CD70071535865BA2E1B1D6C28436 /* Pods-Mystic Deck-Mystic DeckUITests-dummy.m */; };
+		5FA526557719FDBE81B1974B113CF600 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 593C23BE6F81900B7E5D14655827CBEC /* SwiftyJSON-dummy.m */; };
+		6C82EE909A57BB744B63B8A5A538F5E5 /* Pods-Mystic Deck-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 807C9493C20A3A380F717169AE994D3B /* Pods-Mystic Deck-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A344DCF7D3A1DCC10035909CD5D1D49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		7BB2FC4664A36C4B45ADFACEA72A9407 /* Pods-Mystic DeckTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD3B2CE99D2502EB9D03ABF755AFEC8 /* Pods-Mystic DeckTests-dummy.m */; };
+		91AF71E9F82CD03FFA975AFDB3A806D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A115142039C23F91827E6961CC479F05 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A02287654566C4E833D550868E61137D /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3CEE8324948497036C4E123B21CBC59 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874D7ABD2F10BB23F044CCCAEFA96E16 /* SwiftyJSON.swift */; };
+		A7154DF158C7612B2B4B47311812EE6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C1133F89799A9D37496DEB32251AD7E5 /* Pods-Mystic DeckTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C852E4AB4856EB09C91A30E43FD9B9D /* Pods-Mystic DeckTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D61EE0725F7F710A44586E0D168159E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5D791F58CE3D35B5956732760A90888;
+			remoteInfo = "Pods-Mystic Deck";
+		};
+		C05ACBF3EBE35C91F8C5ED92A73C4990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
+			remoteInfo = SwiftyJSON;
+		};
+		EF60CDEF9D2307FE3CC83791BDEE5F36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D118A6A04828FD3CDA8640CD2B6796D2;
+			remoteInfo = SwiftyJSON;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02C08A8660F01384E0670910E17FED83 /* Pods-Mystic DeckTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mystic DeckTests-Info.plist"; sourceTree = "<group>"; };
+		09C718B8D65EC636EC5091EE1860DA96 /* Pods-Mystic Deck-Mystic DeckUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Mystic Deck-Mystic DeckUITests.modulemap"; sourceTree = "<group>"; };
+		0FE57570D07A7812C5FA3CAFDE46C151 /* Pods-Mystic Deck-Mystic DeckUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mystic Deck-Mystic DeckUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		230FB7984DFA44D6E8EE57829E4FA77A /* Pods-Mystic Deck-Mystic DeckUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mystic Deck-Mystic DeckUITests-frameworks.sh"; sourceTree = "<group>"; };
+		29D4F6467269104C89299F47DFE7B5AC /* Pods-Mystic Deck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mystic Deck.release.xcconfig"; sourceTree = "<group>"; };
+		31D2F7114EB1D1A3839B14441E96EC2E /* Pods_Mystic_Deck_Mystic_DeckUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mystic_Deck_Mystic_DeckUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3516E6AB6A6346A756320B0023EDF3B4 /* Pods-Mystic Deck-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Mystic Deck-acknowledgements.markdown"; sourceTree = "<group>"; };
+		428510A9F705277CDAD452D8B28E0B0E /* Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4700CD70071535865BA2E1B1D6C28436 /* Pods-Mystic Deck-Mystic DeckUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mystic Deck-Mystic DeckUITests-dummy.m"; sourceTree = "<group>"; };
+		4EDDB6CCF1A44134C7B4C098124898A8 /* Pods-Mystic Deck-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Mystic Deck-frameworks.sh"; sourceTree = "<group>"; };
+		53C1A7E15161AE3A0E3A5090E19F84AE /* SwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.release.xcconfig; sourceTree = "<group>"; };
+		593C23BE6F81900B7E5D14655827CBEC /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		5989B8A70EC5E6EF4CCD3C176F7BF8A3 /* Pods-Mystic DeckTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mystic DeckTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5BD6E01401AD21EBC509DA3695701CC4 /* Pods-Mystic DeckTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Mystic DeckTests.modulemap"; sourceTree = "<group>"; };
+		5C852E4AB4856EB09C91A30E43FD9B9D /* Pods-Mystic DeckTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mystic DeckTests-umbrella.h"; sourceTree = "<group>"; };
+		60A5446E3184AC9044FD67AD5C6955CF /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
+		6A354C76B80E89FBF808D97B0B17C43C /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		6D7E3483ED7355D9EEB8FCB0972D4A77 /* Pods-Mystic Deck-Mystic DeckUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mystic Deck-Mystic DeckUITests-Info.plist"; sourceTree = "<group>"; };
+		6DF72BEBF83C72E9F8C830C6AF6A6126 /* Pods-Mystic Deck-Mystic DeckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mystic Deck-Mystic DeckUITests.release.xcconfig"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		76D518753B179B5CBB4F0F8B4AB92D31 /* Pods-Mystic Deck-Mystic DeckUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Mystic Deck-Mystic DeckUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7871D6585BD45E858C87B39B889E7667 /* Pods-Mystic Deck-Mystic DeckUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mystic Deck-Mystic DeckUITests-umbrella.h"; sourceTree = "<group>"; };
+		807C9493C20A3A380F717169AE994D3B /* Pods-Mystic Deck-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Mystic Deck-umbrella.h"; sourceTree = "<group>"; };
+		874D7ABD2F10BB23F044CCCAEFA96E16 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
+		8DC939C0C46644CD54ABF7ACFA2C3327 /* Pods-Mystic Deck.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Mystic Deck.modulemap"; sourceTree = "<group>"; };
+		8FD3B2CE99D2502EB9D03ABF755AFEC8 /* Pods-Mystic DeckTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mystic DeckTests-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A02287654566C4E833D550868E61137D /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		A02607D90E9FF3452E31EC386EE0DEE9 /* Pods-Mystic DeckTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Mystic DeckTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A0E4E1D4E9CFE3BB577C3EF9DC29CDB2 /* Pods-Mystic DeckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mystic DeckTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BDBA001F8CA169DE7C1E22BBEAB221FF /* Pods-Mystic Deck-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Mystic Deck-dummy.m"; sourceTree = "<group>"; };
+		BE6C189706015C0877000C4D95BD15E3 /* Pods-Mystic Deck-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mystic Deck-acknowledgements.plist"; sourceTree = "<group>"; };
+		C2F3A025EA4967F4C74A35F9FF21CAE2 /* Pods_Mystic_DeckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mystic_DeckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C588CC80C6B4AB3D98F63E896B0AACB8 /* Pods_Mystic_Deck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mystic_Deck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9DE42C87372AFAD159C73C1DEAAF69 /* Pods-Mystic Deck-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Mystic Deck-Info.plist"; sourceTree = "<group>"; };
+		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A0FD389D173F56FBDB8A357093095A /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		EEF9860817D72B0C84169E62BEE0823B /* Pods-Mystic DeckTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mystic DeckTests.release.xcconfig"; sourceTree = "<group>"; };
+		F53BC124188C905E2B369B86D0817B3A /* Pods-Mystic Deck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Mystic Deck.debug.xcconfig"; sourceTree = "<group>"; };
+		F8D55E3BEC2588689D54AFF1AE0AC1DF /* SwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.debug.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		204ED34989085D9193A9F3ED2DBC20B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A344DCF7D3A1DCC10035909CD5D1D49 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3977393A21672F0FBC6F1193739E0D15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325CCDB295FFA016638075B5D2CEDD5C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D86B7B3AFEF035B4F332C8BD8C62FCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91AF71E9F82CD03FFA975AFDB3A806D5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD99A20980EA2C56C9A7F233DCD4A201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7154DF158C7612B2B4B47311812EE6F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C6A71D462ED46C2A7F74D962134DC74 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				519BE3CB838B11312A08D7AC7819F70F /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4E38BA5CBB7120F014C2E91ACEA14A10 /* Pods-Mystic Deck */ = {
+			isa = PBXGroup;
+			children = (
+				8DC939C0C46644CD54ABF7ACFA2C3327 /* Pods-Mystic Deck.modulemap */,
+				3516E6AB6A6346A756320B0023EDF3B4 /* Pods-Mystic Deck-acknowledgements.markdown */,
+				BE6C189706015C0877000C4D95BD15E3 /* Pods-Mystic Deck-acknowledgements.plist */,
+				BDBA001F8CA169DE7C1E22BBEAB221FF /* Pods-Mystic Deck-dummy.m */,
+				4EDDB6CCF1A44134C7B4C098124898A8 /* Pods-Mystic Deck-frameworks.sh */,
+				CB9DE42C87372AFAD159C73C1DEAAF69 /* Pods-Mystic Deck-Info.plist */,
+				807C9493C20A3A380F717169AE994D3B /* Pods-Mystic Deck-umbrella.h */,
+				F53BC124188C905E2B369B86D0817B3A /* Pods-Mystic Deck.debug.xcconfig */,
+				29D4F6467269104C89299F47DFE7B5AC /* Pods-Mystic Deck.release.xcconfig */,
+			);
+			name = "Pods-Mystic Deck";
+			path = "Target Support Files/Pods-Mystic Deck";
+			sourceTree = "<group>";
+		};
+		519BE3CB838B11312A08D7AC7819F70F /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				874D7ABD2F10BB23F044CCCAEFA96E16 /* SwiftyJSON.swift */,
+				E7117206C2C7669CF7C06E59DE55529D /* Support Files */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		526A18C58238E2A724AB6EFE19388860 /* Pods-Mystic DeckTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BD6E01401AD21EBC509DA3695701CC4 /* Pods-Mystic DeckTests.modulemap */,
+				A02607D90E9FF3452E31EC386EE0DEE9 /* Pods-Mystic DeckTests-acknowledgements.markdown */,
+				5989B8A70EC5E6EF4CCD3C176F7BF8A3 /* Pods-Mystic DeckTests-acknowledgements.plist */,
+				8FD3B2CE99D2502EB9D03ABF755AFEC8 /* Pods-Mystic DeckTests-dummy.m */,
+				02C08A8660F01384E0670910E17FED83 /* Pods-Mystic DeckTests-Info.plist */,
+				5C852E4AB4856EB09C91A30E43FD9B9D /* Pods-Mystic DeckTests-umbrella.h */,
+				A0E4E1D4E9CFE3BB577C3EF9DC29CDB2 /* Pods-Mystic DeckTests.debug.xcconfig */,
+				EEF9860817D72B0C84169E62BEE0823B /* Pods-Mystic DeckTests.release.xcconfig */,
+			);
+			name = "Pods-Mystic DeckTests";
+			path = "Target Support Files/Pods-Mystic DeckTests";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7230713359FD9E971A46EEB611791AF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C588CC80C6B4AB3D98F63E896B0AACB8 /* Pods_Mystic_Deck.framework */,
+				31D2F7114EB1D1A3839B14441E96EC2E /* Pods_Mystic_Deck_Mystic_DeckUITests.framework */,
+				C2F3A025EA4967F4C74A35F9FF21CAE2 /* Pods_Mystic_DeckTests.framework */,
+				E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D7D0ED4285C75A36CE6F6C3E1732589 /* Pods-Mystic Deck-Mystic DeckUITests */ = {
+			isa = PBXGroup;
+			children = (
+				09C718B8D65EC636EC5091EE1860DA96 /* Pods-Mystic Deck-Mystic DeckUITests.modulemap */,
+				76D518753B179B5CBB4F0F8B4AB92D31 /* Pods-Mystic Deck-Mystic DeckUITests-acknowledgements.markdown */,
+				0FE57570D07A7812C5FA3CAFDE46C151 /* Pods-Mystic Deck-Mystic DeckUITests-acknowledgements.plist */,
+				4700CD70071535865BA2E1B1D6C28436 /* Pods-Mystic Deck-Mystic DeckUITests-dummy.m */,
+				230FB7984DFA44D6E8EE57829E4FA77A /* Pods-Mystic Deck-Mystic DeckUITests-frameworks.sh */,
+				6D7E3483ED7355D9EEB8FCB0972D4A77 /* Pods-Mystic Deck-Mystic DeckUITests-Info.plist */,
+				7871D6585BD45E858C87B39B889E7667 /* Pods-Mystic Deck-Mystic DeckUITests-umbrella.h */,
+				428510A9F705277CDAD452D8B28E0B0E /* Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig */,
+				6DF72BEBF83C72E9F8C830C6AF6A6126 /* Pods-Mystic Deck-Mystic DeckUITests.release.xcconfig */,
+			);
+			name = "Pods-Mystic Deck-Mystic DeckUITests";
+			path = "Target Support Files/Pods-Mystic Deck-Mystic DeckUITests";
+			sourceTree = "<group>";
+		};
+		CCB3A85657536F0E9668AC10C5AD9EBB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E38BA5CBB7120F014C2E91ACEA14A10 /* Pods-Mystic Deck */,
+				7D7D0ED4285C75A36CE6F6C3E1732589 /* Pods-Mystic Deck-Mystic DeckUITests */,
+				526A18C58238E2A724AB6EFE19388860 /* Pods-Mystic DeckTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				2C6A71D462ED46C2A7F74D962134DC74 /* Pods */,
+				7230713359FD9E971A46EEB611791AF4 /* Products */,
+				CCB3A85657536F0E9668AC10C5AD9EBB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7117206C2C7669CF7C06E59DE55529D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4A0FD389D173F56FBDB8A357093095A /* SwiftyJSON.modulemap */,
+				593C23BE6F81900B7E5D14655827CBEC /* SwiftyJSON-dummy.m */,
+				60A5446E3184AC9044FD67AD5C6955CF /* SwiftyJSON-Info.plist */,
+				6A354C76B80E89FBF808D97B0B17C43C /* SwiftyJSON-prefix.pch */,
+				A02287654566C4E833D550868E61137D /* SwiftyJSON-umbrella.h */,
+				F8D55E3BEC2588689D54AFF1AE0AC1DF /* SwiftyJSON.debug.xcconfig */,
+				53C1A7E15161AE3A0E3A5090E19F84AE /* SwiftyJSON.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		41145698F7DF35B05606D01197454CFC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A115142039C23F91827E6961CC479F05 /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61E5BB8630B0E03E29D79E44C2A89048 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1133F89799A9D37496DEB32251AD7E5 /* Pods-Mystic DeckTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67FF60F8655B650E29567A6D605F94C4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F4D10E3266415B11DDFC96325E5EEF3 /* Pods-Mystic Deck-Mystic DeckUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C09CD833210CA76509C75009B84915E6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C82EE909A57BB744B63B8A5A538F5E5 /* Pods-Mystic Deck-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		95E3B9863A0AD16C5E2210F95677ED95 /* Pods-Mystic Deck-Mystic DeckUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42394678724AAF237F530AE51C435959 /* Build configuration list for PBXNativeTarget "Pods-Mystic Deck-Mystic DeckUITests" */;
+			buildPhases = (
+				67FF60F8655B650E29567A6D605F94C4 /* Headers */,
+				F46F7BB6DD65D273ACDAC08D33568C3B /* Sources */,
+				FD99A20980EA2C56C9A7F233DCD4A201 /* Frameworks */,
+				77635EB3A69F3F8609D1AE72A4DE2229 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A28303085B094023D7E5B2DAAD109637 /* PBXTargetDependency */,
+			);
+			name = "Pods-Mystic Deck-Mystic DeckUITests";
+			productName = Pods_Mystic_Deck_Mystic_DeckUITests;
+			productReference = 31D2F7114EB1D1A3839B14441E96EC2E /* Pods_Mystic_Deck_Mystic_DeckUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CE4D467F3E4566DFA1A9541EB4866FE2 /* Pods-Mystic DeckTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 461116649E4BD05566344AB12A4E1E78 /* Build configuration list for PBXNativeTarget "Pods-Mystic DeckTests" */;
+			buildPhases = (
+				61E5BB8630B0E03E29D79E44C2A89048 /* Headers */,
+				41561D3B84435F4D67950A61674B6703 /* Sources */,
+				6D86B7B3AFEF035B4F332C8BD8C62FCE /* Frameworks */,
+				5C3DF89E192C400F3E4BCA46F2FBDA8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28BE72D1CDBBC656B513A897D157C765 /* PBXTargetDependency */,
+			);
+			name = "Pods-Mystic DeckTests";
+			productName = Pods_Mystic_DeckTests;
+			productReference = C2F3A025EA4967F4C74A35F9FF21CAE2 /* Pods_Mystic_DeckTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2490E828D479276A7E0AFBA515DD77FA /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildPhases = (
+				41145698F7DF35B05606D01197454CFC /* Headers */,
+				7B5BEB32F210EFE38F7D58FF8A1CC2DE /* Sources */,
+				3977393A21672F0FBC6F1193739E0D15 /* Frameworks */,
+				B05597C458D738E12F170EAC515F8483 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyJSON;
+			productName = SwiftyJSON;
+			productReference = E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F5D791F58CE3D35B5956732760A90888 /* Pods-Mystic Deck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082E4F504AA16244238FF627261B7B39 /* Build configuration list for PBXNativeTarget "Pods-Mystic Deck" */;
+			buildPhases = (
+				C09CD833210CA76509C75009B84915E6 /* Headers */,
+				69B441BED8877174C98F3F6C97B4A42C /* Sources */,
+				204ED34989085D9193A9F3ED2DBC20B0 /* Frameworks */,
+				63CCDE5DA28EF3CD08B98DC5D6A0CFD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B55F41D3802D73E3D738CCD8425C3392 /* PBXTargetDependency */,
+			);
+			name = "Pods-Mystic Deck";
+			productName = Pods_Mystic_Deck;
+			productReference = C588CC80C6B4AB3D98F63E896B0AACB8 /* Pods_Mystic_Deck.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 7230713359FD9E971A46EEB611791AF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5D791F58CE3D35B5956732760A90888 /* Pods-Mystic Deck */,
+				95E3B9863A0AD16C5E2210F95677ED95 /* Pods-Mystic Deck-Mystic DeckUITests */,
+				CE4D467F3E4566DFA1A9541EB4866FE2 /* Pods-Mystic DeckTests */,
+				D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C3DF89E192C400F3E4BCA46F2FBDA8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63CCDE5DA28EF3CD08B98DC5D6A0CFD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77635EB3A69F3F8609D1AE72A4DE2229 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05597C458D738E12F170EAC515F8483 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41561D3B84435F4D67950A61674B6703 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BB2FC4664A36C4B45ADFACEA72A9407 /* Pods-Mystic DeckTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B441BED8877174C98F3F6C97B4A42C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FEEBFBACE70A78E172D9179D94032A5 /* Pods-Mystic Deck-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B5BEB32F210EFE38F7D58FF8A1CC2DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3CEE8324948497036C4E123B21CBC59 /* SwiftyJSON.swift in Sources */,
+				5FA526557719FDBE81B1974B113CF600 /* SwiftyJSON-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46F7BB6DD65D273ACDAC08D33568C3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A9B6E1845C2CEA384A0A8ACBB340A6 /* Pods-Mystic Deck-Mystic DeckUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28BE72D1CDBBC656B513A897D157C765 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Mystic Deck";
+			target = F5D791F58CE3D35B5956732760A90888 /* Pods-Mystic Deck */;
+			targetProxy = 0D61EE0725F7F710A44586E0D168159E /* PBXContainerItemProxy */;
+		};
+		A28303085B094023D7E5B2DAAD109637 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
+			targetProxy = C05ACBF3EBE35C91F8C5ED92A73C4990 /* PBXContainerItemProxy */;
+		};
+		B55F41D3802D73E3D738CCD8425C3392 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = D118A6A04828FD3CDA8640CD2B6796D2 /* SwiftyJSON */;
+			targetProxy = EF60CDEF9D2307FE3CC83791BDEE5F36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		24CB875D5B25BF16969BE395662EAFD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53C1A7E15161AE3A0E3A5090E19F84AE /* SwiftyJSON.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		574A31A87EA4753D1F9869AC70F57EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DF72BEBF83C72E9F8C830C6AF6A6126 /* Pods-Mystic Deck-Mystic DeckUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Mystic Deck-Mystic DeckUITests/Pods-Mystic Deck-Mystic DeckUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Mystic Deck-Mystic DeckUITests/Pods-Mystic Deck-Mystic DeckUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5AA77BE43A6C498009CBB35BFF8630D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0E4E1D4E9CFE3BB577C3EF9DC29CDB2 /* Pods-Mystic DeckTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Mystic DeckTests/Pods-Mystic DeckTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Mystic DeckTests/Pods-Mystic DeckTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6874D80A5C1370A65FF76CF8A6E0E1B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEF9860817D72B0C84169E62BEE0823B /* Pods-Mystic DeckTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Mystic DeckTests/Pods-Mystic DeckTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Mystic DeckTests/Pods-Mystic DeckTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		7F2B0F3CA5C859FFA72FE9EFA14296BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 428510A9F705277CDAD452D8B28E0B0E /* Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Mystic Deck-Mystic DeckUITests/Pods-Mystic Deck-Mystic DeckUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Mystic Deck-Mystic DeckUITests/Pods-Mystic Deck-Mystic DeckUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A6C06F26F3D6739F2C6E9775A4465B64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8D55E3BEC2588689D54AFF1AE0AC1DF /* SwiftyJSON.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyJSON;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DC26DEABDF08001CD3B687D3FD91685A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F53BC124188C905E2B369B86D0817B3A /* Pods-Mystic Deck.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Mystic Deck/Pods-Mystic Deck-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Mystic Deck/Pods-Mystic Deck.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E873CA97BD124B21839AF13C9BE1CD18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		EE457E22CFF6369D8C01368DC2409FC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29D4F6467269104C89299F47DFE7B5AC /* Pods-Mystic Deck.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Mystic Deck/Pods-Mystic Deck-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Mystic Deck/Pods-Mystic Deck.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		082E4F504AA16244238FF627261B7B39 /* Build configuration list for PBXNativeTarget "Pods-Mystic Deck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC26DEABDF08001CD3B687D3FD91685A /* Debug */,
+				EE457E22CFF6369D8C01368DC2409FC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2490E828D479276A7E0AFBA515DD77FA /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6C06F26F3D6739F2C6E9775A4465B64 /* Debug */,
+				24CB875D5B25BF16969BE395662EAFD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42394678724AAF237F530AE51C435959 /* Build configuration list for PBXNativeTarget "Pods-Mystic Deck-Mystic DeckUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2B0F3CA5C859FFA72FE9EFA14296BE /* Debug */,
+				574A31A87EA4753D1F9869AC70F57EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		461116649E4BD05566344AB12A4E1E78 /* Build configuration list for PBXNativeTarget "Pods-Mystic DeckTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AA77BE43A6C498009CBB35BFF8630D9 /* Debug */,
+				6874D80A5C1370A65FF76CF8A6E0E1B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */,
+				E873CA97BD124B21839AF13C9BE1CD18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
