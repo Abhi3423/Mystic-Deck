@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        GameRoomView()
+        if let unwrappedJsonData = jsonData {
+            CardStack(jsonData: unwrappedJsonData)
+        } else {
+            Text("Failed to load JSON data.")
+        }
     }
 }
 

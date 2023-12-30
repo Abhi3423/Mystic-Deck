@@ -32,13 +32,14 @@ struct GameRoomView: View {
                     ("GDP", "35.3 lakh cr.", "#BBB3AC", "#000000"),
                 ]
             )
+            
                 
 //                CustomButton(buttonText: "PLAY") {
 //                    print("Button clicked!")
 ////                    isNavigationActive = true
-//                    // Perform any action you want here
-//                    let ok = createSampleJSON()
-//                    print(ok)
+//                   // Perform any action you want here
+//                    let okok = extractCardData()
+//                    print(okok)
 //                }
             }
         }

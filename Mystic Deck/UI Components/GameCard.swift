@@ -6,7 +6,7 @@ struct GameCard: View {
     var imageName: String
     var cardHeading: String
     var rectangles: [(String, String, String, String)] // (Rectangle Heading, Rectangle Content, Start Color, End Color)
-    @State private var selectedRectangle: (String, String)? = nil
+    @State private var selectedRectangle: (String, String, String, String)? = nil
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -40,9 +40,7 @@ struct GameCard: View {
                                     )
                                     .onTapGesture {
                                 handleRectangleTap(rectangle: rectangles[index])
-                                                                        }
-                                    .background(selectedRectangle != nil ?
-                                        Color.orange.opacity(1) : Color.clear)
+                                    }
                                 }
                             }
                         }
@@ -54,14 +52,18 @@ struct GameCard: View {
             }
             .padding(.top, 35.0)
         }
+        .shadow(color: Color.black.opacity(0.3), radius: 5, x: 12, y: 5)
     }
     
     private func handleRectangleTap(rectangle: (String, String, String, String)) {
-        if let selectedRectangle = selectedRectangle, selectedRectangle.0 == rectangle.0 && selectedRectangle.1 == rectangle.1 {
+        print(rectangle)
+        if var selectedRectangle = selectedRectangle, selectedRectangle.0 == rectangle.0 && selectedRectangle.1 == rectangle.1 {
+            print(selectedRectangle)
             self.selectedRectangle = nil
-            print("helllo")
         } else {
-            self.selectedRectangle = (rectangle.0, rectangle.1)
+            let updatedRectangle = (rectangle.0, rectangle.1, "#DB8C16", "#D97D27")
+                    self.selectedRectangle = updatedRectangle
+                    print("selected")
             print("selected")
         }
     }
@@ -71,17 +73,11 @@ struct GameCard: View {
 
 struct HistoryCard_Previews: PreviewProvider {
     static var previews: some View {
-        GameCard(
-            imageName: "maharashtra",
-            cardHeading: "Maharashtra..",
-            rectangles: [
-                ("AREA (sq km)", "308,000", "#BBB3AC", "#000000"),
-                ("POPULATION", "13.16 crore", "#BBB3AC", "#000000"),
-                ("MPI", "0.033", "#BBB3AC", "#000000"),
-                ("POLLUTION", "137 AQI avg.", "#BBB3AC", "#000000"),
-                ("LITERACY RATE", "82.3%", "#BBB3AC", "#000000"),
-                ("GDP", "35.3 lakh cr.", "#BBB3AC", "#000000"),
-            ])
+        if let unwrappedJsonData = jsonData {
+            CardStack(jsonData: unwrappedJsonData)
+        } else {
+            Text("Failed to load JSON data.")
+        }
     }
 }
 

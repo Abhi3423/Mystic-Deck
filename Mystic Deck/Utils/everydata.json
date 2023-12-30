@@ -1,0 +1,60 @@
+{
+  "geography": {
+    "states and cities": {
+      "Cards": {
+        "1": {
+          "name": "Maharashtra",
+          "image": "maharashtra",
+          "AREA": "308,000 sq. km",
+          "POPULATION": "13.16 crore",
+          "MPI": "0.033",
+          "POLLUTION": "137 AQI avg.",
+          "LITERACY RATE": "82.34%",
+          "GDP": "35.3 lakh cr."
+        },
+        "2": {
+          "name": "TamilNadu",
+          "image": "tamilnadu",
+          "AREA": "130,058 sq. km",
+          "POPULATION": "8.39 crore",
+          "MPI": "0.009",
+          "POLLUTION": "111 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "28.3 lakh cr."
+        },
+        "3": {
+          "name": "Madhya Pradesh",
+          "image": "madhyapradesh",
+          "AREA": "180,058 sq. km",
+          "POPULATION": "11.39 crore",
+          "MPI": "0.019",
+          "POLLUTION": "123 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "23.3 lakh cr."
+        },
+        "4": {
+          "name": "Madhya Pradesh",
+          "image": "madhyapradesh",
+          "AREA": "180,058 sq. km",
+          "POPULATION": "11.39 crore",
+          "MPI": "0.019",
+          "POLLUTION": "123 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "23.3 lakh cr."
+        }
+      },
+      "Startcolor":"#BBB3AC",
+      "Endcolor":"#000000"
+    },
+    "agriculture": {},
+    "rivers": {},
+    "crime and safety": {}
+  },
+  "history": {
+    "agriculture": {},
+    "constitution": {},
+    "medieval": {},
+    "heritage": {}
+  }
+}
+
