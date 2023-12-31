@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import SwiftyJSON
 struct LandingImageView: View {
     @State private var mysticOffset: CGFloat = -200
     @State private var deckOffset: CGFloat = 400

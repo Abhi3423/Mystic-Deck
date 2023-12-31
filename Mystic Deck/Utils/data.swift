@@ -1,5 +1,6 @@
-import SwiftyJSON
 
+import SwiftUI
+import SwiftyJSON
 func createSampleJSON() -> JSON {
     var mainJSON = JSON()
 
