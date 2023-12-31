@@ -1,5 +1,5 @@
 import SwiftUI
-import SwiftyJSON
+
 
 //This is a code for Card structure
 struct GameCard: View {

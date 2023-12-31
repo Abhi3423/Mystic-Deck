@@ -14,9 +14,10 @@
 		7F313EDB2B3B524F00816103 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F313EDA2B3B524F00816103 /* CardStack.swift */; };
 		7F313EE12B40338F00816103 /* dataview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F313EE02B40338F00816103 /* dataview.swift */; };
 		7F313EE52B403AC500816103 /* OppositePlayerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F313EE42B403AC500816103 /* OppositePlayerProfile.swift */; };
+		7D6117F02B3FEE7600F68BA0 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6117EF2B3FEE7600F68BA0 /* Themes.swift */; };
+		7DA8D7A02B3FD988003C2969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA8D79F2B3FD988003C2969 /* Assets.xcassets */; };
 		7F4AD8552B2DA17C00213099 /* Mystic_DeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD8542B2DA17C00213099 /* Mystic_DeckApp.swift */; };
 		7F4AD8572B2DA17C00213099 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD8562B2DA17C00213099 /* ContentView.swift */; };
-		7F4AD8592B2DA17C00213099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F4AD8582B2DA17C00213099 /* Assets.xcassets */; };
 		7F4AD85C2B2DA17D00213099 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F4AD85B2B2DA17D00213099 /* Preview Assets.xcassets */; };
 		7F4AD8662B2DA17D00213099 /* Mystic_DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD8652B2DA17D00213099 /* Mystic_DeckTests.swift */; };
 		7F4AD8702B2DA17D00213099 /* Mystic_DeckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD86F2B2DA17D00213099 /* Mystic_DeckUITests.swift */; };
@@ -55,10 +56,11 @@
 		7F313EDA2B3B524F00816103 /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		7F313EE02B40338F00816103 /* dataview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataview.swift; sourceTree = "<group>"; };
 		7F313EE42B403AC500816103 /* OppositePlayerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OppositePlayerProfile.swift; sourceTree = "<group>"; };
+		7D6117EF2B3FEE7600F68BA0 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		7DA8D79F2B3FD988003C2969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F4AD8512B2DA17C00213099 /* Mystic Deck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mystic Deck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4AD8542B2DA17C00213099 /* Mystic_DeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mystic_DeckApp.swift; sourceTree = "<group>"; };
 		7F4AD8562B2DA17C00213099 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7F4AD8582B2DA17C00213099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F4AD85B2B2DA17D00213099 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F4AD8612B2DA17D00213099 /* Mystic DeckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mystic DeckTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4AD8652B2DA17D00213099 /* Mystic_DeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mystic_DeckTests.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				7F4AD8822B2DAA7A00213099 /* LandingImageView.swift */,
 				7F4AD8562B2DA17C00213099 /* ContentView.swift */,
 				7F313EDA2B3B524F00816103 /* CardStack.swift */,
+				7D6117EF2B3FEE7600F68BA0 /* Themes.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -146,7 +149,7 @@
 		7F313ED22B39D0EA00816103 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				7F4AD8582B2DA17C00213099 /* Assets.xcassets */,
+				7DA8D79F2B3FD988003C2969 /* Assets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -344,8 +347,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA8D7A02B3FD988003C2969 /* Assets.xcassets in Resources */,
 				7F4AD85C2B2DA17D00213099 /* Preview Assets.xcassets in Resources */,
-				7F4AD8592B2DA17C00213099 /* Assets.xcassets in Resources */,
 				7F313ED92B3B4E1800816103 /* everydata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +483,7 @@
 				7F4AD8572B2DA17C00213099 /* ContentView.swift in Sources */,
 				7F313EE12B40338F00816103 /* dataview.swift in Sources */,
 				7F4AD8552B2DA17C00213099 /* Mystic_DeckApp.swift in Sources */,
+				7D6117F02B3FEE7600F68BA0 /* Themes.swift in Sources */,
 				7F4AD8832B2DAA7A00213099 /* LandingImageView.swift in Sources */,
 				7FF7B49B2B383843001FD16C /* Loading.swift in Sources */,
 				7FF7B49D2B383DCB001FD16C /* FontView.swift in Sources */,
