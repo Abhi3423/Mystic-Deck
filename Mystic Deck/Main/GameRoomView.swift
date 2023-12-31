@@ -15,34 +15,51 @@ struct GameRoomView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                
-                Spacer()
-                        .frame(height: 150)
-                
-            GameCard(
-                imageName: "maharashtra",
-                cardHeading: "Maharashtra",
-                rectangles: [
-                    ("AREA (sq km)", "308,000", "#BBB3AC", "#000000"),
-                    ("POPULATION", "13.16 crore", "#BBB3AC", "#000000"),
-                    ("MPI", "0.033", "#BBB3AC", "#000000"),
-                    ("POLLUTION", "137 AQI avg.", "#BBB3AC", "#000000"),
-                    ("LITERACY RATE", "82.3%", "#BBB3AC", "#000000"),
-                    ("GDP", "35.3 lakh cr.", "#BBB3AC", "#000000"),
-                ]
-            )
+                .frame(width: 400)
             
+            
+            VStack{
+                HStack{
+                    OppositePlayerProfileView(imageName: "player", name: "Arul", totalCards: 8)
+                    OppositePlayerProfileView(imageName: "player", name: "Hitarth", totalCards: 8)
+                    OppositePlayerProfileView(imageName: "player", name: "Aman", totalCards: 8)
+                }
+                .padding(.bottom, 40.0)
                 
-//                CustomButton(buttonText: "PLAY") {
-//                    print("Button clicked!")
-////                    isNavigationActive = true
-//                   // Perform any action you want here
-//                    let okok = extractCardData()
-//                    print(okok)
-//                }
-            }
-        }
+                
+                HStack{
+                    Text("Abhishek Yadav")
+                    Spacer()
+                    ZStack{
+                        Circle()
+                            .fill(Color.green)
+                            .frame(width: 40)
+                        Text("8")
+                            .foregroundColor(.white)
+                    }
+  
+                }
+                .font(.system(size: 26))
+                .bold()
+                .padding(.bottom, 30.0)
+                
+                if let unwrappedJsonData = jsonData {
+                    CardStack(jsonData: unwrappedJsonData)
+                        .offset(x: 20)
+                } else {
+                    Text("Failed to load JSON data.")
+                }
+                
+                Spacer().frame(height: 30)
+                CustomButton(buttonText: "PLAY") {
+                    print("Button clicked!")
+                    // isNavigationActive = true
+                    // Perform any action you want here
+                    
+                }
+            }.frame(width: 370, height: 840).padding(.top,50.0)
+        }.padding()
+    }
 }
 
 struct GameRoomView_Previews: PreviewProvider {
