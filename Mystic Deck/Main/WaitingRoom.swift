@@ -169,7 +169,7 @@ struct WaitingRoomView: View {
                                 )
                             Spacer(minLength: 20)
                             
-                            NavigationLink(destination: NewPageView()) {
+                            NavigationLink(destination: ThemeView()) {
                                 Image(systemName: "arrow.right")
                                     .resizable()
                                     .foregroundColor(.white)

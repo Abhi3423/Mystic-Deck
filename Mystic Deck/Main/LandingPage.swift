@@ -101,13 +101,12 @@ struct LoginView: View {
                         .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
                 }
                 
-                Button(action: {
-                    // Handle Login
-                }) {
+                NavigationLink(destination: HomeView()) {
                     Text("Login")
+                        .fontWeight(.semibold)
                         .foregroundColor(.white)
+                        .frame(width: 200.0)
                         .padding()
-                        .frame(width: 300, height: 40)
                         .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
                         .cornerRadius(10)
                 }
@@ -182,7 +181,7 @@ struct SignupView: View {
                 }
                 .padding(.top, 10)
                 
-                NavigationLink(destination: ThemeView()) {
+                NavigationLink(destination: HomeView()) {
                     Text("Sign up")
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
