@@ -10,11 +10,14 @@
 		1111E08F45BE6376249D39B8 /* Pods_Mystic_Deck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D091B8550CAE6C12646709 /* Pods_Mystic_Deck.framework */; };
 		4EC3C6925CC8C5B089DB0567 /* Pods_Mystic_Deck_Mystic_DeckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44A6109090FFAA50BA6E972 /* Pods_Mystic_Deck_Mystic_DeckUITests.framework */; };
 		54EAA1F4668F4D016D71B8F7 /* Pods_Mystic_DeckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF07F07940DF02339484DBF2 /* Pods_Mystic_DeckTests.framework */; };
+		7F313ED92B3B4E1800816103 /* everydata.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F313ED82B3B4E1800816103 /* everydata.json */; };
+		7F313EDB2B3B524F00816103 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F313EDA2B3B524F00816103 /* CardStack.swift */; };
+		7F313EE12B40338F00816103 /* dataview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F313EE02B40338F00816103 /* dataview.swift */; };
+		7F313EE52B403AC500816103 /* OppositePlayerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F313EE42B403AC500816103 /* OppositePlayerProfile.swift */; };
 		7D6117F02B3FEE7600F68BA0 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6117EF2B3FEE7600F68BA0 /* Themes.swift */; };
 		7D6AEFD02B4290670046FDC5 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AEFCF2B4290670046FDC5 /* LandingPage.swift */; };
 		7D6AEFD22B42DA010046FDC5 /* WaitingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AEFD12B42DA010046FDC5 /* WaitingRoom.swift */; };
 		7DA8D7A02B3FD988003C2969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA8D79F2B3FD988003C2969 /* Assets.xcassets */; };
-		7F313ED42B39F2CF00816103 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F313ED32B39F2CF00816103 /* data.swift */; };
 		7F4AD8552B2DA17C00213099 /* Mystic_DeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD8542B2DA17C00213099 /* Mystic_DeckApp.swift */; };
 		7F4AD8572B2DA17C00213099 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD8562B2DA17C00213099 /* ContentView.swift */; };
 		7F4AD85C2B2DA17D00213099 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F4AD85B2B2DA17D00213099 /* Preview Assets.xcassets */; };
@@ -51,11 +54,14 @@
 		34AC10B6C3615A79592B049D /* Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mystic Deck-Mystic DeckUITests/Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		447AC7FE0329660CBC62090C /* Pods-Mystic Deck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mystic Deck.debug.xcconfig"; path = "Target Support Files/Pods-Mystic Deck/Pods-Mystic Deck.debug.xcconfig"; sourceTree = "<group>"; };
 		44D091B8550CAE6C12646709 /* Pods_Mystic_Deck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mystic_Deck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F313ED82B3B4E1800816103 /* everydata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = everydata.json; sourceTree = "<group>"; };
+		7F313EDA2B3B524F00816103 /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
+		7F313EE02B40338F00816103 /* dataview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataview.swift; sourceTree = "<group>"; };
+		7F313EE42B403AC500816103 /* OppositePlayerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OppositePlayerProfile.swift; sourceTree = "<group>"; };
 		7D6117EF2B3FEE7600F68BA0 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		7D6AEFCF2B4290670046FDC5 /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
 		7D6AEFD12B42DA010046FDC5 /* WaitingRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoom.swift; sourceTree = "<group>"; };
 		7DA8D79F2B3FD988003C2969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7F313ED32B39F2CF00816103 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		7F4AD8512B2DA17C00213099 /* Mystic Deck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mystic Deck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4AD8542B2DA17C00213099 /* Mystic_DeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mystic_DeckApp.swift; sourceTree = "<group>"; };
 		7F4AD8562B2DA17C00213099 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +143,8 @@
 				7F4AD8822B2DAA7A00213099 /* LandingImageView.swift */,
 				7D6AEFCF2B4290670046FDC5 /* LandingPage.swift */,
 				7D6AEFD12B42DA010046FDC5 /* WaitingRoom.swift */,
+				7F4AD8562B2DA17C00213099 /* ContentView.swift */,
+				7F313EDA2B3B524F00816103 /* CardStack.swift */,
 				7D6117EF2B3FEE7600F68BA0 /* Themes.swift */,
 				7FF7B4952B37FE20001FD16C /* GameRoomView.swift */,
 				7F4AD8562B2DA17C00213099 /* ContentView.swift */,
@@ -218,6 +226,7 @@
 				7FF7B4982B38263A001FD16C /* Buttons.swift */,
 				7FF7B49A2B383843001FD16C /* Loading.swift */,
 				7FF7B49E2B38506A001FD16C /* GameCard.swift */,
+				7F313EE42B403AC500816103 /* OppositePlayerProfile.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -225,9 +234,10 @@
 		7FF7B4A02B385229001FD16C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7F313ED82B3B4E1800816103 /* everydata.json */,
+				7F313EE02B40338F00816103 /* dataview.swift */,
 				7FF7B49C2B383DCB001FD16C /* FontView.swift */,
 				7FF7B4A12B385238001FD16C /* Color.swift */,
-				7F313ED32B39F2CF00816103 /* data.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -346,6 +356,7 @@
 			files = (
 				7DA8D7A02B3FD988003C2969 /* Assets.xcassets in Resources */,
 				7F4AD85C2B2DA17D00213099 /* Preview Assets.xcassets in Resources */,
+				7F313ED92B3B4E1800816103 /* everydata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,8 +488,9 @@
 				7D6AEFD22B42DA010046FDC5 /* WaitingRoom.swift in Sources */,
 				7FF7B4992B38263A001FD16C /* Buttons.swift in Sources */,
 				7D6AEFD02B4290670046FDC5 /* LandingPage.swift in Sources */,
+				7F313EDB2B3B524F00816103 /* CardStack.swift in Sources */,
 				7F4AD8572B2DA17C00213099 /* ContentView.swift in Sources */,
-				7F313ED42B39F2CF00816103 /* data.swift in Sources */,
+				7F313EE12B40338F00816103 /* dataview.swift in Sources */,
 				7F4AD8552B2DA17C00213099 /* Mystic_DeckApp.swift in Sources */,
 				7D6117F02B3FEE7600F68BA0 /* Themes.swift in Sources */,
 				7F4AD8832B2DAA7A00213099 /* LandingImageView.swift in Sources */,
@@ -486,6 +498,7 @@
 				7FF7B49D2B383DCB001FD16C /* FontView.swift in Sources */,
 				7FF7B4962B37FE20001FD16C /* GameRoomView.swift in Sources */,
 				7FF7B4A22B385238001FD16C /* Color.swift in Sources */,
+				7F313EE52B403AC500816103 /* OppositePlayerProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

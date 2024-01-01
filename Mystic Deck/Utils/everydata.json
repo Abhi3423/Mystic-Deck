@@ -1,0 +1,220 @@
+{
+  "Geography": {
+    "states and cities": {
+      "Cards": {
+        "1": {
+          "name": "Maharashtra",
+          "image": "maharashtra",
+          "AREA": "308,000 sq. km",
+          "POPULATION": "13.16 crore",
+          "MPI": "0.033",
+          "POLLUTION": "137 AQI avg.",
+          "LITERACY RATE": "82.34%",
+          "GDP": "35.3 lakh cr."
+        },
+        "2": {
+          "name": "TamilNadu",
+          "image": "tamilnadu",
+          "AREA": "130,058 sq. km",
+          "POPULATION": "8.39 crore",
+          "MPI": "0.009",
+          "POLLUTION": "111 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "28.3 lakh cr."
+        },
+        "3": {
+          "name": "Madhya Pradesh",
+          "image": "madhyapradesh",
+          "AREA": "180,058 sq. km",
+          "POPULATION": "11.39 crore",
+          "MPI": "0.019",
+          "POLLUTION": "123 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "23.3 lakh cr."
+        },
+        "4": {
+          "name": "Maharashtra",
+          "image": "maharashtra",
+          "AREA": "308,000 sq. km",
+          "POPULATION": "13.16 crore",
+          "MPI": "0.033",
+          "POLLUTION": "137 AQI avg.",
+          "LITERACY RATE": "82.34%",
+          "GDP": "35.3 lakh cr."
+        },
+        "5": {
+          "name": "TamilNadu",
+          "image": "tamilnadu",
+          "AREA": "130,058 sq. km",
+          "POPULATION": "8.39 crore",
+          "MPI": "0.009",
+          "POLLUTION": "111 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "28.3 lakh cr."
+        },
+        "6": {
+          "name": "Madhya Pradesh",
+          "image": "madhyapradesh",
+          "AREA": "180,058 sq. km",
+          "POPULATION": "11.39 crore",
+          "MPI": "0.019",
+          "POLLUTION": "123 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "23.3 lakh cr."
+        },
+        "7": {
+          "name": "Maharashtra",
+          "image": "maharashtra",
+          "AREA": "308,000 sq. km",
+          "POPULATION": "13.16 crore",
+          "MPI": "0.033",
+          "POLLUTION": "137 AQI avg.",
+          "LITERACY RATE": "82.34%",
+          "GDP": "35.3 lakh cr."
+        },
+        "8": {
+          "name": "TamilNadu",
+          "image": "tamilnadu",
+          "AREA": "130,058 sq. km",
+          "POPULATION": "8.39 crore",
+          "MPI": "0.009",
+          "POLLUTION": "111 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "28.3 lakh cr."
+        },
+        "9": {
+          "name": "Madhya Pradesh",
+          "image": "madhyapradesh",
+          "AREA": "180,058 sq. km",
+          "POPULATION": "11.39 crore",
+          "MPI": "0.019",
+          "POLLUTION": "123 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "23.3 lakh cr."
+        },
+        "10": {
+          "name": "Maharashtra",
+          "image": "maharashtra",
+          "AREA": "308,000 sq. km",
+          "POPULATION": "13.16 crore",
+          "MPI": "0.033",
+          "POLLUTION": "137 AQI avg.",
+          "LITERACY RATE": "82.34%",
+          "GDP": "35.3 lakh cr."
+        },
+        "11": {
+          "name": "TamilNadu",
+          "image": "tamilnadu",
+          "AREA": "130,058 sq. km",
+          "POPULATION": "8.39 crore",
+          "MPI": "0.009",
+          "POLLUTION": "111 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "28.3 lakh cr."
+        },
+        "12": {
+          "name": "Madhya Pradesh",
+          "image": "madhyapradesh",
+          "AREA": "180,058 sq. km",
+          "POPULATION": "11.39 crore",
+          "MPI": "0.019",
+          "POLLUTION": "123 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "23.3 lakh cr."
+        },
+        "13": {
+          "name": "Maharashtra",
+          "image": "maharashtra",
+          "AREA": "308,000 sq. km",
+          "POPULATION": "13.16 crore",
+          "MPI": "0.033",
+          "POLLUTION": "137 AQI avg.",
+          "LITERACY RATE": "82.34%",
+          "GDP": "35.3 lakh cr."
+        },
+        "14": {
+          "name": "TamilNadu",
+          "image": "tamilnadu",
+          "AREA": "130,058 sq. km",
+          "POPULATION": "8.39 crore",
+          "MPI": "0.009",
+          "POLLUTION": "111 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "28.3 lakh cr."
+        },
+        "15": {
+          "name": "Madhya Pradesh",
+          "image": "madhyapradesh",
+          "AREA": "180,058 sq. km",
+          "POPULATION": "11.39 crore",
+          "MPI": "0.019",
+          "POLLUTION": "123 AQI avg.",
+          "LITERACY RATE": "80.09%",
+          "GDP": "23.3 lakh cr."
+        },
+        "16": {
+              "name": "Maharashtra",
+              "image": "maharashtra",
+              "AREA": "308,000 sq. km",
+              "POPULATION": "13.16 crore",
+              "MPI": "0.033",
+              "POLLUTION": "137 AQI avg.",
+              "LITERACY RATE": "82.34%",
+              "GDP": "35.3 lakh cr."
+            },
+            "17": {
+              "name": "TamilNadu",
+              "image": "tamilnadu",
+              "AREA": "130,058 sq. km",
+              "POPULATION": "8.39 crore",
+              "MPI": "0.009",
+              "POLLUTION": "111 AQI avg.",
+              "LITERACY RATE": "80.09%",
+              "GDP": "28.3 lakh cr."
+            },
+            "18": {
+              "name": "Madhya Pradesh",
+              "image": "madhyapradesh",
+              "AREA": "180,058 sq. km",
+              "POPULATION": "11.39 crore",
+              "MPI": "0.019",
+              "POLLUTION": "123 AQI avg.",
+              "LITERACY RATE": "80.09%",
+              "GDP": "23.3 lakh cr."
+            },
+            "19": {
+              "name": "Maharashtra",
+              "image": "maharashtra",
+              "AREA": "308,000 sq. km",
+              "POPULATION": "13.16 crore",
+              "MPIhiuhuiu": "0.033",
+              "POLLUTION": "137 AQI avg.",
+              "LITERACY RATE": "82.34%",
+              "GDP": "35.3 lakh cr."
+            },
+            "20": {
+              "name": "TamilNadu",
+              "image": "tamilnadu",
+              "AREA": "130,058 sq. km",
+              "POPULATION": "8.39 crore",
+              "MPIjjjjjj": "0.009",
+              "POLLUTION": "111 AQI avg.",
+              "LITERACY RATE": "80.09%",
+              "GDP": "28.3 lakh cr."
+            }
+      },
+      "Startcolor":"#BBB3AC",
+      "Endcolor":"#000000"
+    },
+    "agriculture": {},
+    "rivers": {},
+    "crime and safety": {}
+  },
+  "history": {
+    "agriculture": {},
+    "constitution": {},
+    "medieval": {},
+    "heritage": {}
+  }
+}
+
