@@ -14,7 +14,7 @@ struct GameCard: View {
             Image(imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 320, height: 440)
+                .frame(width: 320, height: 420)
                 .cornerRadius(30)
             
             VStack(){
@@ -54,7 +54,7 @@ struct GameCard: View {
                     }
                 }
                 .padding(.horizontal, 5.0)
-                .padding(.top, 80.0)
+                .padding(.top, 60.0)
                 .cornerRadius(15)
             }
             .padding(.top, 35.0)
@@ -93,15 +93,11 @@ struct GameCard: View {
 }
 
 //will be removed, only used to see the presentation
-struct HistoryCard_Previews: PreviewProvider {
-    static var previews: some View {
-        if let unwrappedJsonData = jsonData {
-            CardStack(jsonData: unwrappedJsonData)
-        } else {
-            Text("Failed to load JSON data.")
-        }
-    }
-}
+//struct HistoryCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameRoomView()
+//}
+//}
 
 struct RectangleView: View {
     var heading: String

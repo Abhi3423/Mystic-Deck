@@ -61,7 +61,7 @@ struct ThemeView: View {
                         .padding(.vertical, 7)
                         .background(
                             selectedTheme == theme ?
-                                LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing) :
+                            LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing) :
                                 LinearGradient(gradient: Gradient(colors: [Color(red: 75/255, green: 0/255, blue: 130/255).opacity(0.3), Color(red: 75/255, green: 0/255, blue: 130/255).opacity(0.2)]), startPoint: .leading, endPoint: .trailing)
                         )
                         .foregroundColor(selectedTheme == theme ? .white : Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
@@ -87,10 +87,14 @@ struct ThemeView: View {
         
         return VStack(spacing: 20) {
             ForEach(imageNames, id: \.self) { imageName in
-                Image(imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 350, height: 240)
+                NavigationLink(
+                    destination: GameRoomView(theme: theme, topic: imageName),
+                    label: {
+                        Image(imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 350, height: 240)
+                    })
                 Spacer()
             }
         }

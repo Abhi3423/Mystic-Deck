@@ -41,13 +41,13 @@ struct OppositePlayerProfileView: View {
             }
         }
         .padding()
-        .frame(width: 130, height: 110)
+        .frame(width: 130, height: 100)
     }
 }
 
 struct CardRectangleView_Previews: PreviewProvider {
     static var previews: some View {
-       GameRoomView()
+        ThemeView()
     }
 }
 
