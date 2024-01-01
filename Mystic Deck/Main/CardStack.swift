@@ -4,17 +4,19 @@ import SwiftUI
 
 struct CardStack: View {
     var jsonData: JSON
+    let theme: Theme
     
     var body: some View {
         
-        let cardData = jsonData["geography"]["states and cities"]["Cards"]
+        
+        let cardData = jsonData[theme.rawValue]["states and cities"]["Cards"]
         let numberOfCards = cardData.dictionary?.count ?? 0
         
         
         if numberOfCards > 0 {
             ZStack(alignment: .top){
                 ForEach(1...numberOfCards, id: \.self) { cardNumber in
-                    if let cardData = jsonData["geography"]["states and cities"]["Cards"]["\(cardNumber)"].dictionary,
+                    if let cardData = jsonData[theme.rawValue]["states and cities"]["Cards"]["\(cardNumber)"].dictionary,
                        let name = cardData["name"]?.string,
                        let image = cardData["image"]?.string,
                        let area = cardData["AREA"]?.string,
@@ -23,8 +25,8 @@ struct CardStack: View {
                        let pollution = cardData["POLLUTION"]?.string,
                        let literacyRate = cardData["LITERACY RATE"]?.string,
                        let gdp = cardData["GDP"]?.string,
-                       let startColor = jsonData["geography"]["states and cities"]["Startcolor"].string,
-                       let endColor = jsonData["geography"]["states and cities"]["Endcolor"].string{
+                       let startColor = jsonData["Geography"]["states and cities"]["Startcolor"].string,
+                       let endColor = jsonData["Geography"]["states and cities"]["Endcolor"].string{
                         
                         GameCard(
                             imageName: image,
@@ -53,10 +55,6 @@ let jsonData: JSON? = extractCardData()
 
 struct CardStackView_Previews: PreviewProvider {
     static var previews: some View {
-        if let unwrappedJsonData = jsonData {
-            CardStack(jsonData: unwrappedJsonData)
-        } else {
-            Text("Failed to load JSON data.")
-        }
+        ThemeView()
     }
 }
