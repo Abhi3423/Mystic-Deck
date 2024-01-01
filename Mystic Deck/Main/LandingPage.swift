@@ -36,6 +36,7 @@ struct LandingPage: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                                 .padding()
+                                .frame(width: 100.0)
                                 .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
                                 .cornerRadius(10)
                         }
@@ -45,6 +46,7 @@ struct LandingPage: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                                 .padding()
+                                .frame(width: 100.0)
                                 .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
                                 .cornerRadius(10)
                         }
@@ -180,10 +182,24 @@ struct SignupView: View {
                 }
                 .padding(.top, 10)
                 
+                NavigationLink(destination: ThemeView()) {
+                    Text("Sign up")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 100.0)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(10)
+                }
+
+                
                 Rectangle()
                     .fill(Color.purple)
                     .frame(height: 2)
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 10)
+                
+                Text("Or SignUp with")
+                    .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
                 
                 HStack(spacing: 20) {
                     Button(action: {
