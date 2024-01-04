@@ -127,7 +127,7 @@ struct GameRoomView: View {
                     .frame(height: 200)
                 }
             }.padding() .navigationBarBackButtonHidden(true)
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

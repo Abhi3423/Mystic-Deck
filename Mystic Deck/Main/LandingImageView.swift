@@ -14,96 +14,103 @@ struct LandingImageView: View {
     @State private var buttonopacity: Double = 0.0
     @State private var showLoginButtons: Bool = false
     @State private var showNewText: Bool = true
+    @State private var showLandingView: Bool = false
     
     var body: some View {
+        NavigationLink(
+                destination: LandingPage(),
+                isActive: $showLandingView
+            ) {
+                EmptyView()  // This is the label view for NavigationLink
+            }
         ZStack {
-            Image("landing")
+            Image("mainbg")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             
-            Text("MYSTIC")
-                .fontWeight(.bold)
-                .font(.system(size: 60))
-                .offset(y: -220)
-                .foregroundColor(.white)
-                .opacity(opacity)
-                .onAppear {
-                    withAnimation(
-                        Animation.easeInOut(duration: 1.0)
-                            .delay(4.0)
-                    ) {
-                        self.opacity = 1.0
-                    }
-                }
+//            Text("MYSTIC")
+//                .fontWeight(.bold)
+//                .font(.system(size: 60))
+//                .offset(y: -220)
+//                .foregroundColor(.white)
+//                .opacity(opacity)
+//                .onAppear {
+//                    withAnimation(
+//                        Animation.easeInOut(duration: 1.0)
+//                            .delay(4.0)
+//                    ) {
+//                        self.opacity = 1.0
+//                    }
+//                }
+//            
+//            
+//            Text("DECK")
+//                .fontWeight(.bold)
+//                .font(.system(size: 60))
+//                .offset(y: -160)
+//                .foregroundColor(.white)
+//                .opacity(opacity)
+//                .onAppear {
+//                    withAnimation(
+//                        Animation.easeInOut(duration: 1.0)
+//                            .delay(4.0)
+//                    ) {
+//                        self.opacity = 1.0
+//                    }
+//                }
             
-            
-            Text("DECK")
-                .fontWeight(.bold)
-                .font(.system(size: 60))
-                .offset(y: -160)
-                .foregroundColor(.white)
-                .opacity(opacity)
-                .onAppear {
-                    withAnimation(
-                        Animation.easeInOut(duration: 1.0)
-                            .delay(4.0)
-                    ) {
-                        self.opacity = 1.0
-                    }
-                }
-            
-            VStack {
-                
-                Button(action: {
-                    // Handle button action
-                }) {
-                    Rectangle()
-                        .foregroundColor(.white)
-                        .overlay(
-                            Text("Login with Google")
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .padding()
-                        )
-                        .frame(width: 200, height: 50)
-                        .cornerRadius(10)
-                }
-                
-                
-                Text("OR")
-                    .fontWeight(.bold)
-                    .font(.system(size: 30))
-                    .foregroundColor(.white)
-                
-                
-                Button(action: {
-                    // Handle button action
-                }) {
-                    Rectangle()
-                        .foregroundColor(.white)
-                        .overlay(
-                            Text("Login with Apple")
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                                .padding()
-                        )
-                        .frame(width: 200, height: 50)
-                        .cornerRadius(10)
-                }
-            }
-            .offset(y: 60)
-            .opacity(buttonopacity)
-            .onAppear {
-                withAnimation(
-                    Animation.easeInOut(duration: 1.0)
-                        .delay(6.0)
-                ) {
-                    self.buttonopacity = 1.0
-                }
-            }
+//            VStack {
+//                
+//                Button(action: {
+//                    // Handle button action
+//                }) {
+//                    Rectangle()
+//                        .foregroundColor(.white)
+//                        .overlay(
+//                            Text("Login with Google")
+//                                .fontWeight(.bold)
+//                                .foregroundColor(.black)
+//                                .padding()
+//                        )
+//                        .frame(width: 200, height: 50)
+//                        .cornerRadius(10)
+//                }
+//                
+//                
+//                Text("OR")
+//                    .fontWeight(.bold)
+//                    .font(.system(size: 30))
+//                    .foregroundColor(.white)
+//                
+//                
+//                Button(action: {
+//                    // Handle button action
+//                }) {
+//                    Rectangle()
+//                        .foregroundColor(.white)
+//                        .overlay(
+//                            Text("Login with Apple")
+//                                .fontWeight(.bold)
+//                                .foregroundColor(.black)
+//                                .padding()
+//                        )
+//                        .frame(width: 200, height: 50)
+//                        .cornerRadius(10)
+//                }
+//            }
+//            .offset(y: 60)
+//            .opacity(buttonopacity)
+//            .onAppear {
+//                withAnimation(
+//                    Animation.easeInOut(duration: 1.0)
+//                        .delay(6.0)
+//                ) {
+//                    self.buttonopacity = 1.0
+//                }
+//            }
             
             
             Text("MYSTIC")
@@ -118,7 +125,8 @@ struct LandingImageView: View {
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                         withAnimation(.easeInOut(duration: 1.0).delay(0.4)) {
-                            mysticOffset = 1
+                            mysticOffset = 0
+                            showLandingView = true
                         }
                     }
                 }
@@ -138,7 +146,8 @@ struct LandingImageView: View {
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                         withAnimation(.easeInOut(duration: 1.0).delay(0.4)) {
-                            deckOffset = 1
+                            deckOffset = 0
+                            showLandingView = true
                         }
                     }
                     

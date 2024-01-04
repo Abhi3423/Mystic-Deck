@@ -47,7 +47,7 @@ struct ThemeView: View {
             }
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarBackButtonHidden(true)
-        }
+        } .navigationBarBackButtonHidden(true)
     }
     
     private var themeButtons: some View {

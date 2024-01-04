@@ -180,8 +180,8 @@ struct WaitingRoomView: View {
                         }
                     }
                 }
-            }
-        }
+            } .navigationBarBackButtonHidden(true)
+        } .navigationBarBackButtonHidden(true)
     }
 }
 
