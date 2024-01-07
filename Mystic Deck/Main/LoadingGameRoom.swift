@@ -15,9 +15,10 @@ struct LoadingGameRoomView: View {
                 .opacity(showLoading ? 1 : 0)
             
             if showLoading {
-                Text("Loading")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
+                Text("Loading ")
+                    .foregroundColor(.black)
+                    .italic()
+                    .font(Font.custom("Hoefler Text", size: 30))
                     .shadow(color: .black, radius: 5, x: 0, y: 0)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
