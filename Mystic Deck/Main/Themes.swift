@@ -88,7 +88,7 @@ struct ThemeView: View {
         return VStack(spacing: 20) {
             ForEach(imageNames, id: \.self) { imageName in
                 NavigationLink(
-                    destination: GameRoomView(theme: theme, topic: imageName),
+                    destination: LoadingGameRoomView(theme: theme, imageName: imageName),
                     label: {
                         Image(imageName)
                             .resizable()
