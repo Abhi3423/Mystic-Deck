@@ -2,54 +2,120 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        NavigationView {
-            ZStack {
-                // Background Image
-                Image("themebk")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+        ZStack {
+            // Background Image
+            Image("themebk")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            
+            LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.601), Color.clear]), startPoint: .top, endPoint: .center)
+                .edgesIgnoringSafeArea(.top)
+            
+            VStack {
                 
-                VStack {
-                    // Welcome Text
-                    Text("Welcome User")
-                        .font(.system(size: 36, weight: .bold, design: .rounded))
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
-                        .multilineTextAlignment(.center)
-                        .lineLimit(nil)
-                        .padding(.top, -150)
-                        //.padding(.bottom, 0)
-                    
-                    // Join and Create Room Buttons
-                    VStack(spacing: 70) {
-                        NavigationLink(destination: LoadingView()) {
-                            Text("Join Room")
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(width: 300, height: 100)
-                                .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
-                                .cornerRadius(40)
-                        }
-                        NavigationLink(destination: WaitingRoomView()) {
-                            Text("Create Room")
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(width: 300, height: 100)
-                                .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
-                                .cornerRadius(40)
-                        }
+                Spacer()
+                
+                // Join and Create Room Buttons
+                VStack(spacing: 30) {
+                    NavigationLink(destination: LoadingView()) {
+                        // Join Room Button
+                        ButtonView(label: "Join Room")
                     }
-                    //.padding(.horizontal, 50)
-                    //.frame(maxWidth: .infinity)
-                    //.background(Color.black.opacity(0))
-                    //.cornerRadius(0)
+                    
+                    NavigationLink(destination: WaitingRoomView()) {
+                        // Create Room Button
+                        ButtonView(label: "Create Room")
+                    }
                 }
-            }
+                
+                Spacer()
+                
+                
+                HStack(spacing: 20) {
+                    BoxView(content: "Points")
+                    BoxView(content: "Duration")
+                    BoxView(content: "Stats")
+                }
+                
+                Spacer()
+                
+                // Tabular View
+                TableView()
+                
+                Spacer()
+            }.scaledToFit()
         }
     }
 }
+
+
+
+struct ButtonView: View {
+    var label: String
+    
+    var body: some View {
+        Text(label)
+            .foregroundColor(.white)
+            .padding()
+            .font(.system(size: 25))
+            .frame(width: 300, height: 100)
+            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(20)
+    }
+}
+
+struct BoxView: View {
+    var content: String
+    
+    var body: some View {
+        RoundedRectangle(cornerRadius: 15)
+            .fill(Color.white)
+            .frame(width: 100, height: 100)
+            .overlay(
+                Text(content)
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+            )
+            .scaledToFit()
+    }
+}
+
+struct TableView: View {
+    var body: some View {
+        VStack {
+            // Table Header
+            HStack {
+                Text("Profile")
+                Spacer()
+                Text("Name")
+                Spacer()
+                Text("Wins")
+            }
+            .padding()
+            
+            // Dummy Data Rows
+            HStack {
+                Text("Profile 1")
+                Spacer()
+                Text("Player 1")
+                Spacer()
+                Text("5")
+            }
+            .padding()
+            
+            HStack {
+                Text("Profile 2")
+                Spacer()
+                Text("Player 2")
+                Spacer()
+                Text("8")
+            }
+            .padding()
+        }.scaledToFit()
+    }
+}
+
 
 
 struct WaitingRoomView: View {

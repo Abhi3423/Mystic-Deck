@@ -36,26 +36,34 @@ struct LoadingView: View {
                             .frame(width: 300, height: 40)
                             .cornerRadius(10)
 
-                        // 4) Join Button
-                        Button(action: {
-                            // Handle the join action here if needed
-                            navigateToWaitingRoom = true
-                        }) {
+//                        // 4) Join Button
+//                        Button(action: {
+//                            // Handle the join action here if needed
+//                            navigateToWaitingRoom = true
+//                        }) {
+//                            Text("Join")
+//                                .fontWeight(.semibold)
+//                                .foregroundColor(.white)
+//                                .padding()
+//                                .frame(width: 100.0)
+//                                .background(
+//                                    LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing)
+//                                )
+//                                .cornerRadius(10)
+//                        }
+                        
+                        NavigationLink(destination: WaitingRoomView()) {
                             Text("Join")
-                                .fontWeight(.semibold)
                                 .foregroundColor(.white)
-                                .padding()
-                                .frame(width: 100.0)
-                                .background(
-                                    LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing)
-                                )
+                                .padding(.horizontal, 24.0)
+                                .padding(.vertical, 14.0)
+                                .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
                                 .cornerRadius(10)
                         }
-                        .background(NavigationLink("", destination: WaitingRoomView(), isActive: $navigateToWaitingRoom).hidden())
                     }
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

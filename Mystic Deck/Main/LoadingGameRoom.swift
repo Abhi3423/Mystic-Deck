@@ -15,7 +15,7 @@ struct LoadingGameRoomView: View {
                 .opacity(showLoading ? 1 : 0)
             
             if showLoading {
-                Text("Loading ")
+                Text("Loading \(imageName)")
                     .foregroundColor(.black)
                     .italic()
                     .font(Font.custom("Hoefler Text", size: 30))
@@ -33,6 +33,7 @@ struct LoadingGameRoomView: View {
         .background(
             NavigationLink("", destination: GameRoomView(theme: theme, topic: imageName), isActive: $isActive)
         )
+        .navigationBarBackButtonHidden(true)
     }
 }
 
