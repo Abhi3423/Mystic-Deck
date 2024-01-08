@@ -5,18 +5,19 @@ import SwiftUI
 struct CardStack: View {
     var jsonData: JSON
     let theme: Theme
+    let topic: String
     
     var body: some View {
         
         
-        let cardData = jsonData[theme.rawValue]["states and cities"]["Cards"]
+        let cardData = jsonData[theme.rawValue][topic]["Cards"]
         let numberOfCards = cardData.dictionary?.count ?? 0
         
         
         if numberOfCards > 0 {
             ZStack(alignment: .top){
                 ForEach(1...numberOfCards, id: \.self) { cardNumber in
-                    if let cardData = jsonData[theme.rawValue]["states and cities"]["Cards"]["\(cardNumber)"].dictionary,
+                    if let cardData = jsonData[theme.rawValue][topic]["Cards"]["\(cardNumber)"].dictionary,
                        let name = cardData["name"]?.string,
                        let image = cardData["image"]?.string,
                        let area = cardData["AREA"]?.string,

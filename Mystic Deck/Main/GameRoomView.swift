@@ -53,7 +53,7 @@ struct GameRoomView: View {
                     .padding(.bottom, 20.0)
                     
                     if let unwrappedJsonData = jsonData {
-                        CardStack(jsonData: unwrappedJsonData, theme: theme)
+                        CardStack(jsonData: unwrappedJsonData, theme: theme, topic: topic)
                             .offset(x: 20)
                     } else {
                         Text(topic)
