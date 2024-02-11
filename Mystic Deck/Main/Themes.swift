@@ -78,7 +78,7 @@ struct ThemeView: View {
         case .history:
             imageNames = ["H1", "H2", "H3", "H4"]
         case .geography:
-            imageNames = ["G1", "G2", "G3", "G4"]
+            imageNames = ["states and cities", "G2", "G3", "G4"]
         case .science:
             imageNames = ["S1", "S2", "S3", "S4"]
         case .ecosystem:
@@ -88,7 +88,7 @@ struct ThemeView: View {
         return VStack(spacing: 20) {
             ForEach(imageNames, id: \.self) { imageName in
                 NavigationLink(
-                    destination: GameRoomView(theme: theme, topic: imageName),
+                    destination: LoadingGameRoomView(theme: theme, imageName: imageName),
                     label: {
                         Image(imageName)
                             .resizable()
