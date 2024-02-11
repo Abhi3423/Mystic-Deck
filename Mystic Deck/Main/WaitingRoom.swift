@@ -24,7 +24,7 @@ struct HomeView: View {
                     
                     // Join and Create Room Buttons
                     VStack(spacing: 70) {
-                        NavigationLink(destination: WaitingRoomView()) {
+                        NavigationLink(destination: LoadingView()) {
                             Text("Join Room")
                                 .foregroundColor(.white)
                                 .padding()
@@ -50,6 +50,7 @@ struct HomeView: View {
         }
     }
 }
+
 
 struct WaitingRoomView: View {
     @State private var imageSize: CGFloat = 1.0 // default scale factor
