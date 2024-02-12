@@ -101,7 +101,7 @@ struct LoginView: View {
                         .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
                 }
                 
-                NavigationLink(destination: HomeView()) {
+                NavigationLink(destination: NavigationBarView()) {
                     Text("Login")
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -181,7 +181,7 @@ struct SignupView: View {
                 }
                 .padding(.top, 10)
                 
-                NavigationLink(destination: HomeView()) {
+                NavigationLink(destination: NavigationBarView()) {
                     Text("Sign up")
                         .fontWeight(.semibold)
                         .foregroundColor(.white)

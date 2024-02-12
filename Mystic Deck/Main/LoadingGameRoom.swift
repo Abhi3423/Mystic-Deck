@@ -33,6 +33,7 @@ struct LoadingGameRoomView: View {
         .background(
             NavigationLink("", destination: GameRoomView(theme: theme, topic: imageName), isActive: $isActive)
         )
+        .navigationBarBackButtonHidden(true)
     }
 }
 
