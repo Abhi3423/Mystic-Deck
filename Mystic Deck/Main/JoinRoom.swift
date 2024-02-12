@@ -63,7 +63,7 @@ struct LoadingView: View {
                     }
                 }
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
