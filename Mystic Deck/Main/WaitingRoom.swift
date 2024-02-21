@@ -82,37 +82,73 @@ struct BoxView: View {
 }
 
 struct TableView: View {
+    let data = [
+        ("John", 10, "b1"),   // Added profile image names
+        ("Alice", 15, "b2"),
+        ("Bob", 8, "b3")
+    ]
+
+    let cellHeight: CGFloat = 70
+
     var body: some View {
         VStack {
-            // Table Header
             HStack {
-                Text("Profile")
-                Spacer()
-                Text("Name")
-                Spacer()
+//                Text("#")
+//                    .padding()
+//                    .frame(maxWidth: .infinity / 8) // Adjust column width
+//                    .background(Color.blue)
+//                    .foregroundColor(.white)
+//                    .border(Color.black)
+//                    .cornerRadius(8) // Adjust the corner radius as needed
+
+                Text("Profiles")
+                    .padding()
+                    .frame(maxWidth: .infinity / 2) // Adjust column width
+                    .background(Color.black.opacity(0.6))
+                    .foregroundColor(.white)
+//                    .border(Color.black)
+                    .cornerRadius(8) // Adjust the corner radius as needed
+
                 Text("Wins")
+                    .padding()
+                    .frame(maxWidth: .infinity / 4) // Adjust column width
+                    .background(Color.black.opacity(0.6))
+                    .foregroundColor(.white)
+//                    .border(Color.black)
+                    .cornerRadius(8) // Adjust the corner radius as needed
             }
-            .padding()
-            
-            // Dummy Data Rows
-            HStack {
-                Text("Profile 1")
-                Spacer()
-                Text("Player 1")
-                Spacer()
-                Text("5")
+
+            ForEach(data.indices, id: \.self) { index in
+                HStack {
+                    Text("\(index + 1)") // Add a number in front of Profiles
+                        .padding()
+                        .frame(maxWidth: .infinity / 8) // Adjust column width
+//                        .border(Color.black)
+                        .cornerRadius(8) // Adjust the corner radius as needed
+
+                    Image(data[index].2) // Load image from assets
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50) // Set profile picture size
+//                        .border(Color.black)
+                        .cornerRadius(8) // Adjust the corner radius as needed
+
+                    Text(data[index].0)
+                        .padding()
+                        .frame(maxWidth: .infinity / 2) // Adjust column width
+//                        .border(Color.black)
+                        .cornerRadius(8) // Adjust the corner radius as needed
+
+                    Text("\(data[index].1)")
+                        .padding()
+                        .frame(maxWidth: .infinity / 4) // Adjust column width
+//                        .border(Color.black)
+                        .cornerRadius(8) // Adjust the corner radius as needed
+                }
+                .frame(height: cellHeight) // Set the height of each cell
             }
-            .padding()
-            
-            HStack {
-                Text("Profile 2")
-                Spacer()
-                Text("Player 2")
-                Spacer()
-                Text("8")
-            }
-            .padding()
-        }.scaledToFit()
+        }
+        .padding()
     }
 }
 
