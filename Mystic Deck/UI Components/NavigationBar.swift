@@ -33,14 +33,21 @@ struct NavigationBarView: View {
                 
                 HStack {
                     TabBarButton(imageName: "house.fill", title: "Home", tabIndex: 0, selectedTab: $selectedTab)
+                        .dynamicTypeSize(.xxxLarge)
                     Spacer()
                     TabBarButton(imageName: "rosette", title: "Achievements", tabIndex: 1, selectedTab: $selectedTab)
+                        .dynamicTypeSize(.xxxLarge)
                     Spacer()
                     TabBarButton(imageName: "book.fill", title: "Guide", tabIndex: 2, selectedTab: $selectedTab)
+                        .dynamicTypeSize(.xxxLarge)
                     Spacer()
                     TabBarButton(imageName: "gearshape.fill", title: "Settings", tabIndex: 3, selectedTab: $selectedTab)
+                        .dynamicTypeSize(.xxxLarge)
                 }
-                .padding()
+                .padding(.horizontal,40)
+                .padding(.vertical,10)
+                .background(Color.gray.opacity(0.4))
+             
             }
             .background(
                 ZStack {
