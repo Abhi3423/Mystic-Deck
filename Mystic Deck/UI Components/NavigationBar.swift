@@ -138,7 +138,7 @@ struct GuideView: View {
 struct SettingsView: View {
     var body: some View {
         Spacer()
-        Text("Settings jhbjhbjuhbjjhContent")
+        Text("Settings")
     }
 }
 

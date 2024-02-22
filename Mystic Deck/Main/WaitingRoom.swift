@@ -15,6 +15,8 @@ struct HomeView: View {
             VStack {
                 
                 Spacer()
+                Spacer()
+                Spacer()
                 
                 // Join and Create Room Buttons
                 VStack(spacing: 30) {
@@ -27,6 +29,7 @@ struct HomeView: View {
                         // Create Room Button
                         ButtonView(label: "Create Room")
                     }
+                  
                 }
                 
                 Spacer()
@@ -122,7 +125,7 @@ struct TableView: View {
                 HStack {
                     Text("\(index + 1)") // Add a number in front of Profiles
                         .padding()
-                        .frame(maxWidth: .infinity / 8) // Adjust column width
+                        .frame(maxWidth: 40) // Adjust column width
 //                        .border(Color.black)
                         .cornerRadius(8) // Adjust the corner radius as needed
 
@@ -134,7 +137,7 @@ struct TableView: View {
                         .cornerRadius(8) // Adjust the corner radius as needed
 
                     Text(data[index].0)
-                        .padding()
+                        .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing:20))
                         .frame(maxWidth: .infinity / 2) // Adjust column width
 //                        .border(Color.black)
                         .cornerRadius(8) // Adjust the corner radius as needed
