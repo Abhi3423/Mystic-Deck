@@ -202,15 +202,77 @@ struct GuideView: View {
                 }
             }
         }
+        Spacer()
+        .navigationBarTitle("Guide:")
     }
 }
 struct SettingsView: View {
+    @State private var isSoundEnabled = true
+    @State private var isNotificationEnabled = true
+    @State private var isHintsEnabled = true
+    
     var body: some View {
-        Spacer()
-        Text("Settings Content")
+        VStack(spacing: 20) {
+            Spacer()
+            Toggle("Sound", isOn: $isSoundEnabled)
+                .font(.title) // Increase text size
+                .toggleStyle(SwitchToggleStyle(tint: .secondary))
+            
+            Spacer()
+            Toggle("Notification", isOn: $isNotificationEnabled)
+                .font(.title) // Increase text size
+                .toggleStyle(SwitchToggleStyle(tint: .secondary))
+            Spacer()
+            Toggle("Hints", isOn: $isHintsEnabled)
+                .font(.title) // Increase text size
+                .toggleStyle(SwitchToggleStyle(tint: .secondary))
+            Spacer()
+            Button(action: {
+                // Action for Connect with Social Media
+            }) {
+                Text("Connect with Social Media to Send Gifts to Friends")
+                    .font(.headline) // Increase button text size
+                    .foregroundColor(.white)
+            }
+            .padding(.horizontal, 24.0)
+            .padding(.vertical, 14.0)
+            .frame(maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(10)
+            
+            Button(action: {
+                // Action for Contact Us
+            }) {
+                Text("Contact Us")
+                    .font(.headline) // Increase button text size
+                    .foregroundColor(.white)
+            }
+            .padding(.horizontal, 24.0)
+            .padding(.vertical, 14.0)
+            .frame(maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(10)
+//            Spacer()
+            
+            Button(action: {
+                // Action for Restore
+            }) {
+                Text("Restore")
+                    .font(.headline) // Increase button text size
+                    .foregroundColor(.white)
+            }
+            .padding(.horizontal, 24.0)
+            .padding(.vertical, 14.0)
+            .frame(maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(10)
+            
+//            Spacer()
+        }
+        .padding()
+        .navigationBarTitle("Settings")
     }
 }
-
 struct MenuButton: View {
     var body: some View {
         Button(action: {
