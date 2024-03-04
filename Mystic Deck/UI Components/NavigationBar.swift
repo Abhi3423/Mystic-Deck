@@ -48,9 +48,9 @@ struct NavigationBarView: View {
                         .resizable()
                         .scaledToFill()
                         .edgesIgnoringSafeArea(.all)
+                    LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.601), Color.clear]), startPoint: .top, endPoint: .center)
+                        .edgesIgnoringSafeArea(.top)
                     
-//                    LinearGradient(gradient: Gradient(colors: [Color(hue: 0.328, saturation: 0.513, brightness: 0.201), Color.clear]), startPoint: .top, endPoint: .bottom).opacity(0.7)
-//                        .edgesIgnoringSafeArea(.all)
                 }
             )
 
@@ -116,18 +116,94 @@ struct TabBarButton: View {
 
 struct AchievementsView: View {
     var body: some View {
-        Spacer()
-        Text("Achievements Content")
+        NavigationView {
+            VStack {
+                Spacer()
+                
+                List {
+                    AchievementRow(title: "Beginner", description: "Unlock your first card")
+                    AchievementRow(title: "Collector", description: "Collect 10 different cards")
+                    AchievementRow(title: "Master", description: "Unlock all cards")
+                    // Add more achievement rows as needed
+                }
+            }
+            .background(
+                Image("themebk")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+            )
+
+            .navigationBarTitle("Achievements")
+        }
+    }
+    
+    struct AchievementRow: View {
+        var title: String
+        var description: String
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text(title)
+                    .font(.headline)
+                    .padding()
+                    .background(Color.white.opacity(0.8)) // Background color for title
+                    .cornerRadius(10) // Rounded corners for the title background
+                Text(description)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                    .padding()
+                    .background(Color.white.opacity(0.8)) // Background color for description
+                    .cornerRadius(10) // Rounded corners for the description background
+            }
+        }
     }
 }
+
 
 struct GuideView: View {
+    let points = [
+        "1. Welcome, oh mighty sorcerer, to the mystical realm of MysticDeck, where the cards hold secrets and magic awaits!",
+        "2. As you embark on your journey through the enchanted forest of MysticDeck, summon your fellow wizards by crafting a mystical room. Share the secret incantation with your comrades to unite your powers!",
+        "3. Have your friends lost their way in the labyrinth of spells? Fear not! Send forth a mystical signal, guiding them back to your circle of enchantment. Together, you shall conquer the unknown!",
+        "4. As the grand sorcerer presiding over this magical gathering, it falls upon you to set the stage for the epic duel ahead. Choose a theme from the mystical scrolls, each containing its own secrets and challenges. Only you wield the power to shape the destiny of this arcane battle!",
+        "5. Now, wizards and witches alike, it is time to cast your spells! Peer into the depths of your enchanted cards and select the incantation that resonates with your inner magic. Choose wisely, for your fate hangs in the balance!",
+        "6. With your chosen enchantment in hand, it is time to unleash its power upon the realm! Lead the charge, oh noble sorcerer, and click 'Play' to set the arcane energies into motion. Let your friends follow in your mystical footsteps!",
+        "7. Behold, as the cosmic forces converge! Compare the arcane energies woven into each card, and may the highest power reign supreme! Let laughter echo through the halls of MysticDeck as friends become foes and victory dances in the flicker of candlelight!"
+    ]
+    
+    @State private var currentIndex = 0
+    
     var body: some View {
-        Spacer()
-        Text("Guide Content")
+        GeometryReader { geometry in
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 45) {
+                    ForEach(points.indices, id: \.self) { index in
+                        Text(points[index])
+                            .font(.headline)
+                            .padding()
+                            .frame(width: geometry.size.width - 40) // Adjust width
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                            .opacity(currentIndex == index ? 1.0 : 0.5)
+                    }
+                }
+                .frame(width: geometry.size.width * CGFloat(points.count), height: 650) // Adjust height
+                .padding()
+                .offset(x: -CGFloat(currentIndex) * geometry.size.width)
+                .animation(.easeInOut(duration: 1.0))
+            }
+            .onAppear {
+                Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
+                    withAnimation {
+                        currentIndex = (currentIndex + 1) % points.count
+                    }
+                }
+            }
+        }
     }
 }
-
 struct SettingsView: View {
     var body: some View {
         Spacer()

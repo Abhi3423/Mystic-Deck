@@ -29,7 +29,7 @@ struct Loading: View {
     
     var body: some View {
         ZStack {
-            Image("gameroombg")
+            Image("themebk")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)

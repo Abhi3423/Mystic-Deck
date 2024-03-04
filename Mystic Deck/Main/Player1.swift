@@ -1,7 +1,9 @@
 import SwiftUI
 
-struct GameRoomView: View {
+struct Player1View: View {
     let imageName = "your_image_name"
+    @State private var showLoading: Bool = true
+    @State private var isActive: Bool = false
     @State private var mysticOffset: CGFloat = -200
     @State private var deckOffset: CGFloat = 400
     @State private var opacity: Double = 0.0
@@ -30,15 +32,15 @@ struct GameRoomView: View {
                 VStack{
                     
                     HStack{
-                        OppositePlayerProfileView(imageName: "player", name: "Arul", totalCards: 8)
                         OppositePlayerProfileView(imageName: "player", name: "Hitarth", totalCards: 8)
                         OppositePlayerProfileView(imageName: "player", name: "Aman", totalCards: 8)
+                        OppositePlayerProfileView(imageName: "player", name: "Abishek", totalCards: 8)
                     }
                     .padding(.bottom, 40.0)
                     
                     
                     HStack{
-                        Text("Abhishek Yadav")
+                        Text("Arul")
                             .foregroundColor(.white)
                         Spacer()
                         ZStack{
@@ -67,10 +69,9 @@ struct GameRoomView: View {
                         Spacer()
                         CustomButton(buttonText: "PLAY") {
                             print("Button clicked!")
-                            self.isNavigationActive = true
                             isNavigationActive = true
                             // Perform any action you want here
-                            
+                        
                         }
                         Spacer()
                         Image("settings")
@@ -79,9 +80,16 @@ struct GameRoomView: View {
                             .onTapGesture {
                                 // Show the settings popup
                                 isSettingsPopupVisible.toggle()
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                                        withAnimation {
+                                            showLoading = false
+                                            isActive = true
+                                        }
+                                    }
+                                
                             }
                     }
-                    NavigationLink(destination: Player1View(theme: theme, topic: imageName), isActive: $isNavigationActive) {
+                    NavigationLink(destination: Player2View(theme: theme, topic: imageName), isActive: $isNavigationActive) {
                         EmptyView()
                     }
                 }.frame(width: 370, height: 840).padding(.top,50.0)
@@ -140,4 +148,13 @@ struct GameRoomView: View {
 //    static var previews: some View {
 //        GameRoomView()
 //    }
+//}
+
+
+
+//CustomButton(buttonText: "PLAY") {
+//    print("Button clicked!")
+//    // isNavigationActive = true
+//    // Perform any action you want here
+//    
 //}
