@@ -33,14 +33,22 @@ struct NavigationBarView: View {
                 
                 HStack {
                     TabBarButton(imageName: "house.fill", title: "Home", tabIndex: 0, selectedTab: $selectedTab)
+                        .dynamicTypeSize(.xxLarge)
                     Spacer()
                     TabBarButton(imageName: "rosette", title: "Achievements", tabIndex: 1, selectedTab: $selectedTab)
+                        .dynamicTypeSize(.xxLarge)
                     Spacer()
                     TabBarButton(imageName: "book.fill", title: "Guide", tabIndex: 2, selectedTab: $selectedTab)
+                        .dynamicTypeSize(.xxxLarge)
                     Spacer()
                     TabBarButton(imageName: "gearshape.fill", title: "Settings", tabIndex: 3, selectedTab: $selectedTab)
+                        .dynamicTypeSize(.xxxLarge)
                 }
-                .padding()
+                .padding(.horizontal,40)
+                .padding(.top,10)
+                .padding(.bottom,-16)
+                .background(Color.white.opacity(0.6))
+             
             }
             .background(
                 ZStack {
@@ -92,9 +100,15 @@ struct TabBarButton: View {
 //        .padding(.bottom, -30.0)
 //            
 //        }
-        
-        Button("", systemImage: imageName, action: onClick)    .labelStyle(.iconOnly)
-            .foregroundColor(selectedTab == tabIndex ? .blue : .gray)
+        VStack{
+            Button("", systemImage: imageName, action: onClick)    .labelStyle(.iconOnly)
+                .foregroundColor(selectedTab == tabIndex ? .blue : .gray)
+            
+            Text("\(title)")
+                .font(Font.custom("Hoefler Text", size: 13))
+                .padding(.top,1.0)
+                .foregroundColor(selectedTab == tabIndex ? .blue : .gray)
+        }
 
 //    label: {VStack {
 //        Image(systemName: imageName)
@@ -116,22 +130,170 @@ struct TabBarButton: View {
 
 struct AchievementsView: View {
     var body: some View {
-        Spacer()
-        Text("Achievements Content")
+        NavigationView {
+            VStack {
+                Spacer()
+                
+                List {
+                    AchievementRow(title: "Beginner", description: "")
+
+                    AchievementRow(title: "Collector", description: "Collect 10 different badges")
+
+                    AchievementRow(title: "Master", description: "Unlock all the badges")
+                    // Add more achievement rows as needed
+                }
+                .scrollContentBackground(.hidden) // Hide the standard background of the List
+
+            }
+            .background(
+                Image("themebk")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+            )
+
+            .navigationBarTitle("Achievements")
+        }
+    }
+    
+    struct AchievementRow: View {
+        var title: String
+        var description: String
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                Text(title)
+                    .font(.headline)
+                    .padding()
+                    .background(Color.white.opacity(0.8)) // Background color for title
+                    .cornerRadius(10) // Rounded corners for the title background
+                Image("win")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100,height: 100)
+                Text(description)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                    .padding()
+                    .background(Color.white.opacity(0.8)) // Background color for description
+                    .cornerRadius(10) // Rounded corners for the description background
+            }
+        }
     }
 }
 
+
 struct GuideView: View {
+    let points = [
+                "1. User login to the app.",
+                "2. If the user is the leader, they create a room and share the code with friends.",
+                "3. Friends click on 'Join Room' and enter the unique code in the text field.",
+                "4. The leader selects a theme for the game; only the leader can select the theme.",
+                "5. The game starts, and Player 1 selects a parameter on their card that they think is best.",
+                "6. Player 1 clicks 'Play', and other players select the same type of parameter.",
+                "7. All card parameters are compared, and the highest one wins the round."
+    ]
+    
+    @State private var currentIndex = 0
+    
     var body: some View {
+        GeometryReader { geometry in
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 45) {
+                    ForEach(points.indices, id: \.self) { index in
+                        Text(points[index])
+                            .font(.headline)
+                            .padding()
+                            .frame(width: geometry.size.width - 40) // Adjust width
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                            .opacity(currentIndex == index ? 1.0 : 0.5)
+                    }
+                }
+                .frame(width: geometry.size.width * CGFloat(points.count), height: 650) // Adjust height
+                .padding()
+                .offset(x: -CGFloat(currentIndex) * geometry.size.width - 17)
+                .animation(.easeInOut(duration: 1.0))
+            }
+            .onAppear {
+                Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
+                    withAnimation {
+                        currentIndex = (currentIndex + 1) % points.count
+                    }
+                }
+            }
+        }
         Spacer()
-        Text("Guide Content")
+        .navigationBarTitle("Guide:")
     }
 }
 
 struct SettingsView: View {
+    @State private var isSoundEnabled = true
+    @State private var isNotificationEnabled = true
+    @State private var isHintsEnabled = true
+    
     var body: some View {
-        Spacer()
-        Text("Settings Content")
+        VStack(spacing: 20) {
+            Spacer()
+            Toggle("Sound", isOn: $isSoundEnabled)
+                .font(.title) // Increase text size
+                .toggleStyle(SwitchToggleStyle(tint: .secondary))
+            
+            Spacer()
+            Toggle("Notification", isOn: $isNotificationEnabled)
+                .font(.title) // Increase text size
+                .toggleStyle(SwitchToggleStyle(tint: .secondary))
+            Spacer()
+            Toggle("Hints", isOn: $isHintsEnabled)
+                .font(.title) // Increase text size
+                .toggleStyle(SwitchToggleStyle(tint: .secondary))
+            Spacer()
+            Button(action: {
+                // Action for Connect with Social Media
+            }) {
+                Text("Connect with Social Media to Send Gifts to Friends")
+                    .font(.headline) // Increase button text size
+                    .foregroundColor(.white)
+            }
+            .padding(.horizontal, 24.0)
+            .padding(.vertical, 14.0)
+            .frame(maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(10)
+            
+            Button(action: {
+                // Action for Contact Us
+            }) {
+                Text("Contact Us")
+                    .font(.headline) // Increase button text size
+                    .foregroundColor(.white)
+            }
+            .padding(.horizontal, 24.0)
+            .padding(.vertical, 14.0)
+            .frame(maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(10)
+//            Spacer()
+            
+            Button(action: {
+                // Action for Restore
+            }) {
+                Text("Restore")
+                    .font(.headline) // Increase button text size
+                    .foregroundColor(.white)
+            }
+            .padding(.horizontal, 24.0)
+            .padding(.vertical, 14.0)
+            .frame(maxWidth: .infinity)
+            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(10)
+            
+//            Spacer()
+        }
+        .padding()
+        .navigationBarTitle("Settings")
     }
 }
 

@@ -41,6 +41,7 @@ struct LandingPage: View {
                                 .cornerRadius(10)
                         }
                         
+                        
                         NavigationLink(destination: SignupView()) {
                             Text("Sign up")
                                 .fontWeight(.semibold)

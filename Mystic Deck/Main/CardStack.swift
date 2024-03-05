@@ -4,20 +4,19 @@ import SwiftUI
 
 struct CardStack: View {
     var jsonData: JSON
-    let theme: Theme
+    let theme: String
     let topic: String
     
     var body: some View {
         
-        
-        let cardData = jsonData[theme.rawValue][topic]["Cards"]
+        let cardData = jsonData[theme][topic]["Cards"]
         let numberOfCards = cardData.dictionary?.count ?? 0
-        
-        
+
         if numberOfCards > 0 {
             ZStack(alignment: .top){
                 ForEach(1...numberOfCards, id: \.self) { cardNumber in
-                    if let cardData = jsonData[theme.rawValue][topic]["Cards"]["\(cardNumber)"].dictionary,
+
+                    if let cardData = jsonData[theme][topic]["Cards"]["\(cardNumber)"].dictionary,
                        let name = cardData["name"]?.string,
                        let image = cardData["image"]?.string,
                        let area = cardData["AREA"]?.string,
@@ -52,7 +51,8 @@ struct CardStack: View {
     }
 }
 
-let jsonData: JSON? = extractCardData()
+
+//let jsonData: JSON? = shuffleCards(for: AppData.shared.themeselected, topic: AppData.shared.topicselected)
 
 struct CardStackView_Previews: PreviewProvider {
     static var previews: some View {

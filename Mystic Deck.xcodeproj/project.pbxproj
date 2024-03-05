@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1111E08F45BE6376249D39B8 /* Pods_Mystic_Deck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D091B8550CAE6C12646709 /* Pods_Mystic_Deck.framework */; };
+		46150B6D2B975C18007234CE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 46150B6C2B975C18007234CE /* SwiftyJSON */; };
+		46B051732B9672060041C771 /* BitCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 46B051722B9672060041C771 /* BitCollections */; };
+		46B051752B9672060041C771 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 46B051742B9672060041C771 /* Collections */; };
+		46B051772B9672060041C771 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 46B051762B9672060041C771 /* DequeModule */; };
+		46B051792B9672060041C771 /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 46B051782B9672060041C771 /* HashTreeCollections */; };
+		46B0517B2B9672060041C771 /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = 46B0517A2B9672060041C771 /* HeapModule */; };
 		4EC3C6925CC8C5B089DB0567 /* Pods_Mystic_Deck_Mystic_DeckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44A6109090FFAA50BA6E972 /* Pods_Mystic_Deck_Mystic_DeckUITests.framework */; };
 		54EAA1F4668F4D016D71B8F7 /* Pods_Mystic_DeckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF07F07940DF02339484DBF2 /* Pods_Mystic_DeckTests.framework */; };
 		7D6117F02B3FEE7600F68BA0 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6117EF2B3FEE7600F68BA0 /* Themes.swift */; };
@@ -28,6 +34,12 @@
 		7F4AD8702B2DA17D00213099 /* Mystic_DeckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD86F2B2DA17D00213099 /* Mystic_DeckUITests.swift */; };
 		7F4AD8722B2DA17D00213099 /* Mystic_DeckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD8712B2DA17D00213099 /* Mystic_DeckUITestsLaunchTests.swift */; };
 		7F4AD8832B2DAA7A00213099 /* LandingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AD8822B2DAA7A00213099 /* LandingImageView.swift */; };
+		7F9548E12B8A699A0049962C /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9548E02B8A699A0049962C /* SocketIO */; };
+		7F9548E32B8A6C6C0049962C /* socketmanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9548E22B8A6C6C0049962C /* socketmanager.swift */; };
+		7F9548E52B8B6B7C0049962C /* testview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9548E42B8B6B7C0049962C /* testview.swift */; };
+		7F9548E82B8BAA380049962C /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9548E72B8BAA380049962C /* api.swift */; };
+		7F9548EA2B8BAE7C0049962C /* codegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9548E92B8BAE7C0049962C /* codegenerate.swift */; };
+		7F9548EC2B8BC2370049962C /* credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9548EB2B8BC2370049962C /* credentials.swift */; };
 		7FF7B4962B37FE20001FD16C /* GameRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B4952B37FE20001FD16C /* GameRoomView.swift */; };
 		7FF7B4992B38263A001FD16C /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B4982B38263A001FD16C /* Buttons.swift */; };
 		7FF7B49B2B383843001FD16C /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B49A2B383843001FD16C /* Loading.swift */; };
@@ -78,6 +90,11 @@
 		7F4AD86F2B2DA17D00213099 /* Mystic_DeckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mystic_DeckUITests.swift; sourceTree = "<group>"; };
 		7F4AD8712B2DA17D00213099 /* Mystic_DeckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mystic_DeckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7F4AD8822B2DAA7A00213099 /* LandingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandingImageView.swift; path = "Mystic Deck/Main/LandingImageView.swift"; sourceTree = SOURCE_ROOT; };
+		7F9548E22B8A6C6C0049962C /* socketmanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = socketmanager.swift; sourceTree = "<group>"; };
+		7F9548E42B8B6B7C0049962C /* testview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testview.swift; sourceTree = "<group>"; };
+		7F9548E72B8BAA380049962C /* api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
+		7F9548E92B8BAE7C0049962C /* codegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codegenerate.swift; sourceTree = "<group>"; };
+		7F9548EB2B8BC2370049962C /* credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = credentials.swift; sourceTree = "<group>"; };
 		7FF7B4952B37FE20001FD16C /* GameRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoomView.swift; sourceTree = "<group>"; };
 		7FF7B4982B38263A001FD16C /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		7FF7B49A2B383843001FD16C /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
@@ -97,7 +114,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B051792B9672060041C771 /* HashTreeCollections in Frameworks */,
 				1111E08F45BE6376249D39B8 /* Pods_Mystic_Deck.framework in Frameworks */,
+				46150B6D2B975C18007234CE /* SwiftyJSON in Frameworks */,
+				7F9548E12B8A699A0049962C /* SocketIO in Frameworks */,
+				46B0517B2B9672060041C771 /* HeapModule in Frameworks */,
+				46B051772B9672060041C771 /* DequeModule in Frameworks */,
+				46B051752B9672060041C771 /* Collections in Frameworks */,
+				46B051732B9672060041C771 /* BitCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +217,7 @@
 		7F4AD8532B2DA17C00213099 /* Mystic Deck */ = {
 			isa = PBXGroup;
 			children = (
+				7F9548D82B8A66280049962C /* Socket */,
 				7F4AD85A2B2DA17D00213099 /* Preview Content */,
 				7F313ED22B39D0EA00816103 /* Assets */,
 				7F313ED12B39D0B300816103 /* Main */,
@@ -227,6 +252,16 @@
 			path = "Mystic DeckUITests";
 			sourceTree = "<group>";
 		};
+		7F9548D82B8A66280049962C /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				7F9548E22B8A6C6C0049962C /* socketmanager.swift */,
+				7F9548E42B8B6B7C0049962C /* testview.swift */,
+				7F9548E72B8BAA380049962C /* api.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
 		7FF7B4972B38252D001FD16C /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +281,8 @@
 				7F313EE02B40338F00816103 /* dataview.swift */,
 				7FF7B49C2B383DCB001FD16C /* FontView.swift */,
 				7FF7B4A12B385238001FD16C /* Color.swift */,
+				7F9548E92B8BAE7C0049962C /* codegenerate.swift */,
+				7F9548EB2B8BC2370049962C /* credentials.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -268,6 +305,15 @@
 			dependencies = (
 			);
 			name = "Mystic Deck";
+			packageProductDependencies = (
+				7F9548E02B8A699A0049962C /* SocketIO */,
+				46B051722B9672060041C771 /* BitCollections */,
+				46B051742B9672060041C771 /* Collections */,
+				46B051762B9672060041C771 /* DequeModule */,
+				46B051782B9672060041C771 /* HashTreeCollections */,
+				46B0517A2B9672060041C771 /* HeapModule */,
+				46150B6C2B975C18007234CE /* SwiftyJSON */,
+			);
 			productName = "Mystic Deck";
 			productReference = 7F4AD8512B2DA17C00213099 /* Mystic Deck.app */;
 			productType = "com.apple.product-type.application";
@@ -345,6 +391,10 @@
 			mainGroup = 7F4AD8482B2DA17C00213099;
 			packageReferences = (
 				7F4AD8842B2EDC9300213099 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				7F9548DF2B8A699A0049962C /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
+				46B051702B9630420041C771 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				46B051712B9672060041C771 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				46150B6B2B975C18007234CE /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 7F4AD8522B2DA17C00213099 /* Products */;
 			projectDirPath = "";
@@ -495,14 +545,19 @@
 				7FF7B49F2B38506A001FD16C /* GameCard.swift in Sources */,
 				7D6AEFD22B42DA010046FDC5 /* WaitingRoom.swift in Sources */,
 				7FF7B4992B38263A001FD16C /* Buttons.swift in Sources */,
+				7F9548EC2B8BC2370049962C /* credentials.swift in Sources */,
 				7D6AEFD02B4290670046FDC5 /* LandingPage.swift in Sources */,
+				7F9548E52B8B6B7C0049962C /* testview.swift in Sources */,
 				7F313EDB2B3B524F00816103 /* CardStack.swift in Sources */,
 				7F25330B2B4E690A00BF2E2D /* NavigationBar.swift in Sources */,
+				7F9548EA2B8BAE7C0049962C /* codegenerate.swift in Sources */,
+				7F9548E82B8BAA380049962C /* api.swift in Sources */,
 				7F4AD8572B2DA17C00213099 /* ContentView.swift in Sources */,
 				7D7DDFA52B4B0A1500DD13B6 /* LoadingGameRoom.swift in Sources */,
 				7D7DDFA32B4B06DE00DD13B6 /* JoinRoom.swift in Sources */,
 				7F313EE12B40338F00816103 /* dataview.swift in Sources */,
 				7F4AD8552B2DA17C00213099 /* Mystic_DeckApp.swift in Sources */,
+				7F9548E32B8A6C6C0049962C /* socketmanager.swift in Sources */,
 				7D6117F02B3FEE7600F68BA0 /* Themes.swift in Sources */,
 				7F4AD8832B2DAA7A00213099 /* LandingImageView.swift in Sources */,
 				7FF7B49B2B383843001FD16C /* Loading.swift in Sources */,
@@ -679,11 +734,13 @@
 				DEVELOPMENT_TEAM = 2YLF2CLFR6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mystic-Deck-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -709,11 +766,13 @@
 				DEVELOPMENT_TEAM = 2YLF2CLFR6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mystic-Deck-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -849,6 +908,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		46150B6B2B975C18007234CE /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		46B051702B9630420041C771 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.21.0;
+			};
+		};
+		46B051712B9672060041C771 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		7F4AD8842B2EDC9300213099 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -857,7 +940,53 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		7F9548DF2B8A699A0049962C /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		46150B6C2B975C18007234CE /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46150B6B2B975C18007234CE /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		46B051722B9672060041C771 /* BitCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46B051712B9672060041C771 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = BitCollections;
+		};
+		46B051742B9672060041C771 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46B051712B9672060041C771 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		46B051762B9672060041C771 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46B051712B9672060041C771 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		46B051782B9672060041C771 /* HashTreeCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46B051712B9672060041C771 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HashTreeCollections;
+		};
+		46B0517A2B9672060041C771 /* HeapModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46B051712B9672060041C771 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HeapModule;
+		};
+		7F9548E02B8A699A0049962C /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F9548DF2B8A699A0049962C /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7F4AD8492B2DA17C00213099 /* Project object */;
 }

@@ -52,14 +52,29 @@ struct LoadingView: View {
 //                                .cornerRadius(10)
 //                        }
                         
-                        NavigationLink(destination: WaitingRoomView()) {
-                            Text("Join")
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 24.0)
-                                .padding(.vertical, 14.0)
-                                .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
-                                .cornerRadius(10)
-                        }
+                        NavigationLink(
+                            destination: WaitingRoomView(comingfrom: "join_room"),
+                            isActive: $navigateToWaitingRoom,
+                            label: {
+                                Text("Join")
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 24.0)
+                                    .padding(.vertical, 14.0)
+                                    .background(
+                                        LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing)
+                                    )
+                                    .cornerRadius(10)
+                                    .onTapGesture {
+                            
+            //                            // Handle the join action here if needed
+                                        if (code != "") {
+                                            AppData.shared.roomID = "\(code)"
+                                            print(AppData.shared.roomID)
+                                            navigateToWaitingRoom = true
+                                        }
+                                    }
+                            }
+                        )
                     }
                 }
             }

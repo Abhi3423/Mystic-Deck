@@ -41,7 +41,7 @@ struct OppositePlayerProfileView: View {
             }
         }
         .padding()
-        .frame(width: 130, height: 100)
+        .frame(width: 160, height: 100)
     }
 }
 

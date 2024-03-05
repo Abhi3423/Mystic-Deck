@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftyJSON
 
 struct GameRoomView: View {
     @State private var mysticOffset: CGFloat = -200
@@ -9,125 +10,245 @@ struct GameRoomView: View {
     @State private var showNewText: Bool = true
     @State private var isNavigationActive: Bool = false
     @State private var isSettingsPopupVisible = false
+    @State private var showPlayButton = false
+    @State private var refreshID = UUID()
+    @State private var showWinSheet = false
+    @State private var isHomeActive = false
     
-    let theme: Theme
+    let theme: String
     let topic: String
     
+    @ViewBuilder
+    var destinationToHomeView: some View {
+        if isHomeActive {
+            NavigationBarView()
+        } else {
+            EmptyView()
+        }
+    }
     
     var body: some View {
         
-        ZStack{
+        ZStack {
+            Image("gameroombg")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+                .frame(width: 400)
             
-            ZStack {
-                Image("gameroombg")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: 400)
+            
+            VStack{
+                
+                HStack{
+                    OppositePlayerProfileView(imageName: "player", name: "Arul", totalCards: 4)
+                    OppositePlayerProfileView(imageName: "player", name: "Abhishek", totalCards: 4)
+                }
+                .padding(.bottom, 40.0)
                 
                 
-                VStack{
-                    
-                    HStack{
-                        OppositePlayerProfileView(imageName: "player", name: "Arul", totalCards: 8)
-                        OppositePlayerProfileView(imageName: "player", name: "Hitarth", totalCards: 8)
-                        OppositePlayerProfileView(imageName: "player", name: "Aman", totalCards: 8)
+                HStack{
+                    Text("\(AppData.shared.username)")
+                    Spacer()
+                    ZStack{
+                        Circle()
+                            .fill(Color.green)
+                            .frame(width: 40)
+                        Text("\(AppData.shared.score)")
+                            .foregroundColor(.white)
                     }
-                    .padding(.bottom, 40.0)
                     
-                    
-                    HStack{
-                        Text("Abhishek Yadav")
-                        Spacer()
-                        ZStack{
-                            Circle()
-                                .fill(Color.green)
-                                .frame(width: 40)
-                            Text("8")
-                                .foregroundColor(.white)
-                        }
-                        
-                    }
-                    .font(.system(size: 26))
-                    .bold()
-                    .padding(.bottom, 20.0)
-                    
-                    if let unwrappedJsonData = jsonData {
+                }
+                .font(.system(size: 26))
+                .bold()
+                .padding(.bottom, 20.0)
+                
+                if let unwrappedJsonData = JSONDataManager.shared.jsonData {
+                    VStack{
                         CardStack(jsonData: unwrappedJsonData, theme: theme, topic: topic)
                             .offset(x: 20)
-                    } else {
-                        Text(topic)
+                            .id(refreshID)
                     }
                     
-                    Spacer().frame(height: 30)
-                    
-                    HStack{
-                        Spacer()
+                } else {
+                    Text(topic)
+                }
+                
+                Spacer().frame(height: 30)
+                
+                HStack{
+                    Spacer()
+                    if(showPlayButton == true || AppData.shared.mychance == 1){
                         CustomButton(buttonText: "PLAY") {
-                            print("Button clicked!")
-                            // isNavigationActive = true
-                            // Perform any action you want here
-                            
+                            print("Play Button clicked!")
+                            DataSocketManager.shared.play_call()
                         }
+                    }
+                    Spacer()
+                    Image("settings")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .onTapGesture {
+                            // Show the settings popup
+                            isSettingsPopupVisible.toggle()
+                        }
+                }
+                
+            }.frame(width: 370, height: 840).padding(.top,50.0)
+            
+            // Background for the popup
+            if isSettingsPopupVisible {
+                Color.black.opacity(0.4)
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        isSettingsPopupVisible = false
+                    }
+            }
+            
+            // Popup content
+            if isSettingsPopupVisible {
+                VStack {
+                    HStack {
                         Spacer()
-                        Image("settings")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .onTapGesture {
-                                // Show the settings popup
-                                isSettingsPopupVisible.toggle()
-                            }
+                        Button(action: {
+                            isSettingsPopupVisible = false
+                        }) {
+                            Image("cross")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 40, height: 40)
+                        }
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .padding()
                     }
                     
-                }.frame(width: 370, height: 840).padding(.top,50.0)
-                
-                
-                // Background for the popup
-                if isSettingsPopupVisible {
-                    Color.black.opacity(0.4)
-                        .edgesIgnoringSafeArea(.all)
-                        .onTapGesture {
-                            isSettingsPopupVisible = false
+                    NavigationLink(
+                        destination: destinationToHomeView,
+                        isActive: $isHomeActive,
+                        label: {
+                            EmptyView()
                         }
-                }
-                
-                // Popup content
-                if isSettingsPopupVisible {
-                    VStack {
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                isSettingsPopupVisible = false
-                            }) {
-                                Image("cross")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 40, height: 40)
-
-                                    
-                            }
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .padding()
-                        }
-                        
-                        NavigationView{
-                            CustomButton(buttonText: "EXIT") {
-                                print("Exit")
-                                // isNavigationActive = true
-                                
-                            }
-                        }
-                        
-                        Spacer()
+                    )
+                    
+                    
+                    CustomButton(buttonText: "EXIT") {
+                        print("Exit")
+                        DataSocketManager.shared.leave_room()
+                        isHomeActive = true
+                        print(isHomeActive)
                     }
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .padding()
-                    .frame(height: 200)
+                    
+                    Spacer()
                 }
-            }.padding() .navigationBarBackButtonHidden(true)
-        }.navigationBarBackButtonHidden(true)
+                .background(Color.white)
+                .cornerRadius(20)
+                .padding()
+                .frame(height: 200)
+            }
+        }
+        .padding()
+        .navigationBarBackButtonHidden(true)
+        .sheet(isPresented: $showWinSheet, onDismiss: {
+            // Loop through the jsonData to find and remove matching key-value pairs
+            if var jsonData = JSONDataManager.shared.jsonData {
+                print(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"])
+                if var cards = jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"].dictionaryObject as? [String: [String: String]] {
+                    var keysToRemove: [String] = []
+                    
+                    for (key, values) in cards {
+                        // Check if the key-value pair matches the condition
+                        if let parameterValue = values[AppData.shared.parameter_name], parameterValue == AppData.shared.parameter_value {
+                            // Add the key to the list of keys to remove
+                            keysToRemove.append(key)
+                        }
+                    }
+                    
+                    // Remove the key-value pairs from the "Cards" dictionary
+                    for key in keysToRemove {
+                        cards.removeValue(forKey: key)
+                    }
+                    
+                    // Convert the modified Swift dictionary back to a JSON object
+                    if let updatedCards = cards as? [String: Any] {
+                        jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"] = JSON(updatedCards)
+                        if(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"].isEmpty){
+                            JSONDataManager.shared.jsonData = jsonData
+                            print("Exit")
+                            isHomeActive = true
+                            DataSocketManager.shared.leave_room()
+                            print(isHomeActive)
+                        }else{
+                            JSONDataManager.shared.jsonData = jsonData
+                            refreshID = UUID()
+                        }
+                    }
+                    print(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"])
+                }
+                
+            } else {
+                print("JSON data is nil")
+            }
+            
+            showWinSheet = false
+        }) {
+            Text("You win!")
+                .font(.title)
+                .foregroundColor(.black)
+                .padding()
+        }
+        //        .onReceive(AppData.shared.$mychance) { newValue in
+        //            if newValue == 0 {
+        //                // Update the state variable controlling the visibility of the button
+        //                print("gameroom view app data mychance refreshed")
+        //                print("\(AppData.shared.score)")
+        //                showPlayButton = false
+        //                refreshID = UUID()
+        //                print(refreshID)
+        //            } else {
+        //                showPlayButton = true
+        //            }
+        //
+        //            print("nhkiuh")
+        //        }
+        .id(refreshID)
+        .onReceive(DataSocketManager.shared.$startScoreUpdate) { newValue in
+            if newValue {
+                if !DataSocketManager.shared.otherPlayerSendValues {
+                    callAPI(endpoint: "/score_update", method: "POST", formData: ["room_id": AppData.shared.roomID]) { responseString in
+                        DispatchQueue.main.async {
+                            if let responseString = responseString,
+                               let data = responseString.data(using: .utf8),
+                               let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                               let scores = json["scores"] as? [String: Int],
+                               let winner = json["winner"] as? String {
+                                
+                                if let score = scores[AppData.shared.username] {
+                                    AppData.shared.score = score
+                                }
+                                
+                                // Handle the response
+                                print("Response:\(responseString)")
+                                DataSocketManager.shared.startScoreUpdate = false
+                                refreshID = UUID()
+                                print(refreshID)
+                                if AppData.shared.username == winner {
+                                    AppData.shared.mychance = 1
+                                    showWinSheet = true
+                                    showPlayButton = true
+                                } else {
+                                    AppData.shared.mychance = 0
+                                    showPlayButton = false
+                                }
+                            } else {
+                                // Handle the error
+                                print("Failed to fetch data")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 }
 

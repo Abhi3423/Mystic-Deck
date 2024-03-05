@@ -7,6 +7,7 @@ target 'Mystic Deck' do
 
   # Pods for Mystic Deck
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'Socket.IO-Client-Swift', '~> 15.2.0'
   target 'Mystic DeckTests' do
     inherit! :search_paths
     # Pods for testing
