@@ -51,7 +51,7 @@ struct GameRoomView: View {
                 HStack{
                     Text("\(AppData.shared.username)")
                     Spacer()
-                    Text("\(String(isEndActive))")
+                  
                     ZStack{
                         Circle()
                             .fill(Color.green)
