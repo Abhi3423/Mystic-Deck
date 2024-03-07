@@ -30,7 +30,7 @@ func shuffleCards(for theme: String, topic: String) -> JSON? {
         let shuffledKeys = cardsData.keys.shuffled()
 
         // Select only 3 keys randomly
-        let selectedKeys = shuffledKeys.prefix(3)
+        let selectedKeys = shuffledKeys.prefix(2)
 
         var index = 1
         for key in selectedKeys {

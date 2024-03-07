@@ -145,7 +145,15 @@ class DataSocketManager {
     }
     
     func leave_room(){
+        AppData.shared.roomID = ""
+        AppData.shared.themeselected = ""
+        AppData.shared.topicselected = ""
+        AppData.shared.mychance = 0
+        AppData.shared.score = 0
+        AppData.shared.parameter_name = ""
+        AppData.shared.parameter_value = ""
         self.socket?.emit("leave_room", ["username": AppData.shared.username, "room_id": AppData.shared.roomID])
+        
     }
     
     func play_call(){
@@ -159,7 +167,6 @@ class DataSocketManager {
     
     func members_play_call(parameterName par_name: String, parameterValue par_value: String) {
         print("members play called")
-        print(AppData.shared.username)
         self.socket?.emit("members_play_call", ["username": AppData.shared.username,"room_id":AppData.shared.roomID,"score": AppData.shared.score,"parameter_name": par_name, "parameter_value": par_value])
     }
     

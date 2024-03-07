@@ -44,41 +44,41 @@ struct GameCard: View {
                                                     
                                                     handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
                                                 }
-                                                else{
-                                                    if(AppData.shared.parameter_name == rectangles[index].0 && AppData.shared.parameter_value == rectangles[index].1 && DataSocketManager.shared.otherPlayerSendValues == true){
-                                                        
-                                                        handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
-                                                        print("going to call members play from else if")
-                                                        DataSocketManager.shared.members_play_call(parameterName: rectangles[index].0,parameterValue: rectangles[index].1)
-//                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-//                                                            callAPI(endpoint: "/score_update", method: "POST", formData: [ "room_id": AppData.shared.roomID]) { responseString in
-//                                                                if let responseString = responseString,
-//                                                                   let data = responseString.data(using: .utf8),
-//                                                                   let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-//                                                                   let scores = json["scores"] as? [String: Int],
-//                                                                   let winner = json["winner"] as? String {
-//                                                                    if let score = scores[AppData.shared.username] {
-//                                                                        AppData.shared.score = score
-//                                                                    }
-//                                                                    
-//                                                                    // Handle the response
-//                                                                    print("Response:\(responseString)")
-//                                                                    
-//                                                                    if(AppData.shared.username == winner){
-//                                                                        AppData.shared.mychance = 1
-//                                                                        showWinSheet = true
-//                                                                    }else{
-//                                                                        AppData.shared.mychance = 0
-//                                                                    }
-//                                                                } else {
-//                                                                    // Handle the error
-//                                                                    print("Failed to fetch data")
-//                                                                }
-//                                                            }
-//                                                        }
-                                                        
-                                                    }
-                                                }
+//                                                else{
+//                                                    if(AppData.shared.parameter_name == rectangles[index].0 && AppData.shared.parameter_value == rectangles[index].1 && DataSocketManager.shared.otherPlayerSendValues == true){
+//                                                        
+//                                                        handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
+//                                                        print("going to call members play from else if")
+//                                                        DataSocketManager.shared.members_play_call(parameterName: rectangles[index].0,parameterValue: rectangles[index].1)
+//                                                        //                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//                                                        //                                                            callAPI(endpoint: "/score_update", method: "POST", formData: [ "room_id": AppData.shared.roomID]) { responseString in
+//                                                        //                                                                if let responseString = responseString,
+//                                                        //                                                                   let data = responseString.data(using: .utf8),
+//                                                        //                                                                   let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+//                                                        //                                                                   let scores = json["scores"] as? [String: Int],
+//                                                        //                                                                   let winner = json["winner"] as? String {
+//                                                        //                                                                    if let score = scores[AppData.shared.username] {
+//                                                        //                                                                        AppData.shared.score = score
+//                                                        //                                                                    }
+//                                                        //
+//                                                        //                                                                    // Handle the response
+//                                                        //                                                                    print("Response:\(responseString)")
+//                                                        //
+//                                                        //                                                                    if(AppData.shared.username == winner){
+//                                                        //                                                                        AppData.shared.mychance = 1
+//                                                        //                                                                        showWinSheet = true
+//                                                        //                                                                    }else{
+//                                                        //                                                                        AppData.shared.mychance = 0
+//                                                        //                                                                    }
+//                                                        //                                                                } else {
+//                                                        //                                                                    // Handle the error
+//                                                        //                                                                    print("Failed to fetch data")
+//                                                        //                                                                }
+//                                                        //                                                            }
+//                                                        //                                                        }
+//                                                        
+//                                                    }
+//                                                }
                                             }
                                         )
                                     )
@@ -91,7 +91,6 @@ struct GameCard: View {
                                     }
                                     .onReceive(DataSocketManager.shared.$otherPlayerSendValues) { newValue in
                                         if newValue {
-                                            // Perform the entire else condition when otherPlayerSendValues becomes true
                                             if (AppData.shared.parameter_name == rectangles[index].0 &&
                                                 DataSocketManager.shared.otherPlayerSendValues == true) {
                                                 handleRectangleTap(rectangle: rectangles[index], newValue: newValue)

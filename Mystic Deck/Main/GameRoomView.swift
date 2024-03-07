@@ -13,14 +13,16 @@ struct GameRoomView: View {
     @State private var showPlayButton = false
     @State private var refreshID = UUID()
     @State private var showWinSheet = false
+    @State private var showLoseSheet = false
     @State private var isHomeActive = false
+    @State private var isEndActive = false
     
     let theme: String
     let topic: String
     
     @ViewBuilder
     var destinationToHomeView: some View {
-        if isHomeActive {
+        if isEndActive {
             NavigationBarView()
         } else {
             EmptyView()
@@ -49,6 +51,7 @@ struct GameRoomView: View {
                 HStack{
                     Text("\(AppData.shared.username)")
                     Spacer()
+                    Text("\(String(isEndActive))")
                     ZStack{
                         Circle()
                             .fill(Color.green)
@@ -63,14 +66,21 @@ struct GameRoomView: View {
                 .padding(.bottom, 20.0)
                 
                 if let unwrappedJsonData = JSONDataManager.shared.jsonData {
-                    VStack{
-                        CardStack(jsonData: unwrappedJsonData, theme: theme, topic: topic)
-                            .offset(x: 20)
-                            .id(refreshID)
+                    if(unwrappedJsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"].isEmpty){
+                        NavigationLink(
+                            destination: destinationToHomeView,
+                            isActive: $isEndActive,
+                            label: {
+                                EmptyView()
+                            }
+                        )
+                    }else{
+                        VStack{
+                            CardStack(jsonData: unwrappedJsonData, theme: theme, topic: topic)
+                                .offset(x: 20)
+                                .id(refreshID)
+                        }
                     }
-                    
-                } else {
-                    Text(topic)
                 }
                 
                 Spacer().frame(height: 30)
@@ -173,10 +183,9 @@ struct GameRoomView: View {
                         jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"] = JSON(updatedCards)
                         if(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"].isEmpty){
                             JSONDataManager.shared.jsonData = jsonData
-                            print("Exit")
-                            isHomeActive = true
+                            print("Exit because cards over")
                             DataSocketManager.shared.leave_room()
-                            print(isHomeActive)
+                            isEndActive = true
                         }else{
                             JSONDataManager.shared.jsonData = jsonData
                             refreshID = UUID()
@@ -196,20 +205,53 @@ struct GameRoomView: View {
                 .foregroundColor(.black)
                 .padding()
         }
-        //        .onReceive(AppData.shared.$mychance) { newValue in
-        //            if newValue == 0 {
-        //                // Update the state variable controlling the visibility of the button
-        //                print("gameroom view app data mychance refreshed")
-        //                print("\(AppData.shared.score)")
-        //                showPlayButton = false
-        //                refreshID = UUID()
-        //                print(refreshID)
-        //            } else {
-        //                showPlayButton = true
-        //            }
-        //
-        //            print("nhkiuh")
-        //        }
+        .sheet(isPresented: $showLoseSheet, onDismiss: {
+            // Loop through the jsonData to find and remove matching key-value pairs
+            if var jsonData = JSONDataManager.shared.jsonData {
+                print(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"])
+                if var cards = jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"].dictionaryObject as? [String: [String: String]] {
+                    var keysToRemove: [String] = []
+                    
+                    for (key, values) in cards {
+                        // Check if the key-value pair matches the condition
+                        if let parameterValue = values[AppData.shared.parameter_name], parameterValue == AppData.shared.parameter_value {
+                            // Add the key to the list of keys to remove
+                            keysToRemove.append(key)
+                        }
+                    }
+                    
+                    // Remove the key-value pairs from the "Cards" dictionary
+                    for key in keysToRemove {
+                        cards.removeValue(forKey: key)
+                    }
+                    
+                    // Convert the modified Swift dictionary back to a JSON object
+                    if let updatedCards = cards as? [String: Any] {
+                        jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"] = JSON(updatedCards)
+                        if(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"].isEmpty){
+                            JSONDataManager.shared.jsonData = jsonData
+                            print("Exit because cards over")
+                            DataSocketManager.shared.leave_room()
+                            isEndActive = true
+                        }else{
+                            JSONDataManager.shared.jsonData = jsonData
+                            refreshID = UUID()
+                        }
+                    }
+                    print(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"])
+                }
+                
+            } else {
+                print("JSON data is nil")
+            }
+            
+            showLoseSheet = false
+        }) {
+            Text("You Loose!")
+                .font(.title)
+                .foregroundColor(.black)
+                .padding()
+        }
         .id(refreshID)
         .onReceive(DataSocketManager.shared.$startScoreUpdate) { newValue in
             if newValue {
@@ -229,7 +271,6 @@ struct GameRoomView: View {
                                 // Handle the response
                                 print("Response:\(responseString)")
                                 DataSocketManager.shared.startScoreUpdate = false
-                                refreshID = UUID()
                                 print(refreshID)
                                 if AppData.shared.username == winner {
                                     AppData.shared.mychance = 1
@@ -237,6 +278,7 @@ struct GameRoomView: View {
                                     showPlayButton = true
                                 } else {
                                     AppData.shared.mychance = 0
+                                    showLoseSheet = true
                                     showPlayButton = false
                                 }
                             } else {
