@@ -106,6 +106,7 @@ struct WaitingRoomView: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                     .opacity(0.8)
+                
                     VStack {
                         
                         Text("Waiting Room")
@@ -152,7 +153,8 @@ struct WaitingRoomView: View {
                                     
                                     Image("Waiting Line")
                                         .frame(width: 230, height: 350)
-                                }
+
+                            Spacer()
 //                                Spacer()
 //                                Spacer()
 //                                Spacer()

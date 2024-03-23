@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftyJSON
 
 struct GameRoomView: View {
+    let imageName = "your_image_name"
     @State private var mysticOffset: CGFloat = -200
     @State private var deckOffset: CGFloat = 400
     @State private var opacity: Double = 0.0
@@ -37,7 +38,6 @@ struct GameRoomView: View {
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: 400)
-            
             
             VStack{
                 
