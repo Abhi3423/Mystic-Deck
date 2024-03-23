@@ -46,6 +46,7 @@
 		7FF7B49D2B383DCB001FD16C /* FontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B49C2B383DCB001FD16C /* FontView.swift */; };
 		7FF7B49F2B38506A001FD16C /* GameCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B49E2B38506A001FD16C /* GameCard.swift */; };
 		7FF7B4A22B385238001FD16C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF7B4A12B385238001FD16C /* Color.swift */; };
+		7FF96DEE2BAECEC600D2FA61 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF96DED2BAECEC600D2FA61 /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		7FF7B49C2B383DCB001FD16C /* FontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontView.swift; sourceTree = "<group>"; };
 		7FF7B49E2B38506A001FD16C /* GameCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCard.swift; sourceTree = "<group>"; };
 		7FF7B4A12B385238001FD16C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		7FF96DED2BAECEC600D2FA61 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AF07F07940DF02339484DBF2 /* Pods_Mystic_DeckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mystic_DeckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EE76759F0F44F92944E05B /* Pods-Mystic DeckTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mystic DeckTests.debug.xcconfig"; path = "Target Support Files/Pods-Mystic DeckTests/Pods-Mystic DeckTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D44A6109090FFAA50BA6E972 /* Pods_Mystic_Deck_Mystic_DeckUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mystic_Deck_Mystic_DeckUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +182,7 @@
 				7FF7B4952B37FE20001FD16C /* GameRoomView.swift */,
 				7F4AD8562B2DA17C00213099 /* ContentView.swift */,
 				7F4AD8542B2DA17C00213099 /* Mystic_DeckApp.swift */,
+				7FF96DED2BAECEC600D2FA61 /* SplashView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				7F4AD8552B2DA17C00213099 /* Mystic_DeckApp.swift in Sources */,
 				7F9548E32B8A6C6C0049962C /* socketmanager.swift in Sources */,
 				7D6117F02B3FEE7600F68BA0 /* Themes.swift in Sources */,
+				7FF96DEE2BAECEC600D2FA61 /* SplashView.swift in Sources */,
 				7F4AD8832B2DAA7A00213099 /* LandingImageView.swift in Sources */,
 				7FF7B49B2B383843001FD16C /* Loading.swift in Sources */,
 				7FF7B49D2B383DCB001FD16C /* FontView.swift in Sources */,

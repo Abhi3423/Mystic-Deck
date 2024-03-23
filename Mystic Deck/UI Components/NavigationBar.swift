@@ -47,26 +47,25 @@ struct NavigationBarView: View {
                 .padding(.horizontal,40)
                 .padding(.top,10)
                 .padding(.bottom,-16)
-                .background(Color.white.opacity(0.6))
+                .background(Color.purpleColor)
              
             }
             .background(
                 ZStack {
-                    Image("themebk")
+                    Image("landingwave")
                         .resizable()
                         .scaledToFill()
                         .edgesIgnoringSafeArea(.all)
-                    
-//                    LinearGradient(gradient: Gradient(colors: [Color(hue: 0.328, saturation: 0.513, brightness: 0.201), Color.clear]), startPoint: .top, endPoint: .bottom).opacity(0.7)
-//                        .edgesIgnoringSafeArea(.all)
-                }
+                                    }
             )
 
-            .navigationBarItems(leading: Heading(), trailing: ProfileButton())
+//            .navigationBarItems(leading: Heading(), trailing: ProfileButton())
 
         }
         .navigationBarBackButtonHidden(true)
+       
     }
+        
 }
 
 
@@ -102,12 +101,12 @@ struct TabBarButton: View {
 //        }
         VStack{
             Button("", systemImage: imageName, action: onClick)    .labelStyle(.iconOnly)
-                .foregroundColor(selectedTab == tabIndex ? .blue : .gray)
+                .foregroundColor(selectedTab == tabIndex ? .white : .white.opacity(0.6))
             
             Text("\(title)")
                 .font(Font.custom("Hoefler Text", size: 13))
                 .padding(.top,1.0)
-                .foregroundColor(selectedTab == tabIndex ? .blue : .gray)
+                .foregroundColor(selectedTab == tabIndex ? .white : .white)
         }
 
 //    label: {VStack {
@@ -349,4 +348,5 @@ struct ContentView_Previews: PreviewProvider {
 
 extension Color {
     static let themebk = Color(red: 0.2, green: 0.4, blue: 0.6)
+    static let purpleColor = Color(red: 0x7A / 255.0, green: 0x1F / 255.0, blue: 0xA0 / 255.0)
 }

@@ -19,7 +19,7 @@ struct ThemeView: View {
                 ZStack {
                     Color.clear
                         .background(
-                            Image("themebk")
+                            Image("landingwave")
                                 .scaledToFill()
                                 .edgesIgnoringSafeArea(.all)
                                 .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
@@ -72,57 +72,6 @@ struct ThemeView: View {
             }
         }
     }
-    
-//    private func generateImages(for theme: String) -> some View {
-//        let imageNames: [String]
-//        switch theme {
-//        case "History":
-//            imageNames = ["H1", "H2", "H3", "H4"]
-//        case "Geography":
-//            imageNames = ["states and cities", "G2", "G3", "G4"]
-//        case "Science":
-//            imageNames = ["S1", "S2", "S3", "S4"]
-//        case "Ecosystem":
-//            imageNames = ["E1", "E2", "E3", "E4"]
-//        default:
-//            print("default theme")
-//        }
-//        
-//        return VStack(spacing: 20) {
-//            ForEach(imageNames, id: \.self) { imageName in
-////                NavigationLink(
-////                    destination: LoadingGameRoomView(theme: AppData.shared.themeselected!, imageName: AppData.shared.topicselected),
-////                    isActive: Binding<Bool>(
-////                        get: { DataSocketManager.shared.shouldNavigateToLoadingGameRoom },
-////                        set: { DataSocketManager.shared.shouldNavigateToLoadingGameRoom = $0 }
-////                    ),
-////                    label: {
-////                        EmptyView()
-////                    }
-////                )
-////                .hidden()
-//                
-//                Button(
-//                    action: {},
-//                    label: {
-//                        Image(imageName)
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fill)
-//                            .frame(width: 350, height: 240)
-//                            .onTapGesture {
-//                                AppData.shared.themeselected = selectedTheme
-//                                AppData.shared.topicselected = imageName
-//                                print(type(of: AppData.shared.themeselected))
-//                                print(AppData.shared.topicselected)
-//                                DataSocketManager.shared.theme_selection()
-//                                print(type(of: AppData.shared.themeselected))
-////                                LoadingGameRoomView(theme: AppData.shared.themeselected!, imageName: AppData.shared.topicselected)
-//                            }
-//                    })
-//                Spacer()
-//            }
-//        }
-//    }
     
     @ViewBuilder
     var destinationView: some View {
