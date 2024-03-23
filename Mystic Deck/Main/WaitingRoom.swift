@@ -120,6 +120,7 @@ struct TableView: View {
 
 struct WaitingRoomView: View {
     @State private var imageSize: CGFloat = 1.0 // default scale factor
+    @State private var showShareWindow = false
     
     var body: some View {
         NavigationView {
@@ -140,7 +141,6 @@ struct WaitingRoomView: View {
                         .lineLimit(nil)
                         .padding(.top, 20)
                     Spacer()
-                   
                     
                     // Buttons at the middle of each edge
                     VStack {
@@ -174,9 +174,7 @@ struct WaitingRoomView: View {
                                         .foregroundColor(.black)
                                 }
                             }
-                            //Spacer()
-                           // Spacer()
-                           // Spacer()
+                            Spacer()
                             Button(action: {
                                 // Action for b3
                             }) {
@@ -212,12 +210,13 @@ struct WaitingRoomView: View {
                     
                     // Share Button and Rectangle
                     VStack {
-                       // Spacer()
                         HStack {
                             Spacer()
                             Button(action: {
-                                // Implement share action
-                                // Present share sheet
+                                // Toggle share window
+                                withAnimation {
+                                    showShareWindow.toggle()
+                                }
                             }) {
                                 Image(systemName: "square.and.arrow.up")
                                     .resizable()
@@ -245,10 +244,59 @@ struct WaitingRoomView: View {
                             }
                             Spacer()
                         }
+                        .padding(.bottom, 20)
                     }
                 }
-            } .navigationBarBackButtonHidden(true)
-        } .navigationBarBackButtonHidden(true)
+                
+                // Sliding share window
+                if showShareWindow {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            VStack(alignment: .leading, spacing: 20) {
+                                ShareOptionButton(iconName: "doc.on.doc", text: "Copy text")
+                                ShareOptionButton(iconName: "square.and.arrow.up", text: "Share code")
+                                ShareOptionButton(iconName: "message", text: "Forward via WhatsApp")
+                                ShareOptionButton(iconName: "envelope", text: "Forward by mail")
+                            }
+                            Spacer()
+                        }
+                        Spacer()
+                    }
+                    .frame(maxWidth: 1000, maxHeight: 2000)
+                    .background(Color.white)
+                    .transition(.move(edge: .bottom))
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        // Dismiss share window when tapped outside
+                        withAnimation {
+                            showShareWindow.toggle()
+                        }
+                    }
+                }
+            }
+            .navigationBarBackButtonHidden(true)
+        }
+        .navigationBarBackButtonHidden(true)
+    }
+}
+
+struct ShareOptionButton: View {
+    var iconName: String
+    var text: String
+    
+    var body: some View {
+        Button(action: {
+            // Action for share option button
+        }) {
+            HStack(spacing: 10) {
+                Image(systemName: iconName)
+                    .foregroundColor(.blue)
+                Text(text)
+                    .foregroundColor(.blue)
+            }
+        }
     }
 }
 

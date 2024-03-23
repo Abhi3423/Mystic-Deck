@@ -114,52 +114,124 @@ struct TabBarButton: View {
     }
 }
 
+//struct AchievementsView: View {
+//    var body: some View {
+//        NavigationView {
+//            Image("themebk") // Set background image for the entire view
+//                .resizable()
+//                .scaledToFill()
+//                .edgesIgnoringSafeArea(.all)
+//                .overlay(
+//                    HStack {
+//                        Spacer()
+//                        
+//                        List {
+//                            AchievementRow(title: "Beginner", description: "Unlock your first card")
+//                            AchievementRow(title: "Collector", description: "Collect 10 different cards")
+//                            AchievementRow(title: "Master", description: "Unlock all cards")
+//                            // Add more achievement rows as needed
+//                        }
+//                        Spacer()
+//                    }
+//                )
+//            
+//                .navigationBarTitle("Achievements")
+//        }
+//    }
+//    
+//    struct AchievementRow: View {
+//        var title: String
+//        var description: String
+//        
+//        var body: some View {
+//            VStack(alignment: .leading) {
+//                Text(title)
+//                    .font(.headline)
+//                    .padding()
+//                    .background(Color.white.opacity(0.8)) // Background color for title
+//                    .cornerRadius(10) // Rounded corners for the title background
+//                Text(description)
+//                    .font(.subheadline)
+//                    .foregroundColor(.gray)
+//                    .padding()
+//                    //.background(Color.white.opacity(0.8)) // Background color for description
+//                    .cornerRadius(10) // Rounded corners for the description background
+//            }
+//        }
+//    }
+//}
+
+
 struct AchievementsView: View {
+    let points = [
+        Achievement(title: "Beginner", description: "Unlock your first card"),
+        Achievement(title: "Collector", description: "Collect 10 different cards"),
+        Achievement(title: "Master", description: "Unlock all cards")
+    ]
+    
+    @State private var currentIndex = 0
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                Spacer()
-                
-                List {
-                    AchievementRow(title: "Beginner", description: "Unlock your first card")
-                    AchievementRow(title: "Collector", description: "Collect 10 different cards")
-                    AchievementRow(title: "Master", description: "Unlock all cards")
-                    // Add more achievement rows as needed
+        Spacer()
+        GeometryReader { geometry in
+            ScrollView(.vertical, showsIndicators: true) {
+                VStack(spacing: 50) {
+                    ForEach(points.indices, id: \.self) { index in
+                        AchievementRow(achievement: points[index])
+                            .frame(width: geometry.size.width - 40) // Adjust width
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                            .opacity(currentIndex == index ? 1.0 : 1.0)
+                    }
+                }
+                .frame(width: geometry.size.width - 40) // Adjust width
+                .padding()
+                .offset(y: CGFloat(currentIndex) * geometry.size.height)
+               // .animation(.easeInOut(duration: 1.0))
+            }
+        }
+        .onAppear {
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
+                withAnimation {
+                    currentIndex = (currentIndex) % points.count
                 }
             }
-            .background(
-                Image("themebk")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-            )
-
-            .navigationBarTitle("Achievements")
         }
-    }
-    
-    struct AchievementRow: View {
-        var title: String
-        var description: String
-        
-        var body: some View {
-            VStack(alignment: .leading) {
-                Text(title)
-                    .font(.headline)
-                    .padding()
-                    .background(Color.white.opacity(0.8)) // Background color for title
-                    .cornerRadius(10) // Rounded corners for the title background
-                Text(description)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .padding()
-                    .background(Color.white.opacity(0.8)) // Background color for description
-                    .cornerRadius(10) // Rounded corners for the description background
-            }
-        }
+        .navigationBarTitle("Achievements")
     }
 }
 
+struct Achievement {
+    let title: String
+    let description: String
+}
+
+struct AchievementRow: View {
+    let achievement: Achievement
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            Text(achievement.title)
+                .font(.system(size: 28)) // Increase font size
+                .fontWeight(.bold)
+            
+            // Conditional image for Beginner achievement
+            if achievement.title == "Beginner" {
+                Image("Card1")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 70, height: 70)
+            }
+            
+            Text(achievement.description)
+                .font(.subheadline)
+                .font(.system(size: 40))
+                .foregroundColor(.gray)
+        }
+        .padding(.leading) // Push content to the left
+    }
+}
 
 struct GuideView: View {
     let points = [
