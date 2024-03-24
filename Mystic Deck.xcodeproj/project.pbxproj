@@ -16,6 +16,18 @@
 		46B0517B2B9672060041C771 /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = 46B0517A2B9672060041C771 /* HeapModule */; };
 		4EC3C6925CC8C5B089DB0567 /* Pods_Mystic_Deck_Mystic_DeckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44A6109090FFAA50BA6E972 /* Pods_Mystic_Deck_Mystic_DeckUITests.framework */; };
 		54EAA1F4668F4D016D71B8F7 /* Pods_Mystic_DeckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF07F07940DF02339484DBF2 /* Pods_Mystic_DeckTests.framework */; };
+		7D50C2012BB02E6E00777557 /* firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50C2002BB02E6E00777557 /* firebase.swift */; };
+		7D50C2032BB02EB600777557 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D50C2022BB02EB600777557 /* GoogleService-Info.plist */; };
+		7D50C2052BB030A500777557 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7D50C2042BB030A500777557 /* FirebaseAnalytics */; };
+		7D50C2072BB030A500777557 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7D50C2062BB030A500777557 /* FirebaseAnalyticsSwift */; };
+		7D50C2092BB030C800777557 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7D50C2082BB030C800777557 /* FirebaseAuth */; };
+		7D50C20B2BB0321E00777557 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50C20A2BB0321E00777557 /* AuthenticationManager.swift */; };
+		7D50C20F2BB0348700777557 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50C20E2BB0348700777557 /* String.swift */; };
+		7D50C2122BB038D600777557 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50C2112BB038D600777557 /* LoginView.swift */; };
+		7D50C2142BB038E600777557 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50C2132BB038E600777557 /* SignupView.swift */; };
+		7D50C2162BB038F200777557 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50C2152BB038F200777557 /* AuthView.swift */; };
+		7D50C2182BB039DD00777557 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50C2172BB039DD00777557 /* ContentView2.swift */; };
+		7D50C21A2BB039FF00777557 /* SwiftUI_AuthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50C2192BB039FF00777557 /* SwiftUI_AuthApp.swift */; };
 		7D6117F02B3FEE7600F68BA0 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6117EF2B3FEE7600F68BA0 /* Themes.swift */; };
 		7D6AEFD02B4290670046FDC5 /* LandingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AEFCF2B4290670046FDC5 /* LandingPage.swift */; };
 		7D6AEFD22B42DA010046FDC5 /* WaitingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AEFD12B42DA010046FDC5 /* WaitingRoom.swift */; };
@@ -70,6 +82,15 @@
 		34AC10B6C3615A79592B049D /* Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mystic Deck-Mystic DeckUITests/Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		447AC7FE0329660CBC62090C /* Pods-Mystic Deck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mystic Deck.debug.xcconfig"; path = "Target Support Files/Pods-Mystic Deck/Pods-Mystic Deck.debug.xcconfig"; sourceTree = "<group>"; };
 		44D091B8550CAE6C12646709 /* Pods_Mystic_Deck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mystic_Deck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D50C2002BB02E6E00777557 /* firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase.swift; sourceTree = "<group>"; };
+		7D50C2022BB02EB600777557 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7D50C20A2BB0321E00777557 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		7D50C20E2BB0348700777557 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		7D50C2112BB038D600777557 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		7D50C2132BB038E600777557 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		7D50C2152BB038F200777557 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		7D50C2172BB039DD00777557 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		7D50C2192BB039FF00777557 /* SwiftUI_AuthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_AuthApp.swift; sourceTree = "<group>"; };
 		7D6117EF2B3FEE7600F68BA0 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		7D6AEFCF2B4290670046FDC5 /* LandingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPage.swift; sourceTree = "<group>"; };
 		7D6AEFD12B42DA010046FDC5 /* WaitingRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoom.swift; sourceTree = "<group>"; };
@@ -120,10 +141,13 @@
 				1111E08F45BE6376249D39B8 /* Pods_Mystic_Deck.framework in Frameworks */,
 				46150B6D2B975C18007234CE /* SwiftyJSON in Frameworks */,
 				7F9548E12B8A699A0049962C /* SocketIO in Frameworks */,
+				7D50C2072BB030A500777557 /* FirebaseAnalyticsSwift in Frameworks */,
 				46B0517B2B9672060041C771 /* HeapModule in Frameworks */,
 				46B051772B9672060041C771 /* DequeModule in Frameworks */,
+				7D50C2092BB030C800777557 /* FirebaseAuth in Frameworks */,
 				46B051752B9672060041C771 /* Collections in Frameworks */,
 				46B051732B9672060041C771 /* BitCollections in Frameworks */,
+				7D50C2052BB030A500777557 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,11 +193,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7D50C20C2BB0343A00777557 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				7D50C2022BB02EB600777557 /* GoogleService-Info.plist */,
+				7D50C2102BB038BF00777557 /* Views */,
+				7D50C20D2BB0347300777557 /* Extention */,
+				7D50C2172BB039DD00777557 /* ContentView2.swift */,
+				7D50C2192BB039FF00777557 /* SwiftUI_AuthApp.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		7D50C20D2BB0347300777557 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				7D50C20E2BB0348700777557 /* String.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		7D50C2102BB038BF00777557 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D50C2112BB038D600777557 /* LoginView.swift */,
+				7D50C2132BB038E600777557 /* SignupView.swift */,
+				7D50C2152BB038F200777557 /* AuthView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7F313ED12B39D0B300816103 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				7F4AD8822B2DAA7A00213099 /* LandingImageView.swift */,
 				7D6AEFCF2B4290670046FDC5 /* LandingPage.swift */,
+				7D50C20A2BB0321E00777557 /* AuthenticationManager.swift */,
+				7D50C2002BB02E6E00777557 /* firebase.swift */,
 				7D6AEFD12B42DA010046FDC5 /* WaitingRoom.swift */,
 				7D7DDFA22B4B06DE00DD13B6 /* JoinRoom.swift */,
 				7F313EDA2B3B524F00816103 /* CardStack.swift */,
@@ -220,6 +276,7 @@
 		7F4AD8532B2DA17C00213099 /* Mystic Deck */ = {
 			isa = PBXGroup;
 			children = (
+				7D50C20C2BB0343A00777557 /* Firebase */,
 				7F9548D82B8A66280049962C /* Socket */,
 				7F4AD85A2B2DA17D00213099 /* Preview Content */,
 				7F313ED22B39D0EA00816103 /* Assets */,
@@ -316,6 +373,9 @@
 				46B051782B9672060041C771 /* HashTreeCollections */,
 				46B0517A2B9672060041C771 /* HeapModule */,
 				46150B6C2B975C18007234CE /* SwiftyJSON */,
+				7D50C2042BB030A500777557 /* FirebaseAnalytics */,
+				7D50C2062BB030A500777557 /* FirebaseAnalyticsSwift */,
+				7D50C2082BB030C800777557 /* FirebaseAuth */,
 			);
 			productName = "Mystic Deck";
 			productReference = 7F4AD8512B2DA17C00213099 /* Mystic Deck.app */;
@@ -416,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA8D7A02B3FD988003C2969 /* Assets.xcassets in Resources */,
+				7D50C2032BB02EB600777557 /* GoogleService-Info.plist in Resources */,
 				7F4AD85C2B2DA17D00213099 /* Preview Assets.xcassets in Resources */,
 				7F313ED92B3B4E1800816103 /* everydata.json in Resources */,
 			);
@@ -545,8 +606,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D50C2142BB038E600777557 /* SignupView.swift in Sources */,
 				7FF7B49F2B38506A001FD16C /* GameCard.swift in Sources */,
 				7D6AEFD22B42DA010046FDC5 /* WaitingRoom.swift in Sources */,
+				7D50C2182BB039DD00777557 /* ContentView2.swift in Sources */,
 				7FF7B4992B38263A001FD16C /* Buttons.swift in Sources */,
 				7F9548EC2B8BC2370049962C /* credentials.swift in Sources */,
 				7D6AEFD02B4290670046FDC5 /* LandingPage.swift in Sources */,
@@ -555,15 +618,21 @@
 				7F25330B2B4E690A00BF2E2D /* NavigationBar.swift in Sources */,
 				7F9548EA2B8BAE7C0049962C /* codegenerate.swift in Sources */,
 				7F9548E82B8BAA380049962C /* api.swift in Sources */,
+				7D50C2012BB02E6E00777557 /* firebase.swift in Sources */,
 				7F4AD8572B2DA17C00213099 /* ContentView.swift in Sources */,
 				7D7DDFA52B4B0A1500DD13B6 /* LoadingGameRoom.swift in Sources */,
+				7D50C20B2BB0321E00777557 /* AuthenticationManager.swift in Sources */,
+				7D50C20F2BB0348700777557 /* String.swift in Sources */,
 				7D7DDFA32B4B06DE00DD13B6 /* JoinRoom.swift in Sources */,
 				7F313EE12B40338F00816103 /* dataview.swift in Sources */,
 				7F4AD8552B2DA17C00213099 /* Mystic_DeckApp.swift in Sources */,
+				7D50C2162BB038F200777557 /* AuthView.swift in Sources */,
 				7F9548E32B8A6C6C0049962C /* socketmanager.swift in Sources */,
 				7D6117F02B3FEE7600F68BA0 /* Themes.swift in Sources */,
 				7FF96DEE2BAECEC600D2FA61 /* SplashView.swift in Sources */,
 				7F4AD8832B2DAA7A00213099 /* LandingImageView.swift in Sources */,
+				7D50C2122BB038D600777557 /* LoginView.swift in Sources */,
+				7D50C21A2BB039FF00777557 /* SwiftUI_AuthApp.swift in Sources */,
 				7FF7B49B2B383843001FD16C /* Loading.swift in Sources */,
 				7FF7B49D2B383DCB001FD16C /* FontView.swift in Sources */,
 				7FF7B4962B37FE20001FD16C /* GameRoomView.swift in Sources */,
@@ -984,6 +1053,19 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 46B051712B9672060041C771 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = HeapModule;
+		};
+		7D50C2042BB030A500777557 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalytics;
+		};
+		7D50C2062BB030A500777557 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalyticsSwift;
+		};
+		7D50C2082BB030C800777557 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46B051702B9630420041C771 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 		7F9548E02B8A699A0049962C /* SocketIO */ = {
 			isa = XCSwiftPackageProductDependency;

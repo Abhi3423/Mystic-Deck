@@ -3,6 +3,7 @@ import SwiftUI
 struct LandingPage: View {
     @State private var showSignUp = false
     @State private var showLogin = false
+   
     
     var body: some View {
         NavigationView {
@@ -72,6 +73,7 @@ struct LoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var rememberMe: Bool = false
+  
     
     var body: some View {
         ZStack {
@@ -98,7 +100,7 @@ struct LoginView: View {
             //Spacer(minLength: 10)
           
                 
-                TextField("Username", text: $username)
+                TextField("Email", text: $username)
                     //.fontWeight(.semibold)
                     .foregroundColor(Color(hex: "7A1FA0"))
                     .padding()
