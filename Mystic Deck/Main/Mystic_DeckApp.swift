@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+//@main
 struct Mystic_DeckApp: App {
     var body: some Scene {
         WindowGroup {
