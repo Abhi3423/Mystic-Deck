@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 
+
 struct LoginView2: View {
     @Binding var currentShowingView: String
     @AppStorage("uid") var userID: String = ""
@@ -27,8 +28,69 @@ struct LoginView2: View {
         
         return passwordRegex.evaluate(with: password)
     }
+
     
     var body: some View {
+        NavigationView {
+            ZStack {
+                // Background Image
+                Image("landtheme")
+                    .resizable()
+                    .scaledToFill()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                Spacer()
+                    Image("LD")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.top, -100)
+                    
+                    
+                    Text("MysticDeck")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(hex: "7A1FA0"))
+                        .multilineTextAlignment(.leading)
+                    
+                    //Spacer(minLength: 1)
+                    
+                    VStack(spacing: 10) {
+                        NavigationLink(destination: LoginView()) {
+                            Text("Login into existing account")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(width: 300.0)
+                                .background(Color(hex: "7A1FA0"))
+                                .cornerRadius(10)
+                        }
+                        Text("or")
+                            .foregroundColor(Color(hex: "7A1FA0"))
+                        
+                        
+                        NavigationLink(destination: SignupView()) {
+                            Text("Don't have an account? Sign up")
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color(hex: "7A1FA0"))
+                                .padding()
+                                .frame(width: 300.0)
+                                //.background(Color(hex: "5D0083").opacity(0.3))
+                                .cornerRadius(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color(hex: "7A1FA0"), lineWidth: 1)
+                                )
+                        }
+                    }
+                    
+                    Spacer()
+                }
+                .padding(.horizontal, 20)
+            }
+        }
         ZStack {
             Image("landtheme")
                 .resizable()
@@ -53,7 +115,12 @@ struct LoginView2: View {
 
                 HStack {
                     Image(systemName: "mail")
-                    TextField("Email", text: $email)
+                    //Text("Email ID")
+                        
+                    
+                    
+                    TextField("Email ID", text: $email)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                     
                     Spacer()
                     
@@ -66,11 +133,12 @@ struct LoginView2: View {
                     }
                     
                 }
+                
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                     
                 )
                 
@@ -79,7 +147,11 @@ struct LoginView2: View {
                 
                 HStack {
                     Image(systemName: "lock")
+                   
+                        
+                    
                     SecureField("Password", text: $password)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                     
                     Spacer()
                     
@@ -95,7 +167,7 @@ struct LoginView2: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                     
                 )
                 .padding()
@@ -109,7 +181,7 @@ struct LoginView2: View {
                     
                 }) {
                     Text("Don't have an account?")
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                 }
                 
 //                Spacer()
@@ -147,6 +219,8 @@ struct LoginView2: View {
                         )
                         .padding(.horizontal)
                 }
+                Spacer()
+                Spacer()
                 
                 
             }
@@ -154,3 +228,4 @@ struct LoginView2: View {
         }
     }
 }
+
