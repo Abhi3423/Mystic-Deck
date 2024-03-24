@@ -48,7 +48,7 @@ struct NavigationBarView: View {
                 .padding(.top,10)
                 .padding(.bottom,-16)
                 .background(Color.purpleColor)
-             
+                
             }
             .background(
                 ZStack {
@@ -56,16 +56,15 @@ struct NavigationBarView: View {
                         .resizable()
                         .scaledToFill()
                         .edgesIgnoringSafeArea(.all)
-                                    }
+                }
             )
-
-//            .navigationBarItems(leading: Heading(), trailing: ProfileButton())
-
+            
+            
         }
         .navigationBarBackButtonHidden(true)
-       
-    }
         
+    }
+    
 }
 
 
@@ -77,28 +76,11 @@ struct TabBarButton: View {
     @Binding var selectedTab: Int
     
     func onClick() {
-           print("Button clicked! Additional actions can be performed here.")
+        print("Button clicked! Additional actions can be performed here.")
         selectedTab = tabIndex
-       }
+    }
     
     var body: some View {
-//        Button(
-//            Image(systemName: imageName)
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 28, height: 28)
-//        .padding(.bottom, -30.0)
-//            
-//        .foregroundColor(selectedTab == tabIndex ? .blue : .gray)) {onClick()
-//        }
-//        Button(action: onClick) {
-//            Image(systemName: imageName)
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 28, height: 28)
-//        .padding(.bottom, -30.0)
-//            
-//        }
         VStack{
             Button("", systemImage: imageName, action: onClick)    .labelStyle(.iconOnly)
                 .foregroundColor(selectedTab == tabIndex ? .white : .white.opacity(0.6))
@@ -108,22 +90,7 @@ struct TabBarButton: View {
                 .padding(.top,1.0)
                 .foregroundColor(selectedTab == tabIndex ? .white : .white)
         }
-
-//    label: {VStack {
-//        Image(systemName: imageName)
-//            .resizable()
-//            .aspectRatio(contentMode: .fit)
-//            .frame(width: 28, height: 28)
-//    }
-//    .padding(.bottom, -30.0)
-//        
-//    .foregroundColor(selectedTab == tabIndex ? .blue : .gray)
-//    }
-//        .onAppear {
-//                    // You can print selectedTab here
-//                    print(selectedTab)
-//                    print(tabIndex)
-//                }
+        
     }
 }
 
@@ -135,14 +102,14 @@ struct AchievementsView: View {
                 
                 List {
                     AchievementRow(title: "Beginner", description: "")
-
+                    
                     AchievementRow(title: "Collector", description: "Collect 10 different badges")
-
+                    
                     AchievementRow(title: "Master", description: "Unlock all the badges")
                     // Add more achievement rows as needed
                 }
                 .scrollContentBackground(.hidden) // Hide the standard background of the List
-
+                
             }
             .background(
                 Image("themebk")
@@ -150,7 +117,7 @@ struct AchievementsView: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
             )
-
+            
             .navigationBarTitle("Achievements")
         }
     }
@@ -181,52 +148,54 @@ struct AchievementsView: View {
     }
 }
 
-
 struct GuideView: View {
     let points = [
-                "1. User login to the app.",
-                "2. If the user is the leader, they create a room and share the code with friends.",
-                "3. Friends click on 'Join Room' and enter the unique code in the text field.",
-                "4. The leader selects a theme for the game; only the leader can select the theme.",
-                "5. The game starts, and Player 1 selects a parameter on their card that they think is best.",
-                "6. Player 1 clicks 'Play', and other players select the same type of parameter.",
-                "7. All card parameters are compared, and the highest one wins the round."
+        "1. User login to the app.",
+        "2. If the user is the leader, they create a room and share the code with friends.",
+        "3. Friends click on 'Join Room' and enter the unique code in the text field.",
+        "4. The leader selects a theme for the game; only the leader can select the theme.",
+        "5. The game starts, and Player 1 selects a parameter on their card that they think is best.",
+        "6. Player 1 clicks 'Play', and other players select the same type of parameter.",
+        "7. All card parameters are compared, and the highest one wins the round."
     ]
     
     @State private var currentIndex = 0
     
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 45) {
-                    ForEach(points.indices, id: \.self) { index in
-                        Text(points[index])
-                            .font(.headline)
-                            .padding()
-                            .frame(width: geometry.size.width - 40) // Adjust width
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                            .opacity(currentIndex == index ? 1.0 : 0.5)
+        
+        ZStack{
+            Image("landingwave")
+                .ignoresSafeArea()
+            GeometryReader { geometry in
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 5) {
+                        ForEach(points.indices, id: \.self) { index in
+                            Text(points[index])
+                                .font(.headline)
+                                .padding()
+                                .frame(width: geometry.size.width - 40) // Adjust width
+                                .background(Color.lightPurple)
+                                .foregroundColor(Color.purpleColor)
+                                .cornerRadius(10)
+                                .shadow(radius: 5)
+//                                .opacity(currentIndex == index ? 1.0 : 0.5)
+                                .frame(height: geometry.size.height)
+                            // Ensure each point takes full screen height
+
+                        }
                     }
+                    .frame(maxWidth: .infinity) // Allow the VStack to expand horizontally
+                    .padding()
+                    .offset(y: -CGFloat(currentIndex) * geometry.size.height)
                 }
-                .frame(width: geometry.size.width * CGFloat(points.count), height: 650) // Adjust height
-                .padding()
-                .offset(x: -CGFloat(currentIndex) * geometry.size.width - 17)
-                .animation(.easeInOut(duration: 1.0))
-            }
-            .onAppear {
-                Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
-                    withAnimation {
-                        currentIndex = (currentIndex + 1) % points.count
-                    }
-                }
+                .frame(height: geometry.size.height) // Match the ScrollView's height
             }
         }
-        Spacer()
         .navigationBarTitle("Guide:")
     }
 }
+
+
 
 struct SettingsView: View {
     @State private var isSoundEnabled = true
@@ -274,7 +243,7 @@ struct SettingsView: View {
             .frame(maxWidth: .infinity)
             .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
             .cornerRadius(10)
-//            Spacer()
+            //            Spacer()
             
             Button(action: {
                 // Action for Restore
@@ -289,7 +258,7 @@ struct SettingsView: View {
             .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
             .cornerRadius(10)
             
-//            Spacer()
+            //            Spacer()
         }
         .padding()
         .navigationBarTitle("Settings")
@@ -317,7 +286,7 @@ struct Heading: View {
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .foregroundColor(.white)
                 .padding(.leading)
-
+            
             Text("Deck")
                 .font(Font.custom("Hoefler Text", size: 27))
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -334,7 +303,7 @@ struct ProfileButton: View {
         }) {
             Image("832")
                 .resizable()
-                .frame(width: 60, height: 60.0)
+                .frame(width: 60, height: 60)
                 .clipShape(Circle())
         }
     }
@@ -342,11 +311,12 @@ struct ProfileButton: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBarView()
+        GuideView()
     }
 }
 
 extension Color {
     static let themebk = Color(red: 0.2, green: 0.4, blue: 0.6)
     static let purpleColor = Color(red: 0x7A / 255.0, green: 0x1F / 255.0, blue: 0xA0 / 255.0)
+    static let lightPurple = Color(red: 242.0 / 255.0, green: 208.0 / 255.0, blue: 255.0 / 255.0)
 }
