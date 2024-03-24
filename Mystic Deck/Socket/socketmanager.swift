@@ -12,7 +12,7 @@ class DataSocketManager {
     static let shared = DataSocketManager()
     private let manager = SocketManager(socketURL: URL(string: "https://1a02-2409-408d-493-9c45-f4e8-94d8-cd0-4663.ngrok-free.app/")! ,config: [
         .connectParams(["EIO": "3"]),
-        .version(.two)
+//        .version(.two)
     ])
     private var socket: SocketIOClient?
     
