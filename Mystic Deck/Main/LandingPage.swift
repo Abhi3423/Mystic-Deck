@@ -8,48 +8,55 @@ struct LandingPage: View {
         NavigationView {
             ZStack {
                 // Background Image
-                Image("themebk")
+                Image("landtheme")
                     .resizable()
+                    .scaledToFill()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
+                Spacer()
                     Image("LD")
                         .resizable()
                         .scaledToFit()
-                        .padding(.top, -80)
+                        .padding(.top, -100)
                     
-                    Spacer()
                     
                     Text("MysticDeck")
-                        .font(.system(size: 50, weight: .bold, design: .serif))
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
-                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color(hex: "7A1FA0"))
+                        .multilineTextAlignment(.leading)
                     
-                    Spacer()
+                    //Spacer(minLength: 1)
                     
-                    VStack(spacing: 20) {
+                    VStack(spacing: 10) {
                         NavigationLink(destination: LoginView()) {
-                            Text("Login")
+                            Text("Login into existing account")
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                                 .padding()
-                                .frame(width: 100.0)
-                                .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+                                .frame(width: 300.0)
+                                .background(Color(hex: "7A1FA0"))
                                 .cornerRadius(10)
                         }
+                        Text("or")
+                            .foregroundColor(Color(hex: "7A1FA0"))
                         
                         
                         NavigationLink(destination: SignupView()) {
-                            Text("Sign up")
+                            Text("Don't have an account? Sign up")
                                 .fontWeight(.semibold)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(hex: "7A1FA0"))
                                 .padding()
-                                .frame(width: 100.0)
-                                .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+                                .frame(width: 300.0)
+                                //.background(Color(hex: "5D0083").opacity(0.3))
                                 .cornerRadius(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color(hex: "7A1FA0"), lineWidth: 1)
+                                )
                         }
                     }
                     
@@ -68,8 +75,9 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
+         
             // Background Image
-            Image("themebk")
+            Image("landtheme")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -78,28 +86,50 @@ struct LoginView: View {
                 Image("LD")
                     .resizable()
                     .scaledToFit()
-                    .padding(.top, -80)
+                    .padding(.top, 10)
+                Text("MysticDeck")
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color(hex: "7A1FA0"))
                 
-                Spacer(minLength: -500) // Add space after the LD image
+
+                
+            //Spacer(minLength: 10)
+          
                 
                 TextField("Username", text: $username)
+                    //.fontWeight(.semibold)
+                    .foregroundColor(Color(hex: "7A1FA0"))
                     .padding()
-                    .background(Color.gray.opacity(0.3))
+                    .frame(width: 300.0)
+                    //.background(Color(hex: "5D0083").opacity(0.3))
                     .cornerRadius(10)
-                    .frame(width: 300, height: 40)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(hex: "7A1FA0"), lineWidth: 1)
+                    )
+
+      
                 
                 SecureField("Password", text: $password)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(hex: "7A1FA0"))
                     .padding()
-                    .background(Color.gray.opacity(0.3))
+                    .frame(width: 300.0)
+                    //.background(Color(hex: "5D0083").opacity(0.3))
                     .cornerRadius(10)
-                    .frame(width: 300, height: 40)
-                
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(hex: "7A1FA0"), lineWidth: 1)
+                    )
+
                 HStack {
                     CheckBoxView(checked: $rememberMe)
                     Text("Remember Me")
                         .font(.system(size: 14))
                     
-                        .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
+                        .foregroundColor(Color(hex: "7A1FA0"))
                 }
                 
                 NavigationLink(destination: NavigationBarView()) {
@@ -108,7 +138,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .frame(width: 200.0)
                         .padding()
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+                        .background(Color(hex: "7A1FA0"))
                         .cornerRadius(10)
                 }
                 
@@ -119,7 +149,7 @@ struct LoginView: View {
                     NavigationLink(destination: ForgotPasswordView()) {
                         Text("Forgot Password?")
                             .font(.system(size: 12))
-                            .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
+                            .foregroundColor(Color(hex: "7A1FA0"))
                             .padding(.top, 10)
                     }
                     Spacer()
@@ -146,60 +176,72 @@ struct SignupView: View {
     var body: some View {
         ZStack {
             // Background Image
-            Image("themebk")
+            // Background Image
+            Image("landtheme")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 20) {
+            VStack {
                 Image("LD")
                     .resizable()
                     .scaledToFit()
-                    .padding(.top, -30)
-                
-                Text("Login:")
-                    .font(.system(size: 24, weight: .light, design: .serif))
+                    .padding(.top, 10)
+                Text("MysticDeck")
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .font(.title)
                     .fontWeight(.bold)
-                    .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
+                    .foregroundColor(Color(hex: "7A1FA0"))
+                
+
+
                 TextField("Email", text: $email)
+                    //.fontWeight(.semibold)
+                    .foregroundColor(Color(hex: "7A1FA0"))
                     .padding()
-                    .background(Color.gray.opacity(0.3))
+                    .frame(width: 300.0)
+                    //.background(Color(hex: "5D0083").opacity(0.3))
                     .cornerRadius(10)
-                    .frame(width: 300, height: 40)
-                    .padding(.horizontal)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(hex: "7A1FA0"), lineWidth: 1)
+                    )
+
+      
                 
                 SecureField("Password", text: $password)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(hex: "7A1FA0"))
                     .padding()
-                    .background(Color.gray.opacity(0.3))
+                    .frame(width: 300.0)
+                    //.background(Color(hex: "5D0083").opacity(0.3))
                     .cornerRadius(10)
-                    .frame(width: 300, height: 40)
-                    .padding(.horizontal)
-                
-                HStack {
-                    CheckBoxView(checked: $rememberMe)
-                    Text("Remember Me")
-                        .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
-                }
-                .padding(.top, 10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(hex: "7A1FA0"), lineWidth: 1)
+                    )
+                Text("")
+
                 
                 NavigationLink(destination: NavigationBarView()) {
                     Text("Sign up")
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                         .padding()
-                        .frame(width: 100.0)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+                        .frame(width: 300.0)
+                        .background(Color(hex: "7A1FA0"))
                         .cornerRadius(10)
                 }
+            Spacer()
 
                 
                 Rectangle()
-                    .fill(Color.purple)
+                    .fill(Color(hex: "7A1FA0"))
                     .frame(height: 2)
                     .padding(.vertical, 10)
                 
                 Text("Or SignUp with")
-                    .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
+                    .foregroundColor(Color(hex: "7A1FA0"))
                 
                 HStack(spacing: 20) {
                     Button(action: {
@@ -208,7 +250,7 @@ struct SignupView: View {
                         Image("googleIcon")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 80, height: 80)
+                            .frame(width: 65, height: 70)
                     }
                     
                     
@@ -218,11 +260,12 @@ struct SignupView: View {
                         Image("appleIcon")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 80, height: 80)
+                            .frame(width: 70, height: 70)
                     }
                 }
-                
+              Spacer()
                 Spacer()
+               
             }
             .padding()
         }
