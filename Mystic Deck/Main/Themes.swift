@@ -182,9 +182,6 @@ struct ThemeView: View {
 
         }
     }
-
-    
-    
 }
 
 struct ThemeView_Previews: PreviewProvider {

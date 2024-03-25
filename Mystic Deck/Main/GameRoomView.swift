@@ -20,6 +20,7 @@ struct GameRoomView: View {
     let theme: String
     let topic: String
     
+    
     @ViewBuilder
     var destinationToHomeView: some View {
         if isEndActive {
@@ -32,7 +33,7 @@ struct GameRoomView: View {
     var body: some View {
         
         ZStack {
-            Image("gameroombg")
+            Image("BG")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -41,69 +42,181 @@ struct GameRoomView: View {
             
             VStack{
                 
+                ZStack{
+                    
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 425, height: 69)
+                        .background(Color(red: 0.48, green: 0.12, blue: 0.63))
+                        .offset(x: 0, y: 0)
+                        .padding(.vertical,15.0)
+                    
+                    HStack {
+                        Image("profile")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+                            .foregroundColor(.white)
+                            .padding(.horizontal, -10)
+                            .padding(.vertical, -25)
+                            .onTapGesture {
+                                // Handle tapping the export icon
+                            }
+                        Spacer(minLength: 65)
+                        
+                        VStack{
+                            Text("\(theme)")
+                                .font(.system(size: 20, weight: .bold, design: .rounded))
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(0)
+                                .padding(.vertical, -5)
+                                .padding(.trailing, 10) // Added padding to create space between text and images
+                            
+                            Text("\(topic)")
+                                .font(.system(size:17, weight: .bold, design: .rounded))
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white.opacity(0.50))
+                                .multilineTextAlignment(.center)
+                                .lineLimit(0)
+                                .padding(.vertical, -5)
+                                .padding(.trailing, 10) // Added padding to create space between text and images
+                        }
+                        
+                        Spacer() // Added spacer to push images to the right
+                        
+                        Image("bar")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, -25)
+                            .onTapGesture {
+                                // Handle tapping the export icon
+                            }
+                    }.padding(.horizontal,30.0)
+                }
+                
+                
                 HStack{
                     OppositePlayerProfileView(imageName: "player", name: "Arul", totalCards: 4)
                     OppositePlayerProfileView(imageName: "player", name: "Abhishek", totalCards: 4)
                 }
-                .padding(.bottom, 40.0)
+                .padding(.bottom, 10.0)
                 
                 
                 HStack{
-                    Text("\(AppData.shared.username)")
+                    //                    Text("\(AppData.shared.username)")
                     Spacer()
-                  
-                    ZStack{
-                        Circle()
-                            .fill(Color.green)
-                            .frame(width: 40)
-                        Text("\(AppData.shared.score)")
-                            .foregroundColor(.white)
+                    
+                    Text("Score: \(AppData.shared.score)")
+                        .foregroundColor(Color(red: 0.36, green: 0, blue: 0.51))
+                        .font(Font.custom("Inter", size: 24).weight(.semibold))
+                }
+                
+                ZStack{
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 370, height: 220)
+                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                        .cornerRadius(17)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 17)
+                                .inset(by: -1)
+                                .stroke(Color(red: 0.36, green: 0, blue: 0.51), lineWidth: 1)
+                        )
+                        .shadow(
+                            color: Color(red: 0, green: 0, blue: 0, opacity: 0.40), radius: 4
+                        )
+                    
+                    VStack{
+                        if let draggedData = DraggedCardData.shared.draggedCard {
+                            GameCard(imageName: draggedData.imageName,cardHeading: draggedData.cardHeading,rectangles: draggedData.rectangles)
+                                .id(refreshID)
+                        } else {
+                            Text("Please Select the Card") // Placeholder or error message
+                        }
                     }
                     
                 }
-                .font(.system(size: 26))
-                .bold()
-                .padding(.bottom, 20.0)
+                .offset(y: -15.0)
                 
-                if let unwrappedJsonData = JSONDataManager.shared.jsonData {
-                    if(unwrappedJsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"].isEmpty){
-                        NavigationLink(
-                            destination: destinationToHomeView,
-                            isActive: $isEndActive,
-                            label: {
-                                EmptyView()
+                ZStack{
+                    if let unwrappedJsonData = JSONDataManager.shared.jsonData {
+                        if(unwrappedJsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"].isEmpty){
+                            NavigationLink(
+                                destination: destinationToHomeView,
+                                isActive: $isEndActive,
+                                label: {
+                                    EmptyView()
+                                }
+                            )
+                        }else{
+                            VStack{
+                                Spacer()
+                                CardStack(jsonData: unwrappedJsonData, theme: theme, topic: topic)
+                                    .id(refreshID)
+                                    .offset(x: -50,y:-40)
                             }
-                        )
-                    }else{
-                        VStack{
-                            CardStack(jsonData: unwrappedJsonData, theme: theme, topic: topic)
-                                .offset(x: 20)
-                                .id(refreshID)
                         }
                     }
-                }
-                
-                Spacer().frame(height: 30)
-                
-                HStack{
-                    Spacer()
+                    
                     if(showPlayButton == true || AppData.shared.mychance == 1){
-                        CustomButton(buttonText: "PLAY") {
-                            print("Play Button clicked!")
-                            DataSocketManager.shared.play_call()
+                        
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 390, height: 100)
+                            .background(Color(red: 0.95, green: 0.81, blue: 1))
+                            .cornerRadius(20)
+                            .offset(y: 110)
+                            .shadow(radius: 10)
+                        VStack {
+                            Spacer()
+                            ZStack() {
+                                Rectangle()
+                                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63).opacity(0.40))
+                                    .frame(width: 136.99, height: 47.35)
+                                    .cornerRadius(28.75)
+                                
+                                Button(action: {
+                                    print("Play Button clicked!")
+                                    DataSocketManager.shared.play_call()
+                                }) {
+                                    Text("PLAY")
+                                        .font(Font.custom("Inter", size: 24).weight(.semibold))
+                                        .lineSpacing(23.23)
+                                        .foregroundColor(Color(red: 0.36, green: 0, blue: 0.51))
+                                        .offset(x: 0.39, y: -0.49)
+                                }
+                            }
+                            .padding(.bottom,30.0)
                         }
                     }
-                    Spacer()
-                    Image("settings")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .onTapGesture {
-                            // Show the settings popup
-                            isSettingsPopupVisible.toggle()
-                        }
+                    
+                    //                    HStack{
+                    //                        Spacer()
+                    //                        if(showPlayButton == true || AppData.shared.mychance == 1){
+                    //                            CustomButton(buttonText: "PLAY") {
+                    //                                print("Play Button clicked!")
+                    //                                DataSocketManager.shared.play_call()
+                    //                            }
+                    //                        }
+                    //                        Spacer()
+                    //                        Image("settings")
+                    //                            .resizable()
+                    //                            .frame(width: 40, height: 40)
+                    //                            .onTapGesture {
+                    //                                // Show the settings popup
+                    //                                isSettingsPopupVisible.toggle()
+                    //                            }
+                    //                    }
                 }
                 
-            }.frame(width: 370, height: 840).padding(.top,50.0)
+            }.frame(width: 370, height: 840)
             
             // Background for the popup
             if isSettingsPopupVisible {
@@ -188,8 +301,10 @@ struct GameRoomView: View {
                             isEndActive = true
                         }else{
                             JSONDataManager.shared.jsonData = jsonData
+                            DraggedCardData.shared.resetDraggedCard()
                             refreshID = UUID()
                         }
+                        
                     }
                     print(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"])
                 }
@@ -235,9 +350,11 @@ struct GameRoomView: View {
                             isEndActive = true
                         }else{
                             JSONDataManager.shared.jsonData = jsonData
+                            DraggedCardData.shared.resetDraggedCard()
                             refreshID = UUID()
                         }
                     }
+                    
                     print(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"])
                 }
                 
@@ -290,12 +407,16 @@ struct GameRoomView: View {
                 }
             }
         }
+        .onReceive(DraggedCardData.shared.$draggedCard){_ in
+            refreshID = UUID()
+            print("CHANGED")
+        }
         
     }
 }
 
 //struct GameRoomView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        GameRoomView()
+//        GameRoomView(theme: "theme", topic: "imageName")
 //    }
 //}
