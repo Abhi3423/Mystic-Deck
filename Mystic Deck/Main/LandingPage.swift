@@ -274,6 +274,9 @@ struct SignupView: View {
     }
 }
 
+
+
+
 struct CheckBoxView: View {
     @Binding var checked: Bool
     

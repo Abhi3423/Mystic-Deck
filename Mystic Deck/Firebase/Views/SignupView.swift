@@ -48,7 +48,10 @@ struct SignupView2: View {
                 
                 HStack {
                     Image(systemName: "mail")
+//                    Text("Email")
+                        
                     TextField("Email", text: $email)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                     
                     Spacer()
                     
@@ -62,13 +65,16 @@ struct SignupView2: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                 )
                 .padding()
                 
                 HStack {
                     Image(systemName: "lock")
+                  
+                      
                     SecureField("Password", text: $password)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                     
                     
 //                    Spacer()
@@ -83,7 +89,7 @@ struct SignupView2: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 2)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                 )
                 .padding()
                 
@@ -93,7 +99,7 @@ struct SignupView2: View {
                     }
                 }) {
                     Text("Already have an account?")
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(hex: "7A1FA0"))
                 }
                 
 //                Spacer()

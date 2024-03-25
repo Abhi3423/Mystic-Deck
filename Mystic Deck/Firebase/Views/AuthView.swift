@@ -1,9 +1,4 @@
-//
-//  AuthView.swift
-//  SwiftUI-Auth
-//
-//  Created by Derek Hsieh on 1/7/23.
-//
+
 
 import SwiftUI
 
@@ -13,6 +8,7 @@ struct AuthView2: View {
     var body: some View {
         
         if(currentViewShowing == "login") {
+
             LoginView2(currentShowingView: $currentViewShowing)
                 .preferredColorScheme(.light)
         } else {
@@ -20,7 +16,7 @@ struct AuthView2: View {
                 .preferredColorScheme(.dark)
                 .transition(.move(edge: .bottom))
         }
-  
+        
     }
 }
 
