@@ -8,7 +8,7 @@ struct LoadingGameRoomView: View {
     
     var body: some View {
         ZStack {
-            Image("gameroombg")
+            Image("BG")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -16,7 +16,7 @@ struct LoadingGameRoomView: View {
             
             if showLoading {
                 Text("Loading \(imageName)")
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .italic()
                     .font(Font.custom("Hoefler Text", size: 30))
                     .shadow(color: .black, radius: 5, x: 0, y: 0)

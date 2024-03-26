@@ -16,13 +16,15 @@ struct GameCard: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 370, height: 220)
                 .cornerRadius(17)
+            
+            
+//            HStack{
                 
 //                Text(cardHeading)
-//                    .font(.system(size: 32))
-//                    .fontWeight(.bold)
-//                    .foregroundColor(.black)
-//                    .padding()
+//                    .font(Font.custom("Hoefler Text", size: 24).weight(.bold))
+//                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
 //                    .textCase(.uppercase)
+                
                 
                 VStack {
                     ForEach(0..<(rectangles.count / 2), id: \.self) { rowIndex in
@@ -40,41 +42,41 @@ struct GameCard: View {
                                                     
                                                     handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
                                                 }
-//                                                else{
-//                                                    if(AppData.shared.parameter_name == rectangles[index].0 && AppData.shared.parameter_value == rectangles[index].1 && DataSocketManager.shared.otherPlayerSendValues == true){
-//                                                        
-//                                                        handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
-//                                                        print("going to call members play from else if")
-//                                                        DataSocketManager.shared.members_play_call(parameterName: rectangles[index].0,parameterValue: rectangles[index].1)
-//                                                        //                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-//                                                        //                                                            callAPI(endpoint: "/score_update", method: "POST", formData: [ "room_id": AppData.shared.roomID]) { responseString in
-//                                                        //                                                                if let responseString = responseString,
-//                                                        //                                                                   let data = responseString.data(using: .utf8),
-//                                                        //                                                                   let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-//                                                        //                                                                   let scores = json["scores"] as? [String: Int],
-//                                                        //                                                                   let winner = json["winner"] as? String {
-//                                                        //                                                                    if let score = scores[AppData.shared.username] {
-//                                                        //                                                                        AppData.shared.score = score
-//                                                        //                                                                    }
-//                                                        //
-//                                                        //                                                                    // Handle the response
-//                                                        //                                                                    print("Response:\(responseString)")
-//                                                        //
-//                                                        //                                                                    if(AppData.shared.username == winner){
-//                                                        //                                                                        AppData.shared.mychance = 1
-//                                                        //                                                                        showWinSheet = true
-//                                                        //                                                                    }else{
-//                                                        //                                                                        AppData.shared.mychance = 0
-//                                                        //                                                                    }
-//                                                        //                                                                } else {
-//                                                        //                                                                    // Handle the error
-//                                                        //                                                                    print("Failed to fetch data")
-//                                                        //                                                                }
-//                                                        //                                                            }
-//                                                        //                                                        }
-//                                                        
-//                                                    }
-//                                                }
+                                                //                                                else{
+                                                //                                                    if(AppData.shared.parameter_name == rectangles[index].0 && AppData.shared.parameter_value == rectangles[index].1 && DataSocketManager.shared.otherPlayerSendValues == true){
+                                                //
+                                                //                                                        handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
+                                                //                                                        print("going to call members play from else if")
+                                                //                                                        DataSocketManager.shared.members_play_call(parameterName: rectangles[index].0,parameterValue: rectangles[index].1)
+                                                //                                                        //                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                                                //                                                        //                                                            callAPI(endpoint: "/score_update", method: "POST", formData: [ "room_id": AppData.shared.roomID]) { responseString in
+                                                //                                                        //                                                                if let responseString = responseString,
+                                                //                                                        //                                                                   let data = responseString.data(using: .utf8),
+                                                //                                                        //                                                                   let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                                                //                                                        //                                                                   let scores = json["scores"] as? [String: Int],
+                                                //                                                        //                                                                   let winner = json["winner"] as? String {
+                                                //                                                        //                                                                    if let score = scores[AppData.shared.username] {
+                                                //                                                        //                                                                        AppData.shared.score = score
+                                                //                                                        //                                                                    }
+                                                //                                                        //
+                                                //                                                        //                                                                    // Handle the response
+                                                //                                                        //                                                                    print("Response:\(responseString)")
+                                                //                                                        //
+                                                //                                                        //                                                                    if(AppData.shared.username == winner){
+                                                //                                                        //                                                                        AppData.shared.mychance = 1
+                                                //                                                        //                                                                        showWinSheet = true
+                                                //                                                        //                                                                    }else{
+                                                //                                                        //                                                                        AppData.shared.mychance = 0
+                                                //                                                        //                                                                    }
+                                                //                                                        //                                                                } else {
+                                                //                                                        //                                                                    // Handle the error
+                                                //                                                        //                                                                    print("Failed to fetch data")
+                                                //                                                        //                                                                }
+                                                //                                                        //                                                            }
+                                                //                                                        //                                                        }
+                                                //
+                                                //                                                    }
+                                                //                                                }
                                             }
                                         )
                                     )
@@ -107,9 +109,11 @@ struct GameCard: View {
                 .padding(.top, 60.0)
                 .cornerRadius(15)
                 .offset(x: 57, y: -45)
-        }
+            }
+//        }
         .shadow(color: Color.black.opacity(0.3), radius: 5, x: 4)
         .offset(y: 18)
+        
     }
     
     //    private func handleRectangleTap(rectangle: (String, String, String, String)) {
@@ -159,19 +163,19 @@ struct RectangleView: View {
         
         ZStack(alignment: .leading){
             Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: 100, height: 45.57)
-                    .background(Color(red: 0.48, green: 0.12, blue: 0.63))
-                    .cornerRadius(4.72)
-                    .overlay(
-                      RoundedRectangle(cornerRadius: 4.72)
+                .foregroundColor(.clear)
+                .frame(width: 100, height: 45.57)
+                .background(Color(red: 0.48, green: 0.12, blue: 0.63))
+                .cornerRadius(4.72)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 4.72)
                         .inset(by: -0.50)
                         .stroke(Color(red: 0.95, green: 0.81, blue: 1), lineWidth: 0.50)
-                    )
-                    .offset(x: 0, y: 0)
-                    .shadow(
-                      color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 10.07
-                    )
+                )
+                .offset(x: 0, y: 0)
+                .shadow(
+                    color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 10.07
+                )
             
             VStack(alignment: .center, spacing: 4) {
                 Text(heading)
@@ -208,10 +212,10 @@ struct RectangleView: View {
         }
         .overlay(
             RoundedRectangle(cornerRadius: 4.72)
-              .inset(by: -0.50)
-              .stroke( isSelected ? Color.green : Color.clear, lineWidth: isSelected ? 5.50 : 0)
-              .fill(isSelected ? Color.purple.opacity(0.95) : Color.clear)
-              .frame(width: 100, height: 45.57)
+                .inset(by: -0.50)
+                .stroke( isSelected ? Color.green : Color.clear, lineWidth: isSelected ? 5.50 : 0)
+                .fill(isSelected ? Color.purple.opacity(0.95) : Color.clear)
+                .frame(width: 100, height: 45.57)
         )
         
     }
@@ -221,18 +225,18 @@ struct dStackView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             Rectangle()
-              .foregroundColor(.clear)
-              .frame(width: 380, height: 220)
-              .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-              .cornerRadius(17)
-              .overlay(
-                RoundedRectangle(cornerRadius: 17)
-                  .inset(by: -1)
-                  .stroke(Color(red: 0.36, green: 0, blue: 0.51), lineWidth: 1)
-              )
-              .shadow(
-                color: Color(red: 0, green: 0, blue: 0, opacity: 0.40), radius: 4
-              )
+                .foregroundColor(.clear)
+                .frame(width: 380, height: 220)
+                .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                .cornerRadius(17)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 17)
+                        .inset(by: -1)
+                        .stroke(Color(red: 0.36, green: 0, blue: 0.51), lineWidth: 1)
+                )
+                .shadow(
+                    color: Color(red: 0, green: 0, blue: 0, opacity: 0.40), radius: 4
+                )
             
             GameCard(
                 imageName: "Odhisa",

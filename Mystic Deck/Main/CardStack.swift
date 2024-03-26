@@ -19,7 +19,7 @@ struct CardStack: View {
                     
                     CardBack(cardNumber: cardNumber,jsonData: jsonData, isDragged: DraggedCardData.shared.draggedCardIndex == cardNumber)
                         .rotationEffect(.degrees(Double(cardNumber * cardNumber)-Double(50 / cardNumber)))
-                        .offset(x: CGFloat((cardNumber * cardNumber * cardNumber)-15))
+                        .offset(x: CGFloat((cardNumber * cardNumber * 4)-(cardNumber * 5)))
                     //                        .onTapGesture {
                     //                            // Send the key of the clicked card to another view
                     //                            let key = "\(cardNumber)"
@@ -49,9 +49,9 @@ struct CardBack: View {
         Image("CardBack")
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 380, height: 250) // Adjust size as needed
+            .frame(width: 380, height: 260) // Adjust size as needed
             .cornerRadius(10)
-            .opacity(isDragged ? 0.2 : 1.0)
+            .opacity(isDragged ? 0 : 1.0)
             .gesture(
                 DragGesture()
                     .onEnded { value in
