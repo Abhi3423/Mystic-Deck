@@ -1,50 +1,5 @@
 import SwiftUI
 
-struct HomeView: View {
-    
-    var body: some View {
-        //Home Page
-        ZStack {
-//             Background Image
-//            Image("BG")
-//                .resizable()
-//                .scaledToFill()
-//                .edgesIgnoringSafeArea(.all)
-////            
-//            LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.601), Color.clear]), startPoint: .top, endPoint: .center)
-//                .edgesIgnoringSafeArea(.top)
-//            
-            VStack {
-                
-           Text("Welcome Users !!")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.purple)
-                
-                Image("Kite")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 300, height: 300)
-
-                VStack() {
-                    NavigationLink(destination: LoadingView()) {
-                 
-                        ButtonView(label: "Join Room")
-                    }
-                    
-                    NavigationLink(destination: WaitingRoomView(comingfrom: "create_room")) {
-
-                        ButtonView(label: "Create Room")
-                    }
-                }
-                Image("Lotus")
-                    .frame(width: 50,height: 80)
-
-            }.scaledToFit()
-   }
-        
-        }
-    }
 
 
 
@@ -100,22 +55,90 @@ struct WaitingRoomView: View {
         NavigationView {
             ZStack {
                 
-                Image("BG")
+                Image("themenew1")
                    
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                    .opacity(0.8)
+//                    .opacity(0.8)
+                
+                VStack (spacing: 30){
+                    VStack{
+
+                        HStack {
+                            
+                            
+                            Image("back")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 3)
+                                .padding(.vertical, -25)
+                                .onTapGesture {
+                                    // Handle tapping the export icon
+                                }
+                            Spacer(minLength: 65)
+                            Text("Explore Themes")
+                                .font(.system(size: 20, weight: .bold, design: .rounded))
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(0)
+                                .padding(.vertical, -5)
+                                .padding(.trailing, 10) // Added padding to create space between text and images
+                            
+                            Spacer() // Added spacer to push images to the right
+                            
+                            Image("profile")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+                                .foregroundColor(.white)
+                                .padding(.horizontal, -10)
+                                .padding(.vertical, -25)
+                                .onTapGesture {
+                                    // Handle tapping the export icon
+                                }
+                            
+                            Image("bar")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 5)
+                                .padding(.vertical, -25)
+                                .onTapGesture {
+                                    // Handle tapping the export icon
+                                }
+                        }
+                    }
+                    .padding(.bottom, 750.5)
+                
+                    
+//                        themeButtons
+//
+//                        ScrollView {
+//                            if selectedTheme != "" {
+//                                generateImages(for: selectedTheme)
+//                            }
+//                        }
+                    
+                }
                     VStack {
                         
-                        Text("Waiting Room")
-                            .font(.system(size: 26, weight: .bold, design: .rounded))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
-                            .multilineTextAlignment(.center)
-                            .lineLimit(nil)
-                            .padding(.top, 50)
-                        Spacer(minLength: 30)
+//                        Text("Waiting Room")
+//                            .font(.system(size: 26, weight: .bold, design: .rounded))
+//                            .fontWeight(.bold)
+//                            .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
+//                            .multilineTextAlignment(.center)
+//                            .lineLimit(nil)
+//                            .padding(.top, 50)
+                        
+                        Spacer(minLength: 120)
+                        Spacer()
+                        Spacer()
                         
                         VStack {
 //                            Spacer()
@@ -204,13 +227,14 @@ struct WaitingRoomView: View {
                                                                         showShareWindow.toggle()
                                                                     }
                                     }) {
+//                                        Spacer()
                                         Image(systemName: "square.and.arrow.up")
                                             .resizable()
-                                            .foregroundColor(.white)
-                                            .background(Color.purple)
+                                            .foregroundColor(.purpleColor)
+//                                            .background(Color.purple)
                                             .frame(width: 30 * imageSize, height: 35 * imageSize)
                                     }
-                                    Spacer(minLength: 0)
+                                    Spacer(minLength: 60)
                                     
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 8.79)
@@ -229,19 +253,22 @@ struct WaitingRoomView: View {
                                     NavigationLink(destination: ThemeView()) {
                                         Image(systemName: "arrow.right")
                                             .resizable()
-                                            .foregroundColor(.white)
-                                            .background(Color.purple)
+                                            .foregroundColor(.purpleColor)
+//                                            .background(Color.purple)
                                             .frame(width: 30 * imageSize, height: 30 * imageSize)
                                             .padding(.horizontal)
                                     }
-                                    Spacer()
+//                                    Spacer()
+                                    
                                 }
                             }
                             // Sliding share window
                                             if showShareWindow {
                                                 VStack {
+//                                                    Spacer()
                                                     Spacer()
                                                     HStack {
+                                                        
                                                         Spacer()
                                                         VStack(alignment: .leading, spacing: 20) {
                                                             ShareOptionButton(iconName: "doc.on.doc", text: "Copy text")
@@ -249,12 +276,16 @@ struct WaitingRoomView: View {
                                                             ShareOptionButton(iconName: "message", text: "Forward via WhatsApp")
                                                             ShareOptionButton(iconName: "envelope", text: "Forward by mail")
                                                         }
+                                                        
                                                         Spacer()
+                                                        
                                                     }
                                                     Spacer()
+                                                    
                                                 }
                                                 .frame(maxWidth: 1000, maxHeight: 2000)
                                                 .background(Color.white)
+                                               
                                                 .transition(.move(edge: .bottom))
                                                 .edgesIgnoringSafeArea(.all)
                                                 .onTapGesture {
@@ -264,6 +295,7 @@ struct WaitingRoomView: View {
                                                     }
                                                 }
                                             }
+                            Spacer()
                             
                             NavigationLink(
                                            destination: destinationView,

@@ -9,27 +9,92 @@ struct LoadingView: View {
             GeometryReader { geo in
                 ZStack {
                     // 1) Background Image
-                    Image("landingwave")
+                    Image("themenew1")
                         .resizable()
                         .scaledToFill()
                         .edgesIgnoringSafeArea(.all)
                         .frame(width: geo.size.width, height: geo.size.height)
+                    
 
+                    VStack (spacing: 30){
+                        VStack{
+
+                            HStack {
+                                
+                                
+                                Image("back")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 3)
+                                    .padding(.vertical, -25)
+                                    .onTapGesture {
+                                        // Handle tapping the export icon
+                                    }
+                                Spacer(minLength: 85)
+                                Text(" Join Room")
+                                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(0)
+                                    .padding(.vertical, -5)
+                                    .padding(.trailing, 10) // Added padding to create space between text and images
+                                
+                                Spacer() // Added spacer to push images to the right
+                                
+                                Image("profile")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, -10)
+                                    .padding(.vertical, -25)
+                                    .onTapGesture {
+                                        // Handle tapping the export icon
+                                    }
+                                
+                                Image("bar")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 5)
+                                    .padding(.vertical, -25)
+                                    .onTapGesture {
+                                        // Handle tapping the export icon
+                                    }
+                            }
+                        }
+                        .padding(.bottom, 750.5)
+                    
+                        
+//                        themeButtons
+//                        
+//                        ScrollView {
+//                            if selectedTheme != "" {
+//                                generateImages(for: selectedTheme)
+//                            }
+//                        }
+                        
+                    }
                     // 2) Join Room Text
                     VStack {
                         
                         
-                        
-                        Text("Join Room")
+//                        
+//                        Text("Join Room")
+//                            
+//                            .font(.system(size: 35, weight: .bold, design: .rounded))
+//                            .fontWeight(.bold)
+//                            .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
+//                            .multilineTextAlignment(.center)
+//                            .lineLimit(0)
+//                            .padding(.top, -100)
                             
-                            .font(.system(size: 35, weight: .bold, design: .rounded))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
-                            .multilineTextAlignment(.center)
-                            .lineLimit(0)
-                            .padding(.top, -100)
-                            
-                        
+//                        
                         Image("Kite")
 
 //                         3) Text Field for "Enter the code"

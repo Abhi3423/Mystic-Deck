@@ -4,7 +4,7 @@ enum Theme: String, Identifiable, CaseIterable {
     case history = "History"
     case geography = "Geography"
     case science = "Science"
-    case ecosystem = "Ecosystem"
+    case economy = "Economy"
     
     var id: String { self.rawValue }
 }
@@ -19,7 +19,7 @@ struct ThemeView: View {
                 ZStack {
                     Color.clear
                         .background(
-                            Image("themenew")
+                            Image("themenew1")
                                 .resizable()
                                 .scaledToFill()
                                 .edgesIgnoringSafeArea(.all)
@@ -84,7 +84,7 @@ struct ThemeView: View {
                                 generateImages(for: selectedTheme)
                             }
                         }
-                        .padding(.bottom, -34.5)
+                        .padding(.bottom, -814.5)
                     }
                 }
                 .onAppear {
@@ -142,13 +142,13 @@ struct ThemeView: View {
             imageNames = ["G1.2", "G2.2", "G3.2", "G4.2"]
         case "Science":
             imageNames = ["S1.2", "S2.2", "S3.2", "S4.2"]
-        case "Ecosystem":
+        case "Economy":
             imageNames = ["E1", "E2", "E3", "E4"]
         default:
             print("default theme")
         }
 
-        return VStack(spacing: 20) {
+        return VStack(spacing: 10) {
             ForEach(imageNames, id: \.self) { imageName in
                 
                 NavigationLink(
