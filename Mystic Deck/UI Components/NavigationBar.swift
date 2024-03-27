@@ -361,7 +361,7 @@ struct GuideView: View {
                 .animation(.easeInOut(duration: 1.0))
             }
             .onAppear {
-                Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { timer in
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                     withAnimation {
                         currentIndex = (currentIndex + 1) % points.count
                     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03DF01D22BB3E59400D0FAF5 /* DraggedCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF01D12BB3E59400D0FAF5 /* DraggedCardModel.swift */; };
 		1111E08F45BE6376249D39B8 /* Pods_Mystic_Deck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44D091B8550CAE6C12646709 /* Pods_Mystic_Deck.framework */; };
 		46150B6D2B975C18007234CE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 46150B6C2B975C18007234CE /* SwiftyJSON */; };
 		46B051732B9672060041C771 /* BitCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 46B051722B9672060041C771 /* BitCollections */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03DF01D12BB3E59400D0FAF5 /* DraggedCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggedCardModel.swift; sourceTree = "<group>"; };
 		34AC10B6C3615A79592B049D /* Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mystic Deck-Mystic DeckUITests/Pods-Mystic Deck-Mystic DeckUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		447AC7FE0329660CBC62090C /* Pods-Mystic Deck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mystic Deck.debug.xcconfig"; path = "Target Support Files/Pods-Mystic Deck/Pods-Mystic Deck.debug.xcconfig"; sourceTree = "<group>"; };
 		44D091B8550CAE6C12646709 /* Pods_Mystic_Deck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mystic_Deck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,6 +342,7 @@
 				7FF7B4A12B385238001FD16C /* Color.swift */,
 				7F9548E92B8BAE7C0049962C /* codegenerate.swift */,
 				7F9548EB2B8BC2370049962C /* credentials.swift */,
+				03DF01D12BB3E59400D0FAF5 /* DraggedCardModel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				7F9548E52B8B6B7C0049962C /* testview.swift in Sources */,
 				7F313EDB2B3B524F00816103 /* CardStack.swift in Sources */,
 				7F25330B2B4E690A00BF2E2D /* NavigationBar.swift in Sources */,
+				03DF01D22BB3E59400D0FAF5 /* DraggedCardModel.swift in Sources */,
 				7F9548EA2B8BAE7C0049962C /* codegenerate.swift in Sources */,
 				7F9548E82B8BAA380049962C /* api.swift in Sources */,
 				7F4AD8572B2DA17C00213099 /* ContentView.swift in Sources */,
