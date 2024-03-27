@@ -139,7 +139,7 @@ struct ThemeView: View {
         case "History":
             imageNames = ["H1.2", "H2.2", "H3.2", "H4.2"]
         case "Geography":
-            imageNames = ["G1.2", "G2.2", "G3.2", "G4.2"]
+            imageNames = ["states and cities", "G2.2", "G3.2", "G4.2"]
         case "Science":
             imageNames = ["S1.2", "S2.2", "S3.2", "S4.2"]
         case "Economy":

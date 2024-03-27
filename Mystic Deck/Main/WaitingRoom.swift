@@ -62,70 +62,70 @@ struct WaitingRoomView: View {
                     .edgesIgnoringSafeArea(.all)
 //                    .opacity(0.8)
                 
-                VStack (spacing: 30){
-                    VStack{
-
-                        HStack {
-                            
-                            
-                            Image("back")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 3)
-                                .padding(.vertical, -25)
-                                .onTapGesture {
-                                    // Handle tapping the export icon
-                                }
-                            Spacer(minLength: 65)
-                            Text("Explore Themes")
-                                .font(.system(size: 20, weight: .bold, design: .rounded))
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.white)
-                                .multilineTextAlignment(.center)
-                                .lineLimit(0)
-                                .padding(.vertical, -5)
-                                .padding(.trailing, 10) // Added padding to create space between text and images
-                            
-                            Spacer() // Added spacer to push images to the right
-                            
-                            Image("profile")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                                .foregroundColor(.white)
-                                .padding(.horizontal, -10)
-                                .padding(.vertical, -25)
-                                .onTapGesture {
-                                    // Handle tapping the export icon
-                                }
-                            
-                            Image("bar")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 5)
-                                .padding(.vertical, -25)
-                                .onTapGesture {
-                                    // Handle tapping the export icon
-                                }
-                        }
-                    }
-                    .padding(.bottom, 750.5)
-                
-                    
-//                        themeButtons
+//                VStack (spacing: 30){
+//                    VStack{
 //
-//                        ScrollView {
-//                            if selectedTheme != "" {
-//                                generateImages(for: selectedTheme)
-//                            }
+//                        HStack {
+//                            
+//                            
+//                            Image("back")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+//                                .foregroundColor(.white)
+//                                .padding(.horizontal, 3)
+//                                .padding(.vertical, -25)
+//                                .onTapGesture {
+//                                    // Handle tapping the export icon
+//                                }
+//                            Spacer(minLength: 65)
+//                            Text("Explore Themes")
+//                                .font(.system(size: 20, weight: .bold, design: .rounded))
+//                                .font(.title)
+//                                .fontWeight(.bold)
+//                                .foregroundColor(Color.white)
+//                                .multilineTextAlignment(.center)
+//                                .lineLimit(0)
+//                                .padding(.vertical, -5)
+//                                .padding(.trailing, 10) // Added padding to create space between text and images
+//                            
+//                            Spacer() // Added spacer to push images to the right
+//                            
+//                            Image("profile")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+//                                .foregroundColor(.white)
+//                                .padding(.horizontal, -10)
+//                                .padding(.vertical, -25)
+//                                .onTapGesture {
+//                                    // Handle tapping the export icon
+//                                }
+//                            
+//                            Image("bar")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
+//                                .foregroundColor(.white)
+//                                .padding(.horizontal, 5)
+//                                .padding(.vertical, -25)
+//                                .onTapGesture {
+//                                    // Handle tapping the export icon
+//                                }
 //                        }
-                    
-                }
+//                    }
+//                    .padding(.bottom, 750.5)
+//                
+//                    
+////                        themeButtons
+////
+////                        ScrollView {
+////                            if selectedTheme != "" {
+////                                generateImages(for: selectedTheme)
+////                            }
+////                        }
+//                    
+//                }
                     VStack {
                         
 //                        Text("Waiting Room")
@@ -203,7 +203,7 @@ struct WaitingRoomView: View {
                                         Image("b4")
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(width: 50 * imageSize, height: 150 * imageSize)
+                                            .frame(width: 50 * imageSize, height: 50 * imageSize)
                                         Text("User4")
                                             .foregroundColor(.purple)
                                     }
@@ -212,7 +212,8 @@ struct WaitingRoomView: View {
                             }
                         }
 //                        .padding(.top)
-//                        Spacer()
+    
+                        Spacer(minLength: 100)
                         
                         // Share Button and Rectangle
                         VStack {

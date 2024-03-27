@@ -52,7 +52,7 @@ struct NavigationBarView: View {
                 .padding(.top,10)
                 .padding(.bottom,-16)
                 .background(Color.purpleColor)
-             
+                
             }
             
             .background(
@@ -61,16 +61,16 @@ struct NavigationBarView: View {
                         .resizable()
                         .scaledToFill()
                         .edgesIgnoringSafeArea(.all)
-                                    }
+                }
             )
-
-//            .navigationBarItems(leading: Heading(), trailing: ProfileButton())
-
+            
+            //            .navigationBarItems(leading: Heading(), trailing: ProfileButton())
+            
         }
         .navigationBarBackButtonHidden(true)
-       
-    }
         
+    }
+    
 }
 
 
@@ -82,28 +82,28 @@ struct TabBarButton: View {
     @Binding var selectedTab: Int
     
     func onClick() {
-           print("Button clicked! Additional actions can be performed here.")
+        print("Button clicked! Additional actions can be performed here.")
         selectedTab = tabIndex
-       }
+    }
     
     var body: some View {
-//        Button(
-//            Image(systemName: imageName)
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 28, height: 28)
-//        .padding(.bottom, -30.0)
-//            
-//        .foregroundColor(selectedTab == tabIndex ? .blue : .gray)) {onClick()
-//        }
-//        Button(action: onClick) {
-//            Image(systemName: imageName)
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 28, height: 28)
-//        .padding(.bottom, -30.0)
-//            
-//        }
+        //        Button(
+        //            Image(systemName: imageName)
+        //                .resizable()
+        //                .aspectRatio(contentMode: .fit)
+        //                .frame(width: 28, height: 28)
+        //        .padding(.bottom, -30.0)
+        //
+        //        .foregroundColor(selectedTab == tabIndex ? .blue : .gray)) {onClick()
+        //        }
+        //        Button(action: onClick) {
+        //            Image(systemName: imageName)
+        //                .resizable()
+        //                .aspectRatio(contentMode: .fit)
+        //                .frame(width: 28, height: 28)
+        //        .padding(.bottom, -30.0)
+        //
+        //        }
         VStack{
             Button("", systemImage: imageName, action: onClick)    .labelStyle(.iconOnly)
                 .foregroundColor(selectedTab == tabIndex ? .white : .white.opacity(0.6))
@@ -113,91 +113,93 @@ struct TabBarButton: View {
                 .padding(.top,1.0)
                 .foregroundColor(selectedTab == tabIndex ? .white : .white)
         }
-
-//    label: {VStack {
-//        Image(systemName: imageName)
-//            .resizable()
-//            .aspectRatio(contentMode: .fit)
-//            .frame(width: 28, height: 28)
-//    }
-//    .padding(.bottom, -30.0)
-//        
-//    .foregroundColor(selectedTab == tabIndex ? .blue : .gray)
-//    }
-//        .onAppear {
-//                    // You can print selectedTab here
-//                    print(selectedTab)
-//                    print(tabIndex)
-//                }
+        
+        //    label: {VStack {
+        //        Image(systemName: imageName)
+        //            .resizable()
+        //            .aspectRatio(contentMode: .fit)
+        //            .frame(width: 28, height: 28)
+        //    }
+        //    .padding(.bottom, -30.0)
+        //
+        //    .foregroundColor(selectedTab == tabIndex ? .blue : .gray)
+        //    }
+        //        .onAppear {
+        //                    // You can print selectedTab here
+        //                    print(selectedTab)
+        //                    print(tabIndex)
+        //                }
     }
 }
 
 struct AchievementsView: View {
-    var body: some View {   VStack (spacing: 30){
-        VStack{
-            
-            HStack {
-                
-                
-                Image("back")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 3)
-                    .padding(.vertical, -25)
-                    .onTapGesture {
-                        // Handle tapping the export icon
-                    }
-                Spacer(minLength: 73)
-                Text("Achievements")
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(0)
-                    .padding(.vertical, -5)
-                    .padding(.trailing, 10) // Added padding to create space between text and images
-                
-                Spacer() // Added spacer to push images to the right
-                
-                Image("profile")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                    .foregroundColor(.white)
-                    .padding(.horizontal, -10)
-                    .padding(.vertical, -25)
-                    .onTapGesture {
-                        // Handle tapping the export icon
-                    }
-                
-                Image("bar")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 5)
-                    .padding(.vertical, -25)
-                    .onTapGesture {
-                        // Handle tapping the export icon
-                    }
-            }
-        }            .padding(.top, -80.5)
+    var body: some View {
         
-        
-        //                        themeButtons
-        //
-        //                        ScrollView {
-        //                            if selectedTheme != "" {
-        //                                generateImages(for: selectedTheme)
-        //                            }
-        //                        }
+        VStack (spacing: 30){
+            VStack{
+                
+                HStack {
                     
+                    
+                    Image("back")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 3)
+                        .padding(.vertical, -25)
+                        .onTapGesture {
+                            // Handle tapping the export icon
+                        }
+                    Spacer(minLength: 73)
+                    Text("Achievements")
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(0)
+                        .padding(.vertical, -5)
+                        .padding(.trailing, 10) // Added padding to create space between text and images
+                    
+                    Spacer() // Added spacer to push images to the right
+                    
+                    Image("profile")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+                        .foregroundColor(.white)
+                        .padding(.horizontal, -10)
+                        .padding(.vertical, -25)
+                        .onTapGesture {
+                            // Handle tapping the export icon
+                        }
+                    
+                    Image("bar")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 5)
+                        .padding(.vertical, -25)
+                        .onTapGesture {
+                            // Handle tapping the export icon
+                        }
                 }
-
-
+            }            .padding(.top, -80.5)
+            
+            
+            //                        themeButtons
+            //
+            //                        ScrollView {
+            //                            if selectedTheme != "" {
+            //                                generateImages(for: selectedTheme)
+            //                            }
+            //                        }
+            
+        }
+        
+        
         
         NavigationView {
             
@@ -209,14 +211,14 @@ struct AchievementsView: View {
                 List {
                     
                     AchievementRow(title: "Beginner", description: "")
-
+                    
                     AchievementRow(title: "Collector", description: "Collect 10 different badges")
-
+                    
                     AchievementRow(title: "Master", description: "Unlock all the badges")
                     // Add more achievement rows as needed
                 }
                 .scrollContentBackground(.hidden) // Hide the standard background of the List
-
+                
             }
             .background(
                 Image("themenew1")
@@ -224,9 +226,9 @@ struct AchievementsView: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
             )
-         
-           
-        } .navigationBarTitle("Achievements")
+            
+            
+        }
     }
     
     struct AchievementRow: View {
@@ -234,8 +236,8 @@ struct AchievementsView: View {
         var description: String
         
         var body: some View {
-           
-                
+            
+            
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.headline)
@@ -262,13 +264,13 @@ struct AchievementsView: View {
 
 struct GuideView: View {
     let points = [
-                "1. User login to the app.",
-                "2. If the user is the leader, they create a room and share the code with friends.",
-                "3. Friends click on 'Join Room' and enter the unique code in the text field.",
-                "4. The leader selects a theme for the game; only the leader can select the theme.",
-                "5. The game starts, and Player 1 selects a parameter on their card that they think is best.",
-                "6. Player 1 clicks 'Play', and other players select the same type of parameter.",
-                "7. All card parameters are compared, and the highest one wins the round."
+        "1. User login to the app.",
+        "2. If the user is the leader, they create a room and share the code with friends.",
+        "3. Friends click on 'Join Room' and enter the unique code in the text field.",
+        "4. The leader selects a theme for the game; only the leader can select the theme.",
+        "5. The game starts, and Player 1 selects a parameter on their card that they think is best.",
+        "6. Player 1 clicks 'Play', and other players select the same type of parameter.",
+        "7. All card parameters are compared, and the highest one wins the round."
     ]
     
     @State private var currentIndex = 0
@@ -335,8 +337,8 @@ struct GuideView: View {
             //                                generateImages(for: selectedTheme)
             //                            }
             //                        }
-                        
-                    }
+            
+        }
         
         GeometryReader { geometry in
             
@@ -367,8 +369,6 @@ struct GuideView: View {
             }
         }
         Spacer()
-        Spacer()
-        .navigationBarTitle("Guide")
     }
 }
 
@@ -380,7 +380,7 @@ struct SettingsView: View {
     var body: some View {
         VStack (spacing: 30){
             VStack{
-
+                
                 HStack {
                     
                     
@@ -431,15 +431,15 @@ struct SettingsView: View {
                 }
             }
             .padding(.top, -80.5)
-        
             
-//                        themeButtons
-//
-//                        ScrollView {
-//                            if selectedTheme != "" {
-//                                generateImages(for: selectedTheme)
-//                            }
-//                        }
+            
+            //                        themeButtons
+            //
+            //                        ScrollView {
+            //                            if selectedTheme != "" {
+            //                                generateImages(for: selectedTheme)
+            //                            }
+            //                        }
             
         }
         
@@ -466,7 +466,7 @@ struct SettingsView: View {
                     .foregroundColor(Color(hex: "7A1FA0"))
                     .padding()
                     .frame(width: 300.0)
-                    //.background(Color(hex: "5D0083").opacity(0.3))
+                //.background(Color(hex: "5D0083").opacity(0.3))
                     .cornerRadius(10)
                     .padding(.horizontal, 24.0)
                     .padding(.vertical, 14.0)
@@ -475,11 +475,11 @@ struct SettingsView: View {
                             .stroke(Color(hex: "7A1FA0"), lineWidth: 1)
                     )
             }
-//            .padding(.horizontal, 24.0)
-//            .padding(.vertical, 14.0)
-//            .frame(maxWidth: .infinity)
-//            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
-//            .cornerRadius(10)
+            //            .padding(.horizontal, 24.0)
+            //            .padding(.vertical, 14.0)
+            //            .frame(maxWidth: .infinity)
+            //            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            //            .cornerRadius(10)
             
             Button(action: {
                 // Action for Contact Us
@@ -489,7 +489,7 @@ struct SettingsView: View {
                     .foregroundColor(Color(hex: "7A1FA0"))
                     .padding()
                     .frame(width: 300.0)
-                    //.background(Color(hex: "5D0083").opacity(0.3))
+                //.background(Color(hex: "5D0083").opacity(0.3))
                     .cornerRadius(10)
                     .padding(.horizontal, 24.0)
                     .padding(.vertical, 14.0)
@@ -498,12 +498,12 @@ struct SettingsView: View {
                             .stroke(Color(hex: "7A1FA0"), lineWidth: 1)
                     )
             }
-//            .padding(.horizontal, 24.0)
-//            .padding(.vertical, 14.0)
-//            .frame(maxWidth: .infinity)
-//            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
-//            .cornerRadius(10)
-//            Spacer()
+            //            .padding(.horizontal, 24.0)
+            //            .padding(.vertical, 14.0)
+            //            .frame(maxWidth: .infinity)
+            //            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            //            .cornerRadius(10)
+            //            Spacer()
             
             Button(action: {
                 let firebaseAuth = Auth.auth()
@@ -521,7 +521,7 @@ struct SettingsView: View {
                     .foregroundColor(Color(hex: "7A1FA0"))
                     .padding()
                     .frame(width: 300.0)
-                    //.background(Color(hex: "5D0083").opacity(0.3))
+                //.background(Color(hex: "5D0083").opacity(0.3))
                     .cornerRadius(10)
                     .padding(.horizontal, 24.0)
                     .padding(.vertical, 14.0)
@@ -530,16 +530,15 @@ struct SettingsView: View {
                             .stroke(Color(hex: "7A1FA0"), lineWidth: 1)
                     )
             }
-//            .padding(.horizontal, 24.0)
-//            .padding(.vertical, 14.0)
-//            .frame(maxWidth: .infinity)
-//            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
-//            .cornerRadius(10)
+            //            .padding(.horizontal, 24.0)
+            //            .padding(.vertical, 14.0)
+            //            .frame(maxWidth: .infinity)
+            //            .background(LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.841), Color(red: 75/255, green: 0/255, blue: 130/255)]), startPoint: .leading, endPoint: .trailing))
+            //            .cornerRadius(10)
             
-//            Spacer()
+            //            Spacer()
         }
         .padding()
-        .navigationBarTitle("Settings")
     }
 }
 
@@ -569,20 +568,20 @@ struct HomeView: View {
         ZStack {
             
             
-//             Background Image
-//            Image("BG")
-//                .resizable()
-//                .scaledToFill()
-//                .edgesIgnoringSafeArea(.all)
-////
-//            LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.601), Color.clear]), startPoint: .top, endPoint: .center)
-//                .edgesIgnoringSafeArea(.top)
-//
+            //             Background Image
+            //            Image("BG")
+            //                .resizable()
+            //                .scaledToFill()
+            //                .edgesIgnoringSafeArea(.all)
+            ////
+            //            LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.601), Color.clear]), startPoint: .top, endPoint: .center)
+            //                .edgesIgnoringSafeArea(.top)
+            //
             VStack {
                 
-
+                
                 VStack{
-
+                    
                     HStack {
                         
                         
@@ -633,50 +632,50 @@ struct HomeView: View {
                     }
                 }
                 .padding(.top, -250.5)
-            
                 
-    //                        themeButtons
-    //
-    //                        ScrollView {
-    //                            if selectedTheme != "" {
-    //                                generateImages(for: selectedTheme)
-    //                            }
-    //                        }
+                
+                //                        themeButtons
+                //
+                //                        ScrollView {
+                //                            if selectedTheme != "" {
+                //                                generateImages(for: selectedTheme)
+                //                            }
+                //                        }
                 
             }
             Text("Welcome User !!")
-                     .font(.title)
-                     .bold()
-                     .foregroundColor(.purple)
-                     .padding(.top, -190)
-                
-                Image("Kite")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 300, height: 300)
-
+                .font(.title)
+                .bold()
+                .foregroundColor(.purple)
+                .padding(.top, -190)
+            
+            Image("Kite")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            //                    .frame(width: 300, height: 300)
+            
             VStack(spacing: 20) {
                 Spacer(minLength: 1)
- 
-                    NavigationLink(destination: LoadingView()) {
-                 
-                        ButtonView(label: "Join Room")
-                    }
+                
+                NavigationLink(destination: LoadingView()) {
                     
-                    NavigationLink(destination: WaitingRoomView(comingfrom: "create_room")) {
-
-                        ButtonView(label: "Create Room")
-                    }
+                    ButtonView(label: "Join Room")
                 }
-//                Image("Lotus")
-//                    .frame(width: 50,height: 80)
-
+                
+                NavigationLink(destination: WaitingRoomView(comingfrom: "create_room")) {
+                    
+                    ButtonView(label: "Create Room")
+                }
             }
-        .padding(.top, -200)
-           
-   }
-        
+            //                Image("Lotus")
+            //                    .frame(width: 50,height: 80)
+            
         }
+        .padding(.top, -200)
+        
+    }
+    
+}
 //    }
 
 
@@ -750,13 +749,13 @@ struct Heading: View {
                             }
                         }
                         
-//                        themeButtons
-//                        
-//                        ScrollView {
-//                            if selectedTheme != "" {
-//                                generateImages(for: selectedTheme)
-//                            }
-//                        }
+                        //                        themeButtons
+                        //
+                        //                        ScrollView {
+                        //                            if selectedTheme != "" {
+                        //                                generateImages(for: selectedTheme)
+                        //                            }
+                        //                        }
                         .padding(.bottom, 700.5)
                     }
                 }
@@ -764,7 +763,7 @@ struct Heading: View {
                     // Set navigation bar color
                     UINavigationBar.appearance().barTintColor = UIColor(named: "7A1FA0")
                 }
-
+                
             }
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarBackButtonHidden(true)
@@ -772,32 +771,32 @@ struct Heading: View {
         .navigationBarBackButtonHidden(true)
     }
     
-
     
-//    private var themeButtons: some View {
-//        HStack(spacing: 8) {
-//            ForEach(Theme.allCases) { theme in
-//                Button(action: {
-//                    selectedTheme = theme.rawValue
-//                }) {
-//                    Text(theme.rawValue)
-//                        .padding(.horizontal, 9)
-//                        .padding(.vertical, 10)
-//                        .background(
-//                            selectedTheme == theme.rawValue ?
-//                                Color(hex: "7A1FA0") :
-//                                Color(hex: "5D0083").opacity(0.4)
-//                        )
-//                        .foregroundColor(selectedTheme == theme.rawValue ? .white : Color(hex: "7A1FA0"))
-//                        .cornerRadius(20)
-//                }
-//                .padding(.bottom, 8)
-//            }
-//        }
-//    }
-
-
-
+    
+    //    private var themeButtons: some View {
+    //        HStack(spacing: 8) {
+    //            ForEach(Theme.allCases) { theme in
+    //                Button(action: {
+    //                    selectedTheme = theme.rawValue
+    //                }) {
+    //                    Text(theme.rawValue)
+    //                        .padding(.horizontal, 9)
+    //                        .padding(.vertical, 10)
+    //                        .background(
+    //                            selectedTheme == theme.rawValue ?
+    //                                Color(hex: "7A1FA0") :
+    //                                Color(hex: "5D0083").opacity(0.4)
+    //                        )
+    //                        .foregroundColor(selectedTheme == theme.rawValue ? .white : Color(hex: "7A1FA0"))
+    //                        .cornerRadius(20)
+    //                }
+    //                .padding(.bottom, 8)
+    //            }
+    //        }
+    //    }
+    
+    
+    
     
     @ViewBuilder
     var destinationView: some View {
@@ -810,12 +809,12 @@ struct Heading: View {
     
     private func generateImages(for theme: String) -> some View {
         var imageNames: [String] = []
-
+        
         switch theme {
         case "History":
             imageNames = ["H1.2", "H2.2", "H3.2", "H4.2"]
         case "Geography":
-            imageNames = ["G1.2", "G2.2", "G3.2", "G4.2"]
+            imageNames = ["states and cities", "G2.2", "G3.2", "G4.2"]
         case "Science":
             imageNames = ["S1.2", "S2.2", "S3.2", "S4.2"]
         case "Ecosystem":
@@ -823,7 +822,7 @@ struct Heading: View {
         default:
             print("default theme")
         }
-
+        
         return VStack(spacing: 20) {
             ForEach(imageNames, id: \.self) { imageName in
                 
@@ -834,8 +833,8 @@ struct Heading: View {
                         EmptyView()
                     }
                 )
-           
-
+                
+                
                 Button(
                     action: {
                         // Handle both navigation and button actions here
@@ -854,10 +853,10 @@ struct Heading: View {
                     })
                 Spacer()
             }
-
+            
         }
     }
-
+    
     
     
 }
