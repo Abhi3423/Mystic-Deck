@@ -12,7 +12,7 @@ class AppData {
     static var shared = AppData()
     var mychance: Int = 0
     // Properties to hold your values
-    var username: String = "Arul Gupta"
+    var username: String = "Arul"
     var roomID: String = ""
     var isLoggedIn: Bool = false
     var parameter_name: String = ""

@@ -14,6 +14,7 @@ class DataSocketManager {
         .connectParams(["EIO": "3"]),
         .version(.two)
     ])
+    
     private var socket: SocketIOClient?
     
     private init() {}
@@ -73,73 +74,30 @@ class DataSocketManager {
         
         // Handle 'theme_sent' event called by theme_call
         socket?.on("theme_sent") { [weak self] data, _ in
-            if let receivedData =  data as? [[String: Any]],
+            if let receivedData = data as? [[String: Any]],
                let firstElement = receivedData.first,
                let themeSelected = firstElement["theme_selected"] as? String,
                let topicSelected = firstElement["topic_selected"] as? String,
-               var usersData = firstElement["users_data"] as? [String: Any] {
+               var usersData = firstElement["users_data"] as? [String: Any]{
+                
                 print("Received message: \(themeSelected) - \(topicSelected)")
+                
                 // Update AppData with received values
                 AppData.shared.themeselected = themeSelected
                 AppData.shared.topicselected = topicSelected
                 AppData.shared.score = 0
                 print(AppData.shared.themeselected)
                 print(AppData.shared.topicselected)
-                
-//                if var userData = usersData[AppData.shared.username] as? [String: Any] {
-//                    // Accessing the 'Geography' dictionary
-//                    if var geographyData = userData["Geography"] as? [String: Any] {
-//                        // Accessing the 'states and cities' dictionary
-//                        if var statesAndCitiesData = geographyData["states and cities"] as? [String: Any] {
-//                            // Accessing the 'Cards' dictionary
-//                            if var cardsData = statesAndCitiesData["Cards"] as? [String: Any] {
-//                                // Determine the length of the cards dictionary
-//                                let cardCount = cardsData.count
-//                                print(cardCount)
-//                                // Create a new dictionary to hold the reordered cards
-//                                var reorderedCardsData: [String: Any] = [:]
-//                                
-//                                // Reorder the keys sequentially starting from 1
-//                                var newIndex = 1
-//                                for (_, card) in cardsData.sorted(by: { Int($0.key)! < Int($1.key)! }) {
-//                                    reorderedCardsData[String(newIndex)] = card
-//                                    print(reorderedCardsData)
-//                                    newIndex += 1
-//                                    print("newIndex: \(newIndex)")
-//                                }
-//                                
-////                                print(reorderedCardsData)
-//                                
-//                                // Update the 'Cards' dictionary with reordered keys
-//                                cardsData = reorderedCardsData
-//                                
-//                                // Update the 'states and cities' dictionary with the reordered 'Cards' dictionary
-//                                statesAndCitiesData["Cards"] = cardsData
-//                                
-//                                // Update the 'Geography' dictionary with the updated 'states and cities' dictionary
-//                                geographyData["states and cities"] = statesAndCitiesData
-//                                
-//                                // Update the 'userData' dictionary with the updated 'Geography' dictionary
-//                                userData["Geography"] = geographyData
-//                                
-//                                // Assign the updated userData back to the original dictionary
-//                                usersData[AppData.shared.username] = userData
-//                                
-//                                // At this point, 'usersData' contains the reordered 'Cards' dictionary
-//                                print("Cards reordered successfully")
-////                                print(userData)
-//                            }
-//                        }
-//                    }
-//                } else {
-//                    print("User-specific data not found for \(AppData.shared.username)")
-//                }
+                // Convert userDataArray to JSON format
+                JSONDataManager.shared.jsonData = JSON(rawValue: usersData[AppData.shared.username])
+                print(JSONDataManager.shared.jsonData)
                 self?.shouldNavigateToLoadingGameRoom = true
             } else {
                 print("Invalid data type received: \(type(of: data))")
                 // Handle the error condition gracefully
             }
         }
+
         
         
     }

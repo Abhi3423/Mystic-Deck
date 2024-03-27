@@ -8,7 +8,7 @@ struct LoadingGameRoomView: View {
     
     var body: some View {
         ZStack {
-            Image("gameroombg")
+            Image("BG")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -16,20 +16,20 @@ struct LoadingGameRoomView: View {
             
             if showLoading {
                 Text("Loading \(imageName)")
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .italic()
                     .font(Font.custom("Hoefler Text", size: 30))
                     .shadow(color: .black, radius: 5, x: 0, y: 0)
                     .onAppear {
-                        if(imageName != ""){
-                            if let  newJSONData = shuffleCards(for: AppData.shared.themeselected, topic: AppData.shared.topicselected){
-                                JSONDataManager.shared.jsonData = newJSONData
-                                print(JSONDataManager.shared.jsonData)
-                            } else {
-                                print("Error: Failed to retrieve new JSON data")
-                            }
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//                        if(imageName != ""){
+//                            if let  newJSONData = shuffleCards(for: AppData.shared.themeselected, topic: AppData.shared.topicselected){
+//                                JSONDataManager.shared.jsonData = newJSONData
+//                                print(JSONDataManager.shared.jsonData)
+//                            } else {
+//                                print("Error: Failed to retrieve new JSON data")
+//                            }
+//                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                             withAnimation {
                                 showLoading = false
                                 if(imageName != ""){
