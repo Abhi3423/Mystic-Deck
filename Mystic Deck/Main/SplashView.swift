@@ -16,7 +16,7 @@ struct SplashView: View {
     var body: some View {
         
         if isActive {
-            LandingPage()
+            ContentView2()
         } else {
             VStack {
                 Image("Kite")

@@ -133,16 +133,16 @@ struct LoginView: View {
                     
                         .foregroundColor(Color(hex: "7A1FA0"))
                 }
-                
-                NavigationLink(destination: NavigationBarView()) {
-                    Text("Login")
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .frame(width: 200.0)
-                        .padding()
-                        .background(Color(hex: "7A1FA0"))
-                        .cornerRadius(10)
-                }
+//                
+//                NavigationLink(destination: NavigationBarView()) {
+//                    Text("Login")
+//                        .fontWeight(.semibold)
+//                        .foregroundColor(.white)
+//                        .frame(width: 200.0)
+//                        .padding()
+//                        .background(Color(hex: "7A1FA0"))
+//                        .cornerRadius(10)
+//                }
                 
                 Spacer() // Add a Spacer to push the "Forgot Password?" text to the center
                 
@@ -225,15 +225,15 @@ struct SignupView: View {
                 Text("")
 
                 
-                NavigationLink(destination: NavigationBarView()) {
-                    Text("Sign up")
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 300.0)
-                        .background(Color(hex: "7A1FA0"))
-                        .cornerRadius(10)
-                }
+//                NavigationLink(destination: NavigationBarView()) {
+//                    Text("Sign up")
+//                        .fontWeight(.semibold)
+//                        .foregroundColor(.white)
+//                        .padding()
+//                        .frame(width: 300.0)
+//                        .background(Color(hex: "7A1FA0"))
+//                        .cornerRadius(10)
+//                }
             Spacer()
 
                 

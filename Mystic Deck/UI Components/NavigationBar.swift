@@ -8,6 +8,10 @@
 import Foundation
 
 import SwiftUI
+import FirebaseAuth
+
+
+
 
 struct NavigationBarView: View {
     @State private var selectedTab: Int = 0
@@ -502,9 +506,17 @@ struct SettingsView: View {
 //            Spacer()
             
             Button(action: {
-                // Action for Restore
+                let firebaseAuth = Auth.auth()
+                do {
+                    try firebaseAuth.signOut()
+                    withAnimation {
+                        AppData.shared.username = ""
+                    }
+                } catch let signOutError as NSError {
+                    print("Error signing out: %@", signOutError)
+                }
             }) {
-                Text("Restore")
+                Text("Sign Out")
                     .fontWeight(.semibold)
                     .foregroundColor(Color(hex: "7A1FA0"))
                     .padding()
@@ -632,7 +644,7 @@ struct HomeView: View {
     //                        }
                 
             }
-            Text("Welcome Users !!")
+            Text("Welcome User !!")
                      .font(.title)
                      .bold()
                      .foregroundColor(.purple)
