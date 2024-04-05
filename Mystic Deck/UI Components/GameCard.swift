@@ -9,95 +9,95 @@ struct GameCard: View {
     @State private var selectedRectangle: (String, String)? = nil
     
     var body: some View {
-        ZStack(alignment: .top) {
+        ZStack{
+            
             
             Image(imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 370, height: 220)
+                .frame(width: 380, height: 220)
                 .cornerRadius(17)
             
             
-//            HStack{
-                
-//                Text(cardHeading)
-//                    .font(Font.custom("Hoefler Text", size: 24).weight(.bold))
-//                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
-//                    .textCase(.uppercase)
-                
-                
-                VStack {
-                    ForEach(0..<(rectangles.count / 2), id: \.self) { rowIndex in
-                        HStack(spacing: 20) {
-                            ForEach(0..<2, id: \.self) { colIndex in
-                                let index = rowIndex * 2 + colIndex
-                                if index < rectangles.count {
-                                    RectangleView(
-                                        heading: rectangles[index].0,
-                                        content: rectangles[index].1,
-                                        isSelected: Binding(
-                                            get: { isSelected(rectangle: rectangles[index]) },
-                                            set: {  newValue in
-                                                if (AppData.shared.mychance == 1){
-                                                    
-                                                    handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
-                                                }
-                                                //                                                else{
-                                                //                                                    if(AppData.shared.parameter_name == rectangles[index].0 && AppData.shared.parameter_value == rectangles[index].1 && DataSocketManager.shared.otherPlayerSendValues == true){
-                                                //
-                                                //                                                        handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
-                                                //                                                        print("going to call members play from else if")
-                                                //                                                        DataSocketManager.shared.members_play_call(parameterName: rectangles[index].0,parameterValue: rectangles[index].1)
-                                                //                                                        //                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                                                //                                                        //                                                            callAPI(endpoint: "/score_update", method: "POST", formData: [ "room_id": AppData.shared.roomID]) { responseString in
-                                                //                                                        //                                                                if let responseString = responseString,
-                                                //                                                        //                                                                   let data = responseString.data(using: .utf8),
-                                                //                                                        //                                                                   let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                                                //                                                        //                                                                   let scores = json["scores"] as? [String: Int],
-                                                //                                                        //                                                                   let winner = json["winner"] as? String {
-                                                //                                                        //                                                                    if let score = scores[AppData.shared.username] {
-                                                //                                                        //                                                                        AppData.shared.score = score
-                                                //                                                        //                                                                    }
-                                                //                                                        //
-                                                //                                                        //                                                                    // Handle the response
-                                                //                                                        //                                                                    print("Response:\(responseString)")
-                                                //                                                        //
-                                                //                                                        //                                                                    if(AppData.shared.username == winner){
-                                                //                                                        //                                                                        AppData.shared.mychance = 1
-                                                //                                                        //                                                                        showWinSheet = true
-                                                //                                                        //                                                                    }else{
-                                                //                                                        //                                                                        AppData.shared.mychance = 0
-                                                //                                                        //                                                                    }
-                                                //                                                        //                                                                } else {
-                                                //                                                        //                                                                    // Handle the error
-                                                //                                                        //                                                                    print("Failed to fetch data")
-                                                //                                                        //                                                                }
-                                                //                                                        //                                                            }
-                                                //                                                        //                                                        }
-                                                //
-                                                //                                                    }
-                                                //                                                }
-                                            }
-                                        )
-                                    )
-                                    .onTapGesture {
-                                        if (AppData.shared.mychance == 1) {
-                                            print(rectangles[index].1)
-                                            AppData.shared.parameter_name = rectangles[index].0
-                                            AppData.shared.parameter_value = rectangles[index].1
-                                        }
-                                    }
-                                    .onReceive(DataSocketManager.shared.$otherPlayerSendValues) { newValue in
-                                        if newValue {
-                                            if (AppData.shared.parameter_name == rectangles[index].0 &&
-                                                DataSocketManager.shared.otherPlayerSendValues == true) {
+            //            HStack{
+            //
+            //                Text(cardHeading)
+            //                    .font(Font.custom("Hoefler Text", size: 24).weight(.bold))
+            //                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+            //                    .textCase(.uppercase)
+            
+            
+            VStack {
+                ForEach(0..<(rectangles.count / 2), id: \.self) { rowIndex in
+                    HStack(spacing: 20) {
+                        ForEach(0..<2, id: \.self) { colIndex in
+                            let index = rowIndex * 2 + colIndex
+                            if index < rectangles.count {
+                                RectangleView(
+                                    heading: rectangles[index].0,
+                                    content: rectangles[index].1,
+                                    isSelected: Binding(
+                                        get: { isSelected(rectangle: rectangles[index]) },
+                                        set: {  newValue in
+                                            if (AppData.shared.mychance == 1){
+                                                
                                                 handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
-                                                DraggedCardData.shared.draggedCard = DraggedCardModel(imageName: imageName, cardHeading: cardHeading, rectangles: rectangles)
-                                                print("going to call members play from onrecieve")
-                                                print(rectangles[index].1)
-                                                DataSocketManager.shared.otherPlayerSendValues = false
-                                                DataSocketManager.shared.members_play_call(parameterName: rectangles[index].0, parameterValue: rectangles[index].1)
                                             }
+                                            //                                                else{
+                                            //                                                    if(AppData.shared.parameter_name == rectangles[index].0 && AppData.shared.parameter_value == rectangles[index].1 && DataSocketManager.shared.otherPlayerSendValues == true){
+                                            //
+                                            //                                                        handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
+                                            //                                                        print("going to call members play from else if")
+                                            //                                                        DataSocketManager.shared.members_play_call(parameterName: rectangles[index].0,parameterValue: rectangles[index].1)
+                                            //                                                        //                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                                            //                                                        //                                                            callAPI(endpoint: "/score_update", method: "POST", formData: [ "room_id": AppData.shared.roomID]) { responseString in
+                                            //                                                        //                                                                if let responseString = responseString,
+                                            //                                                        //                                                                   let data = responseString.data(using: .utf8),
+                                            //                                                        //                                                                   let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                                            //                                                        //                                                                   let scores = json["scores"] as? [String: Int],
+                                            //                                                        //                                                                   let winner = json["winner"] as? String {
+                                            //                                                        //                                                                    if let score = scores[AppData.shared.username] {
+                                            //                                                        //                                                                        AppData.shared.score = score
+                                            //                                                        //                                                                    }
+                                            //                                                        //
+                                            //                                                        //                                                                    // Handle the response
+                                            //                                                        //                                                                    print("Response:\(responseString)")
+                                            //                                                        //
+                                            //                                                        //                                                                    if(AppData.shared.username == winner){
+                                            //                                                        //                                                                        AppData.shared.mychance = 1
+                                            //                                                        //                                                                        showWinSheet = true
+                                            //                                                        //                                                                    }else{
+                                            //                                                        //                                                                        AppData.shared.mychance = 0
+                                            //                                                        //                                                                    }
+                                            //                                                        //                                                                } else {
+                                            //                                                        //                                                                    // Handle the error
+                                            //                                                        //                                                                    print("Failed to fetch data")
+                                            //                                                        //                                                                }
+                                            //                                                        //                                                            }
+                                            //                                                        //                                                        }
+                                            //
+                                            //                                                    }
+                                            //                                                }
+                                        }
+                                    )
+                                )
+                                .onTapGesture {
+                                    if (AppData.shared.mychance == 1) {
+                                        print(rectangles[index].1)
+                                        AppData.shared.parameter_name = rectangles[index].0
+                                        AppData.shared.parameter_value = rectangles[index].1
+                                    }
+                                }
+                                .onReceive(DataSocketManager.shared.$otherPlayerSendValues) { newValue in
+                                    if newValue {
+                                        if (AppData.shared.parameter_name == rectangles[index].0 &&
+                                            DataSocketManager.shared.otherPlayerSendValues == true) {
+                                            handleRectangleTap(rectangle: rectangles[index], newValue: newValue)
+                                            DraggedCardData.shared.draggedCard = DraggedCardModel(imageName: imageName, cardHeading: cardHeading, rectangles: rectangles)
+                                            print("going to call members play from onrecieve")
+                                            print(rectangles[index].1)
+                                            DataSocketManager.shared.otherPlayerSendValues = false
+                                            DataSocketManager.shared.members_play_call(parameterName: rectangles[index].0, parameterValue: rectangles[index].1)
                                         }
                                     }
                                 }
@@ -105,15 +105,14 @@ struct GameCard: View {
                         }
                     }
                 }
-                .padding(.horizontal, 5.0)
-                .padding(.top, 60.0)
-                .cornerRadius(15)
-                .offset(x: 57, y: -45)
             }
-//        }
+            .padding(.horizontal, 5.0)
+            .padding(.top, 60.0)
+            .cornerRadius(15)
+            .offset(x: 57, y: -30)
+        }
+        //        }
         .shadow(color: Color.black.opacity(0.3), radius: 5, x: 4)
-        .offset(y: 18)
-        
     }
     
     //    private func handleRectangleTap(rectangle: (String, String, String, String)) {
@@ -221,6 +220,8 @@ struct RectangleView: View {
     }
 }
 
+
+
 struct dStackView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
@@ -239,8 +240,8 @@ struct dStackView_Previews: PreviewProvider {
                 )
             
             GameCard(
-                imageName: "Odhisa",
-                cardHeading: "Odhisa",
+                imageName: "Himachal Pradesh",
+                cardHeading: "Himachal Pradesh",
                 rectangles: [
                     ("AREA", "12111"),
                     ("POPULATION", "12121"),

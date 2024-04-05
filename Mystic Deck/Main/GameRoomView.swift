@@ -31,17 +31,15 @@ struct GameRoomView: View {
     }
     
     var body: some View {
-        GeometryReader { geo in
+
             
             ZStack {
-                Color.clear
-                    .background(
-                Image("BG")
+               
+                Image("themenew")
                     .resizable()
                     .scaledToFill()
+                    .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
-                    .frame(width: geo.size.width+200, height: geo.size.height)
-                )
                 
                 
                 VStack{
@@ -341,11 +339,16 @@ struct GameRoomView: View {
                 
                 showWinSheet = false
             }) {
-                Text("You win!")
-                    .font(.title)
-                    .foregroundColor(.black)
-                    .padding()
-            }
+                Image("sheetwin")
+                    .resizable()
+                    .scaledToFit()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: 400, height: 300)
+//                Text("You win!")
+//                    .font(.title)
+//                    .foregroundColor(.black)
+//                    .padding()
+            }.background(Color(red: 0.48, green: 0.12, blue: 0.63))
             .sheet(isPresented: $showLoseSheet, onDismiss: {
                 // Loop through the jsonData to find and remove matching key-value pairs
                 if var jsonData = JSONDataManager.shared.jsonData {
@@ -390,11 +393,12 @@ struct GameRoomView: View {
                 
                 showLoseSheet = false
             }) {
-                Text("You Loose!")
-                    .font(.title)
-                    .foregroundColor(.black)
-                    .padding()
-            }
+                Image("sheetlose")
+                    .resizable()
+                    .scaledToFit()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: 400, height: 300)
+            }.background(Color(red: 0.48, green: 0.12, blue: 0.63))
             .id(refreshID)
             .onReceive(DataSocketManager.shared.$startScoreUpdate) { newValue in
                 if newValue {
@@ -438,8 +442,6 @@ struct GameRoomView: View {
                 print("CHANGED")
             }
         }
-        
-    }
 }
 
 //struct GameRoomView_Previews: PreviewProvider {

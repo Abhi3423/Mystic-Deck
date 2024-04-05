@@ -20,6 +20,7 @@ struct NavigationBarView: View {
         NavigationView {
             
             VStack {
+                
                 switch selectedTab {
                 case 0:
                     HomeView()
@@ -51,20 +52,19 @@ struct NavigationBarView: View {
                 .padding(.horizontal,40)
                 .padding(.top,10)
                 .padding(.bottom,-16)
-                .background(Color.purpleColor)
-                
+                .background(Color(red: 0.48, green: 0.12, blue: 0.63).opacity(0.9))
             }
             
             .background(
                 ZStack {
-                    Image("themenew1")
+                    Image("themenew")
                         .resizable()
                         .scaledToFill()
                         .edgesIgnoringSafeArea(.all)
                 }
             )
             
-            //            .navigationBarItems(leading: Heading(), trailing: ProfileButton())
+            // .navigationBarItems(leading: Heading(), trailing: ProfileButton())
             
         }
         .navigationBarBackButtonHidden(true)
@@ -87,177 +87,176 @@ struct TabBarButton: View {
     }
     
     var body: some View {
-        //        Button(
-        //            Image(systemName: imageName)
-        //                .resizable()
-        //                .aspectRatio(contentMode: .fit)
-        //                .frame(width: 28, height: 28)
-        //        .padding(.bottom, -30.0)
-        //
-        //        .foregroundColor(selectedTab == tabIndex ? .blue : .gray)) {onClick()
-        //        }
-        //        Button(action: onClick) {
-        //            Image(systemName: imageName)
-        //                .resizable()
-        //                .aspectRatio(contentMode: .fit)
-        //                .frame(width: 28, height: 28)
-        //        .padding(.bottom, -30.0)
-        //
-        //        }
+        
         VStack{
             Button("", systemImage: imageName, action: onClick)    .labelStyle(.iconOnly)
-                .foregroundColor(selectedTab == tabIndex ? .white : .white.opacity(0.6))
+                .foregroundColor(selectedTab == tabIndex ? .white : .white.opacity(0.4))
             
             Text("\(title)")
                 .font(Font.custom("Hoefler Text", size: 13))
                 .padding(.top,1.0)
-                .foregroundColor(selectedTab == tabIndex ? .white : .white)
+                .foregroundColor(selectedTab == tabIndex ? .white : .white.opacity(0.4))
         }
+    }
+}
+
+
+struct Navbar: View {
+    let NavbarHeading: String
+    
+    var body: some View{
         
-        //    label: {VStack {
-        //        Image(systemName: imageName)
-        //            .resizable()
-        //            .aspectRatio(contentMode: .fit)
-        //            .frame(width: 28, height: 28)
-        //    }
-        //    .padding(.bottom, -30.0)
-        //
-        //    .foregroundColor(selectedTab == tabIndex ? .blue : .gray)
-        //    }
-        //        .onAppear {
-        //                    // You can print selectedTab here
-        //                    print(selectedTab)
-        //                    print(tabIndex)
-        //                }
+        HStack {
+            
+            
+            Image("profile")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+                .foregroundColor(.white)
+                .padding(.horizontal, -10)
+                .padding(.vertical, -25)
+                .onTapGesture {
+                    // Handle tapping the export icon
+                }
+            
+//            Image("back")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
+//                .foregroundColor(.white)
+//                .padding(.horizontal, 3)
+//                .padding(.vertical, -25)
+//                .onTapGesture {
+//                    // Handle tapping the export icon
+//                }
+            
+            Spacer()
+            
+            Text(NavbarHeading)
+                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(Color.white)
+                .multilineTextAlignment(.center)
+                .lineLimit(0)
+                .padding(.vertical, -5)
+                
+            
+            Spacer() // Added spacer to push images to the right
+            
+            Image("bar")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
+                .foregroundColor(.white)
+                .padding(.horizontal, 5)
+                .padding(.vertical, -25)
+                .onTapGesture {
+                    // Handle tapping the export icon
+                }
+        }
+        .padding(.horizontal)
+        .padding(.top, 4.0)
     }
 }
 
 struct AchievementsView: View {
     var body: some View {
         
-        VStack (spacing: 30){
-            VStack{
-                
-                HStack {
-                    
-                    
-                    Image("back")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 3)
-                        .padding(.vertical, -25)
-                        .onTapGesture {
-                            // Handle tapping the export icon
-                        }
-                    Spacer(minLength: 73)
-                    Text("Achievements")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(0)
-                        .padding(.vertical, -5)
-                        .padding(.trailing, 10) // Added padding to create space between text and images
-                    
-                    Spacer() // Added spacer to push images to the right
-                    
-                    Image("profile")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                        .foregroundColor(.white)
-                        .padding(.horizontal, -10)
-                        .padding(.vertical, -25)
-                        .onTapGesture {
-                            // Handle tapping the export icon
-                        }
-                    
-                    Image("bar")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, -25)
-                        .onTapGesture {
-                            // Handle tapping the export icon
-                        }
-                }
-            }            .padding(.top, -80.5)
-            
-            
-            //                        themeButtons
-            //
-            //                        ScrollView {
-            //                            if selectedTheme != "" {
-            //                                generateImages(for: selectedTheme)
-            //                            }
-            //                        }
-            
-        }
+        Navbar(NavbarHeading: "Achievements")
         
-        
-        
-        NavigationView {
+        VStack(alignment: .center, spacing: 20.0) {
+            AcheivementBox(imagename:"beginner", title: "Beginner", description: "Unlock your first card!")
             
+            AcheivementBox(imagename:"collector", title: "Collector", description: "Unlock your first card!")
             
-            VStack {
-                
-                Spacer()
-                
-                List {
-                    
-                    AchievementRow(title: "Beginner", description: "")
-                    
-                    AchievementRow(title: "Collector", description: "Collect 10 different badges")
-                    
-                    AchievementRow(title: "Master", description: "Unlock all the badges")
-                    // Add more achievement rows as needed
-                }
-                .scrollContentBackground(.hidden) // Hide the standard background of the List
-                
-            }
-            .background(
-                Image("themenew1")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-            )
+            AcheivementBox(imagename:"master", title: "Master", description: "Unlock your first card!")
             
-            
-        }
+        }.padding(.vertical,50.0)
     }
     
-    struct AchievementRow: View {
+    struct AcheivementBox: View{
+        var imagename: String
         var title: String
         var description: String
         
-        var body: some View {
-            
-            
-            VStack(alignment: .leading) {
-                Text(title)
-                    .font(.headline)
-                    .padding()
-                    .background(Color.white.opacity(0.8)) // Background color for title
-                    .cornerRadius(10) // Rounded corners for the title background
-                Image("win")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 100,height: 100)
-                Text(description)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .padding()
-                    .background(Color.white.opacity(0.8)) // Background color for description
-                    .cornerRadius(10) // Rounded corners for the description background
+        var body: some View{
+            ZStack() {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 325, height: 117)
+                    .background(Color(red: 0.95, green: 0.81, blue: 1))
+                    .cornerRadius(15)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .inset(by: 0.50)
+                            .stroke(Color(red: 0.48, green: 0.12, blue: 0.63), lineWidth: 0.50)
+                    )
+                    .offset(x: 0, y: 0)
+                    .shadow(
+                        color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 4
+                    )
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 91, height: 85)
+                    .background(Color(red: 0.48, green: 0.12, blue: 0.63).opacity(0.40))
+                    .cornerRadius(10)
+                    .offset(x: -104, y: 0)
+                Text("\(title)")
+                    .font(Font.custom("Inter", size: 17).weight(.heavy))
+                    .lineSpacing(13.74)
+                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                    .offset(x: -6, y: -31.50)
+                ZStack() {
+                    Image("\(imagename)")
+                        .frame(width: 64, height: 45.90)
+                        .offset(x: -78, y: 15)
+                    
+                }
+                .frame(width: 62.69, height: 40.90)
+                .offset(x: -31.37, y: -17.55)
+                .rotationEffect(.degrees(-3.05))
+                Text("\(description)")
+                    .font(Font.custom("Inter", size: 12).weight(.heavy))
+                    .lineSpacing(13.74)
+                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63).opacity(0.50))
+                    .offset(x: 20.50, y: -7.50)
+                ZStack() {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 191, height: 23)
+                        .background(Color(red: 0.48, green: 0.12, blue: 0.63).opacity(0.40))
+                        .cornerRadius(5)
+                        .offset(x: 0, y: 0)
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 163, height: 16)
+                        .background(Color(red: 0.95, green: 0.81, blue: 1))
+                        .cornerRadius(3)
+                        .offset(x: -11, y: 0.50)
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 58, height: 16)
+                        .background(Color(red: 0.48, green: 0.12, blue: 0.63))
+                        .cornerRadius(3)
+                        .offset(x: -63.50, y: 0.50)
+                    Text("3")
+                        .font(Font.custom("Inter", size: 8.20).weight(.semibold))
+                        .lineSpacing(6.62)
+                        .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                        .offset(x: 77.50, y: 1)
+                    Text("25%")
+                        .font(Font.custom("Inter", size: 8.20).weight(.semibold))
+                        .lineSpacing(6.62)
+                        .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                        .offset(x: -2.50, y: 0)
+                }
+                .frame(width: 191, height: 23)
+                .offset(x: 50, y: 31)
             }
-            
+            .frame(width: 325, height: 117)
         }
-        
     }
 }
 
@@ -276,101 +275,58 @@ struct GuideView: View {
     @State private var currentIndex = 0
     
     var body: some View {
-        VStack (spacing: 30){
-            VStack{
-                
-                HStack {
-                    
-                    
-                    Image("back")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 3)
-                        .padding(.vertical, -25)
-                        .onTapGesture {
-                            // Handle tapping the export icon
-                        }
-                    Spacer(minLength: 115)
-                    Text("Guide")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(0)
-                        .padding(.vertical, -5)
-                        .padding(.trailing, 10) // Added padding to create space between text and images
-                    
-                    Spacer() // Added spacer to push images to the right
-                    
-                    Image("profile")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                        .foregroundColor(.white)
-                        .padding(.horizontal, -10)
-                        .padding(.vertical, -25)
-                        .onTapGesture {
-                            // Handle tapping the export icon
-                        }
-                    
-                    Image("bar")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, -25)
-                        .onTapGesture {
-                            // Handle tapping the export icon
-                        }
-                }
-            }            .padding(.top, -80.5)
-            
-            
-            //                        themeButtons
-            //
-            //                        ScrollView {
-            //                            if selectedTheme != "" {
-            //                                generateImages(for: selectedTheme)
-            //                            }
-            //                        }
-            
-        }
+        
+        Navbar(NavbarHeading: "Guide")
         
         GeometryReader { geometry in
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 45) {
-                    ForEach(points.indices, id: \.self) { index in
-                        Text(points[index])
-                            .font(.headline)
-                            .padding()
-                            .frame(width: geometry.size.width - 40) // Adjust width
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .shadow(radius: 5)
-                            .opacity(currentIndex == index ? 1.0 : 0.5)
-                    }
-                }
-                .frame(width: geometry.size.width * CGFloat(points.count), height: 650) // Adjust height
-                .padding()
-                .offset(x: -CGFloat(currentIndex) * geometry.size.width - 17)
-                .animation(.easeInOut(duration: 1.0))
-            }
-            .onAppear {
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                    withAnimation {
-                        currentIndex = (currentIndex + 1) % points.count
-                    }
+            ScrollView {
+                VStack(alignment: .center, spacing: 30) {
+                    GuideBox()
+                    GuideBox()
+                    GuideBox()
                 }
             }
+            .frame(width: geometry.size.width)
+            .padding(.top, 60.0)
         }
-        Spacer()
+    }
+    
+    
+    struct GuideBox: View{
+        var body: some View{
+            ZStack() {
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: 325, height: 237)
+                    .background(Color(red: 0.95, green: 0.81, blue: 1))
+                    .cornerRadius(15)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .inset(by: 0.50)
+                            .stroke(Color(red: 0.48, green: 0.12, blue: 0.63), lineWidth: 0.50)
+                    )
+                    .offset(x: 0, y: 0)
+                    .shadow(
+                        color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 4
+                    )
+                Text("How to Play")
+                    .font(Font.custom("Inter", size: 17).weight(.semibold))
+                    .lineSpacing(13.74)
+                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                    .offset(x: 0, y: -90.50)
+                HStack{
+                    Text("Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet")
+                        .font(Font.custom("Inter", size: 12))
+                        .lineSpacing(17)
+                        .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                }.padding()
+            }
+            .frame(width: 325, height: 237)
+        }
     }
 }
+
+
 
 struct SettingsView: View {
     @State private var isSoundEnabled = true
@@ -378,70 +334,8 @@ struct SettingsView: View {
     @State private var isHintsEnabled = true
     
     var body: some View {
-        VStack (spacing: 30){
-            VStack{
-                
-                HStack {
-                    
-                    
-                    Image("back")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 3)
-                        .padding(.vertical, -25)
-                        .onTapGesture {
-                            // Handle tapping the export icon
-                        }
-                    Spacer(minLength: 108)
-                    Text("Setting")
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(0)
-                        .padding(.vertical, -5)
-                        .padding(.trailing, 10) // Added padding to create space between text and images
-                    
-                    Spacer() // Added spacer to push images to the right
-                    
-                    Image("profile")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                        .foregroundColor(.white)
-                        .padding(.horizontal, -10)
-                        .padding(.vertical, -25)
-                        .onTapGesture {
-                            // Handle tapping the export icon
-                        }
-                    
-                    Image("bar")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, -25)
-                        .onTapGesture {
-                            // Handle tapping the export icon
-                        }
-                }
-            }
-            .padding(.top, -80.5)
-            
-            
-            //                        themeButtons
-            //
-            //                        ScrollView {
-            //                            if selectedTheme != "" {
-            //                                generateImages(for: selectedTheme)
-            //                            }
-            //                        }
-            
-        }
+        
+        Navbar(NavbarHeading: "Settings")
         
         VStack(spacing: 20) {
             Spacer()
@@ -542,22 +436,6 @@ struct SettingsView: View {
     }
 }
 
-struct MenuButton: View {
-    var body: some View {
-        Button(action: {
-            // Handle menu action
-        }) {
-            Image(systemName: "list.dash")
-                .imageScale(.large)
-                .foregroundColor(Color(hue: 0.728, saturation: 0.953, brightness: 0.741))
-                .padding()
-        }
-    }
-}
-
-
-
-
 
 struct HomeView: View {
     
@@ -565,299 +443,56 @@ struct HomeView: View {
         
         
         //Home Page
-        ZStack {
+        Navbar(NavbarHeading: "MysticDeck")
+        
+        VStack{
             
-            
-            //             Background Image
-            //            Image("BG")
-            //                .resizable()
-            //                .scaledToFill()
-            //                .edgesIgnoringSafeArea(.all)
-            ////
-            //            LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.601), Color.clear]), startPoint: .top, endPoint: .center)
-            //                .edgesIgnoringSafeArea(.top)
-            //
-            VStack {
+            ZStack {
                 
                 
-                VStack{
-                    
-                    HStack {
-                        
-                        
-                        Image("back")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 3)
-                            .padding(.vertical, -25)
-                            .onTapGesture {
-                                // Handle tapping the export icon
-                            }
-                        Spacer(minLength: 108)
-                        Text("Home")
-                            .font(.system(size: 20, weight: .bold, design: .rounded))
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.white)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(0)
-                            .padding(.vertical, -5)
-                            .padding(.trailing, 10) // Added padding to create space between text and images
-                        
-                        Spacer() // Added spacer to push images to the right
-                        
-                        Image("profile")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                            .foregroundColor(.white)
-                            .padding(.horizontal, -10)
-                            .padding(.vertical, -25)
-                            .onTapGesture {
-                                // Handle tapping the export icon
-                            }
-                        
-                        Image("bar")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 5)
-                            .padding(.vertical, -25)
-                            .onTapGesture {
-                                // Handle tapping the export icon
-                            }
-                    }
-                }
-                .padding(.top, -250.5)
-                
-                
-                //                        themeButtons
+                //             Background Image
+                //            Image("BG")
+                //                .resizable()
+                //                .scaledToFill()
+                //                .edgesIgnoringSafeArea(.all)
+                ////
+                //            LinearGradient(gradient: Gradient(colors: [Color(hue: 0.628, saturation: 0.553, brightness: 0.601), Color.clear]), startPoint: .top, endPoint: .center)
+                //                .edgesIgnoringSafeArea(.top)
                 //
-                //                        ScrollView {
-                //                            if selectedTheme != "" {
-                //                                generateImages(for: selectedTheme)
-                //                            }
-                //                        }
                 
-            }
-            Text("Welcome User !!")
-                .font(.title)
-                .bold()
-                .foregroundColor(.purple)
-                .padding(.top, -190)
-            
-            Image("Kite")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            //                    .frame(width: 300, height: 300)
-            
-            VStack(spacing: 20) {
-                Spacer(minLength: 1)
+                Text("Welcome Abhishek !!")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.purple)
+                    .padding(.top, -180)
                 
-                NavigationLink(destination: LoadingView()) {
-                    
-                    ButtonView(label: "Join Room")
-                }
+                Image("Kite")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .offset(x:10, y:20)
+                //                    .frame(width: 300, height: 300)
                 
-                NavigationLink(destination: WaitingRoomView(comingfrom: "create_room")) {
+                VStack(spacing: 20) {
+                    Spacer(minLength: 1)
                     
-                    ButtonView(label: "Create Room")
-                }
-            }
-            //                Image("Lotus")
-            //                    .frame(width: 50,height: 80)
-            
-        }
-        .padding(.top, -200)
-        
-    }
-    
-}
-//    }
-
-
-
-struct Heading: View {
-    @State private var selectedTheme: String = Theme.history.rawValue
-    @State private var isNavigationActive = false
-    
-    var body: some View {
-        NavigationView {
-            GeometryReader { geo in
-                ZStack {
-                    Color.clear
-                        .background(
-                            Image("themenew1")
-                                .resizable()
-                                .scaledToFill()
-                                .edgesIgnoringSafeArea(.all)
-                                .frame(width: geo.size.width, height: geo.size.height)
-                        )
-                    
-                    
-                    VStack (spacing: 1){
-                        VStack{
-                            HStack {
-                                
-                                Image("back")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 3)
-                                    .padding(.vertical, -25)
-                                    .onTapGesture {
-                                        // Handle tapping the export icon
-                                    }
-                                Spacer(minLength: 108)
-                                Text("HOME")
-                                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color.white)
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(0)
-                                    .padding(.vertical, -5)
-                                    .padding(.trailing, 10) // Added padding to create space between text and images
-                                
-                                Spacer() // Added spacer to push images to the right
-                                
-                                Image("profile")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50, height: 40) // Adjusted frame size to reduce image size
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, -10)
-                                    .padding(.vertical, -25)
-                                    .onTapGesture {
-                                        // Handle tapping the export icon
-                                    }
-                                
-                                Image("bar")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 40, height: 40) // Adjusted frame size to reduce image size
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 5)
-                                    .padding(.vertical, -25)
-                                    .onTapGesture {
-                                        // Handle tapping the export icon
-                                    }
-                            }
-                        }
+                    NavigationLink(destination: LoadingView()) {
                         
-                        //                        themeButtons
-                        //
-                        //                        ScrollView {
-                        //                            if selectedTheme != "" {
-                        //                                generateImages(for: selectedTheme)
-                        //                            }
-                        //                        }
-                        .padding(.bottom, 700.5)
+                        ButtonView(label: "Join Room")
+                    }
+                    
+                    NavigationLink(destination: WaitingRoomView(comingfrom: "create_room")) {
+                        
+                        ButtonView(label: "Create Room")
                     }
                 }
-                .onAppear {
-                    // Set navigation bar color
-                    UINavigationBar.appearance().barTintColor = UIColor(named: "7A1FA0")
-                }
+                //                Image("Lotus")
+                //                    .frame(width: 50,height: 80)
                 
             }
-            .navigationBarTitle("", displayMode: .inline)
-            .navigationBarBackButtonHidden(true)
-        }
-        .navigationBarBackButtonHidden(true)
-    }
-    
-    
-    
-    //    private var themeButtons: some View {
-    //        HStack(spacing: 8) {
-    //            ForEach(Theme.allCases) { theme in
-    //                Button(action: {
-    //                    selectedTheme = theme.rawValue
-    //                }) {
-    //                    Text(theme.rawValue)
-    //                        .padding(.horizontal, 9)
-    //                        .padding(.vertical, 10)
-    //                        .background(
-    //                            selectedTheme == theme.rawValue ?
-    //                                Color(hex: "7A1FA0") :
-    //                                Color(hex: "5D0083").opacity(0.4)
-    //                        )
-    //                        .foregroundColor(selectedTheme == theme.rawValue ? .white : Color(hex: "7A1FA0"))
-    //                        .cornerRadius(20)
-    //                }
-    //                .padding(.bottom, 8)
-    //            }
-    //        }
-    //    }
-    
-    
-    
-    
-    @ViewBuilder
-    var destinationView: some View {
-        if isNavigationActive {
-            LoadingGameRoomView(theme: AppData.shared.themeselected, imageName: AppData.shared.topicselected)
-        } else {
-            EmptyView()
-        }
-    }
-    
-    private func generateImages(for theme: String) -> some View {
-        var imageNames: [String] = []
-        
-        switch theme {
-        case "History":
-            imageNames = ["H1.2", "H2.2", "H3.2", "H4.2"]
-        case "Geography":
-            imageNames = ["states and cities", "G2.2", "G3.2", "G4.2"]
-        case "Science":
-            imageNames = ["S1.2", "S2.2", "S3.2", "S4.2"]
-        case "Ecosystem":
-            imageNames = ["E1", "E2", "E3", "E4"]
-        default:
-            print("default theme")
-        }
-        
-        return VStack(spacing: 20) {
-            ForEach(imageNames, id: \.self) { imageName in
-                
-                NavigationLink(
-                    destination: destinationView,
-                    isActive: $isNavigationActive,
-                    label: {
-                        EmptyView()
-                    }
-                )
-                
-                
-                Button(
-                    action: {
-                        // Handle both navigation and button actions here
-                        AppData.shared.themeselected = selectedTheme
-                        AppData.shared.topicselected = imageName
-                        DataSocketManager.shared.theme_selection() // Trigger navigation
-                        isNavigationActive = DataSocketManager.shared.shouldNavigateToLoadingGameRoom
-                        print(isNavigationActive)
-                        print(AppData.shared.themeselected)
-                    },
-                    label: {
-                        Image(imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 370, height: 150)
-                    })
-                Spacer()
-            }
+            .padding(.top, -200)
             
         }
     }
-    
-    
     
 }
 

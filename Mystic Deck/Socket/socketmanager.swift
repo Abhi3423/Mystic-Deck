@@ -10,7 +10,7 @@ class DataSocketManager {
     @Published var shouldNavigateToLoadingGameRoom:Bool = false
     
     static let shared = DataSocketManager()
-    private let manager = SocketManager(socketURL: URL(string: "https://7829-2406-7400-bd-33d-6968-deb6-5eac-d986.ngrok-free.app/")! ,config: [
+    private let manager = SocketManager(socketURL: URL(string: "https://6a63-183-82-178-252.ngrok-free.app/")! ,config: [
         .connectParams(["EIO": "3"]),
         .version(.two)
     ])
@@ -57,12 +57,32 @@ class DataSocketManager {
         }
         
         
-        // Handle 'status' event called by join_room and leave_room
-        socket?.on("status") { data, _ in
-            if let dataArray = data as? [[String: Any]], let message = dataArray[0]["message"] as? String {
+        // Inside your socket?.on("status") closure
+        socket?.on("status") { [weak self] data, _ in
+            if let dataArray = data as? [[String: Any]],
+               let message = dataArray[0]["message"] as? String,
+               let status = dataArray[0]["status"] as? Bool {
+                
+                DispatchQueue.main.async { // Ensure updates are on the main thread
+                    
+                    if status {
+                        AppData.shared.RoomEntryStatus = true
+                        print(AppData.shared.RoomEntryStatus)
+                        if let users = dataArray[0]["users"] as? [String] {
+                            AppData.shared.OpponentPlayers = users
+                            print(users)
+                        } else {
+                            AppData.shared.OpponentPlayers = []
+                        }
+                    }else{
+                        AppData.shared.JoinStatusMessage = message
+                    }
+                }
                 print("Received status message: \(message)")
             }
         }
+
+
         
         
         // Handle 'leave' event called by leave_room
@@ -100,6 +120,10 @@ class DataSocketManager {
 
         
         
+    }
+    
+    func join_room(){
+        self.socket?.emit("join_room", ["username": AppData.shared.username, "room_id": AppData.shared.roomID])
     }
     
     func leave_room(){
