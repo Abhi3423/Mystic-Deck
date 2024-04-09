@@ -206,11 +206,17 @@ struct LoadingView: View {
                     .padding(.bottom, -80)
                     .padding(.top, 50.0)
                     .onReceive(AppData.shared.$RoomEntryStatus) { shouldNavigate in
-                        if shouldNavigate {
-                            if(AppData.shared.RoomEntryStatus == true){
-                                print(AppData.shared.roomID)
-                                navigateToWaitingRoom = true
-                                print("going to navigate")
+                        DispatchQueue.main.async{
+                            if shouldNavigate {
+//                                print("room entry status updated")
+//                                print("Value:", AppData.shared.RoomEntryStatus)
+//                                print("Type:", type(of: AppData.shared.RoomEntryStatus))
+                                
+                                if(AppData.shared.RoomEntryStatus == true){
+                                    print(AppData.shared.roomID)
+                                    navigateToWaitingRoom = true
+                                    print("going to navigate")
+                                }
                             }
                         }
                     }
@@ -218,7 +224,7 @@ struct LoadingView: View {
                         DispatchQueue.main.async { // Ensure updates are on the main thread
                             showMessage = !AppData.shared.JoinStatusMessage.isEmpty
                             JoinMessage = AppData.shared.JoinStatusMessage
-                            print(JoinMessage)
+                            print("OnRecieve message: \(JoinMessage)")
                             refreshID = UUID() // Refreshing to trigger the animation again
                         }
                     }

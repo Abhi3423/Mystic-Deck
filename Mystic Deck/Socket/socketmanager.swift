@@ -10,7 +10,7 @@ class DataSocketManager {
     @Published var shouldNavigateToLoadingGameRoom:Bool = false
     
     static let shared = DataSocketManager()
-    private let manager = SocketManager(socketURL: URL(string: "https://6a63-183-82-178-252.ngrok-free.app/")! ,config: [
+    private let manager = SocketManager(socketURL: URL(string: "https://3eea-2406-7400-bd-34e0-5896-9589-96fc-f064.ngrok-free.app/")! ,config: [
         .connectParams(["EIO": "3"]),
         .version(.two)
     ])
@@ -64,10 +64,8 @@ class DataSocketManager {
                let status = dataArray[0]["status"] as? Bool {
                 
                 DispatchQueue.main.async { // Ensure updates are on the main thread
-                    
                     if status {
                         AppData.shared.RoomEntryStatus = true
-                        print(AppData.shared.RoomEntryStatus)
                         if let users = dataArray[0]["users"] as? [String] {
                             AppData.shared.OpponentPlayers = users
                             print(users)
