@@ -460,7 +460,7 @@ struct HomeView: View {
                 //                .edgesIgnoringSafeArea(.top)
                 //
                 
-                Text("Welcome Abhishek !!")
+                Text("Welcome \(AppData.shared.username) !!")
                     .font(.title)
                     .bold()
                     .foregroundColor(.purple)

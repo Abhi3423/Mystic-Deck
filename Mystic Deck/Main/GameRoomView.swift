@@ -170,8 +170,6 @@ struct GameRoomView: View {
                                 }
                             }
                         }
-                        
-                        if(showPlayButton == true || AppData.shared.mychance == 1){
                             
                             Rectangle()
                                 .foregroundColor(.clear)
@@ -180,7 +178,8 @@ struct GameRoomView: View {
                                 .cornerRadius(20)
                                 .offset(y: 130)
                                 .shadow(radius: 10)
-                               
+                       
+                        if(showPlayButton == true || AppData.shared.mychance == 1){
                             
                             VStack {
                                 Spacer()
@@ -201,7 +200,7 @@ struct GameRoomView: View {
                                             .offset(x: 0.39, y: -0.49)
                                     }
                                 }
-                                .padding(.bottom,10.0)
+                                .padding(.bottom,40.0)
                             }
                         }
                         
@@ -339,28 +338,67 @@ struct GameRoomView: View {
                 
                 showWinSheet = false
             }) {
-                Image("sheetwin")
-                    .resizable()
-                    .scaledToFit()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: 400, height: 300)
-//                Text("You win!")
-//                    .font(.title)
-//                    .foregroundColor(.black)
-//                    .padding()
-            }.background(Color(red: 0.48, green: 0.12, blue: 0.63))
+                
+                Color(red: 0.95, green: 0.82, blue: 1) // Adjust the RGB values as needed
+                       .edgesIgnoringSafeArea(.all) // Ignore safe area edges
+                       .overlay(
+                        VStack(spacing: 0) {
+                            Image("sheetwin")
+                                .resizable()
+                                .scaledToFit()
+                                .edgesIgnoringSafeArea(.all)
+                                .frame(width: 400, height: 300)
+                                .padding(.vertical, 20.0)
+                            
+                            ZStack() {
+                                Rectangle()
+                                    .foregroundColor(.clear)
+                                    .frame(width: 330, height: 215)
+                                    .background(Color(red: 0.95, green: 0.82, blue: 1))
+                                    .cornerRadius(12)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .inset(by: 0.50)
+                                            .stroke(Color(red: 0.48, green: 0.12, blue: 0.63), lineWidth: 0.50)
+                                    )
+                                    .offset(x: 0, y: 0)
+                                    .shadow(
+                                        color: Color(red: 0.48, green: 0.12, blue: 0.63, opacity: 1), radius: 0, x: 3.51, y: 3.51
+                                    )
+                                Text("Odisha")
+                                    .font(Font.custom("Inter", size: 20.53).weight(.bold))
+                                    .tracking(0.37)
+                                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                                    .offset(x: -114, y: -78.50)
+                                Text("Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tercc incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ut labore et dolore magna aliqua. Ut enim ad minim veniaut labore et ")
+                                    .font(Font.custom("Inter", size: 16))
+                                    .tracking(0.32)
+                                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                                    .offset(x: 7, y: 17)
+                                    .padding()
+                            }.frame(width: 330, height: 215)
+                        }
+                )
+                
+            }
+            .background(Color(red: 0.48, green: 0.12, blue: 0.63))
             .sheet(isPresented: $showLoseSheet, onDismiss: {
                 // Loop through the jsonData to find and remove matching key-value pairs
                 if var jsonData = JSONDataManager.shared.jsonData {
                     print(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"])
                     if var cards = jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"].dictionaryObject as? [String: [String: String]] {
                         var keysToRemove: [String] = []
-                        
+                        print("loss dismiss: \(AppData.shared.parameter_name)")
                         for (key, values) in cards {
+                            print(key, values)
                             // Check if the key-value pair matches the condition
                             if let parameterValue = values[AppData.shared.parameter_name], parameterValue == AppData.shared.parameter_value {
                                 // Add the key to the list of keys to remove
                                 keysToRemove.append(key)
+                            }else{
+                                let parameterValue = values[AppData.shared.parameter_name]
+                                print("loss dismiss parameterValue: \(parameterValue)")
+                                print("loss dismiss app data value: \(AppData.shared.parameter_value)")
                             }
                         }
                         
@@ -377,14 +415,15 @@ struct GameRoomView: View {
                                 print("Exit because cards over")
                                 DataSocketManager.shared.leave_room()
                                 isEndActive = true
-                            }else{
+                            }
+                            else{
                                 JSONDataManager.shared.jsonData = jsonData
                                 DraggedCardData.shared.resetDraggedCard()
                                 refreshID = UUID()
                             }
                         }
                         
-                        print(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"])
+//                      print(jsonData[AppData.shared.themeselected][AppData.shared.topicselected]["Cards"])
                     }
                     
                 } else {
@@ -393,11 +432,46 @@ struct GameRoomView: View {
                 
                 showLoseSheet = false
             }) {
-                Image("sheetlose")
-                    .resizable()
-                    .scaledToFit()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: 400, height: 300)
+                Color(red: 0.95, green: 0.82, blue: 1) // Adjust the RGB values as needed
+                       .edgesIgnoringSafeArea(.all) // Ignore safe area edges
+                       .overlay(
+                        VStack(spacing: 0) {
+                            Image("sheetlose")
+                                .resizable()
+                                .scaledToFit()
+                                .edgesIgnoringSafeArea(.all)
+                                .frame(width: 400, height: 200)
+                                .padding(.vertical, 20.0)
+                            
+                            ZStack() {
+                                Rectangle()
+                                    .foregroundColor(.clear)
+                                    .frame(width: 330, height: 215)
+                                    .background(Color(red: 0.95, green: 0.82, blue: 1))
+                                    .cornerRadius(12)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .inset(by: 0.50)
+                                            .stroke(Color(red: 0.48, green: 0.12, blue: 0.63), lineWidth: 0.50)
+                                    )
+                                    .offset(x: 0, y: 0)
+                                    .shadow(
+                                        color: Color(red: 0.48, green: 0.12, blue: 0.63, opacity: 1), radius: 0, x: 3.51, y: 3.51
+                                    )
+                                Text("Odisha")
+                                    .font(Font.custom("Inter", size: 20.53).weight(.bold))
+                                    .tracking(0.37)
+                                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                                    .offset(x: -114, y: -78.50)
+                                Text("Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tercc incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ut labore et dolore magna aliqua. Ut enim ad minim veniaut labore et ")
+                                    .font(Font.custom("Inter", size: 16))
+                                    .tracking(0.32)
+                                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                                    .offset(x: 7, y: 17)
+                                    .padding()
+                            }.frame(width: 330, height: 215)
+                        }
+                )
             }.background(Color(red: 0.48, green: 0.12, blue: 0.63))
             .id(refreshID)
             .onReceive(DataSocketManager.shared.$startScoreUpdate) { newValue in
@@ -439,7 +513,6 @@ struct GameRoomView: View {
             }
             .onReceive(DraggedCardData.shared.$draggedCard){_ in
                 refreshID = UUID()
-                print("CHANGED")
             }
         }
 }
