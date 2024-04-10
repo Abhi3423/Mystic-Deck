@@ -399,6 +399,7 @@ struct SettingsView: View {
             //            .cornerRadius(10)
             //            Spacer()
             
+            
             Button(action: {
                 let firebaseAuth = Auth.auth()
                 do {

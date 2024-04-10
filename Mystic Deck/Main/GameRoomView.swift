@@ -16,6 +16,7 @@ struct GameRoomView: View {
     @State private var showLoseSheet = false
     @State private var isHomeActive = false
     @State private var isEndActive = false
+    @State private var winnerName: String = ""
     
     let theme: String
     let topic: String
@@ -350,6 +351,12 @@ struct GameRoomView: View {
                                 .frame(width: 400, height: 300)
                                 .padding(.vertical, 20.0)
                             
+                            Text("\(winnerName) has won the game")
+                                .font(Font.custom("Inter", size: 20.53).weight(.bold))
+                                .tracking(0.37)
+                                .padding()
+                                .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                            
                             ZStack() {
                                 Rectangle()
                                     .foregroundColor(.clear)
@@ -443,6 +450,12 @@ struct GameRoomView: View {
                                 .frame(width: 400, height: 200)
                                 .padding(.vertical, 20.0)
                             
+                            Text("\(winnerName) has won the game")
+                                .font(Font.custom("Inter", size: 20.53).weight(.bold))
+                                .tracking(0.37)
+                                .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                                .padding()
+
                             ZStack() {
                                 Rectangle()
                                     .foregroundColor(.clear)
@@ -493,6 +506,7 @@ struct GameRoomView: View {
                                     print("Response:\(responseString)")
                                     DataSocketManager.shared.startScoreUpdate = false
                                     print(refreshID)
+                                    winnerName = winner
                                     if AppData.shared.username == winner {
                                         AppData.shared.mychance = 1
                                         showWinSheet = true

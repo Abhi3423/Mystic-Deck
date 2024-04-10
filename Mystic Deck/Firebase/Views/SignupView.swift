@@ -95,7 +95,7 @@ struct SignupView2: View {
                 
                 Button(action: {
                     withAnimation {
-                        self.currentShowingView = "signin"
+                        self.currentShowingView = "login"
                     }
                 }) {
                     Text("Already have an account?")
