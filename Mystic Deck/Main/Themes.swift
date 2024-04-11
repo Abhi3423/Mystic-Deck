@@ -137,7 +137,7 @@ struct ThemeView: View {
 
         switch theme {
         case "History":
-            imageNames = ["H1.2", "H2.2", "H3.2", "H4.2"]
+            imageNames = ["kingdoms", "monuments", "H3.2", "H4.2"]
         case "Geography":
             imageNames = ["states and cities", "G2.2", "G3.2", "G4.2"]
         case "Science":

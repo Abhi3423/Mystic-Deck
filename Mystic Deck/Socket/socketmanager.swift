@@ -10,7 +10,7 @@ class DataSocketManager {
     @Published var shouldNavigateToLoadingGameRoom:Bool = false
     
     static let shared = DataSocketManager()
-    private let manager = SocketManager(socketURL: URL(string: "https://3eea-2406-7400-bd-34e0-5896-9589-96fc-f064.ngrok-free.app/")! ,config: [
+    private let manager = SocketManager(socketURL: URL(string: "https://085f-2405-201-e04c-d077-e8cc-8f5e-8365-78a.ngrok-free.app/")! ,config: [
         .connectParams(["EIO": "3"]),
         .version(.two)
     ])

@@ -19,19 +19,20 @@ struct GameCard: View {
                 .cornerRadius(17)
             
             
-            //            HStack{
-            //
-            //                Text(cardHeading)
-            //                    .font(Font.custom("Hoefler Text", size: 24).weight(.bold))
-            //                    .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
-            //                    .textCase(.uppercase)
+            VStack(spacing:0){
+            
+                            Text(cardHeading)
+                                .font(Font.custom("Hoefler Text", size: 20).weight(.bold))
+                                .foregroundColor(Color(red: 0.48, green: 0.12, blue: 0.63))
+                                .textCase(.uppercase)
+                
             
             
             VStack {
                 ForEach(0..<(rectangles.count / 2), id: \.self) { rowIndex in
                     HStack(spacing: 20) {
-                        ForEach(0..<2, id: \.self) { colIndex in
-                            let index = rowIndex * 2 + colIndex
+                        ForEach(0..<3, id: \.self) { colIndex in
+                            let index = rowIndex * 3 + colIndex
                             if index < rectangles.count {
                                 RectangleView(
                                     heading: rectangles[index].0,
@@ -106,12 +107,12 @@ struct GameCard: View {
                     }
                 }
             }
-            .padding(.horizontal, 5.0)
-            .padding(.top, 60.0)
+//            .padding(.horizontal, 5.0)
+            .padding(.top, 50.0)
             .cornerRadius(15)
-            .offset(x: 57, y: -30)
-        }
-        //        }
+            .offset(x: 5, y: -30)
+            }.padding(.top, 20.0)
+            }
         .shadow(color: Color.black.opacity(0.3), radius: 5, x: 4)
     }
     
@@ -240,8 +241,8 @@ struct dStackView_Previews: PreviewProvider {
                 )
             
             GameCard(
-                imageName: "Himachal Pradesh",
-                cardHeading: "Himachal Pradesh",
+                imageName: "Maharashtra",
+                cardHeading: "Maharashtra",
                 rectangles: [
                     ("AREA", "12111"),
                     ("POPULATION", "12121"),

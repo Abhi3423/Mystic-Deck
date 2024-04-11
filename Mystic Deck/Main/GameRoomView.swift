@@ -18,6 +18,9 @@ struct GameRoomView: View {
     @State private var isEndActive = false
     @State private var winnerName: String = ""
     
+    @State private var winCardHeading: String = ""
+    @State private var winCardContent: String = ""
+    
     let theme: String
     let topic: String
     
